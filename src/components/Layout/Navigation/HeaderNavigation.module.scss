@@ -1,0 +1,12 @@
+@import '../../../scss/constants';
+
+.nav-bar {
+  display: flex;
+  background-color: $color-main-dark;
+  padding: 26px 0 26px 0;
+}
+
+.nav-link {
+  cursor: pointer;
+  color: $color-main-light
+}

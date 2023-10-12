@@ -1,4 +1,4 @@
-const domainName = '/fe-48-diplom';
+const domainName = '';
 
 const links = {
    main: domainName ,

@@ -1,14 +1,76 @@
 html {
-    font-size: 10px;
+	font-size: 10px;
 }
 
 body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-       'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-       'Helvetica Neue', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-size: 1.6rem;
- }
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+		'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+		'Helvetica Neue', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-size: 1.6rem;
+}
 
+// h1 {
+// 	@extend %font-add;
+// 	@include font($size: 7.2rem, $height: 8.4rem);
+// }
+
+// h2 {
+// 	@extend %font-add;
+// 	@include font($size: 3.6rem, $height: 4.2rem);
+// }
+
+// h3 {
+// 	@extend %font-add;
+// 	@include font($size: 3rem, $height: 3.5rem);
+// }
+
+// h4 {
+// 	@extend %font-add;
+// 	@include font($size: 2.4rem, $height: 2.8rem);
+// }
+
+
+
+// button {
+// 	@extend %font-add;
+// 	@extend %transition;
+// 	cursor: pointer;
+// 	text-align: center;
+// 	border-radius: 0.5rem;
+
+// 	&_transparent {
+// 		background-color: transparent;
+// 		color: $color-main-light;
+
+// 		&:hover {
+// 			background-color: $color-hover;
+// 			border-color: $color-hover;
+// 			color: $color-secondary-dark;
+// 		}
+
+// 		&:active {
+// 			background-color: $color-main-light;
+// 			border-color: $color-main-light;
+// 			color: $color-secondary-dark;
+// 		}
+// 	}
+
+// 	&_colored {
+// 		background-color: $color-primary;
+// 		&:hover, 
+// 		&:focus{
+// 			background-color: $color-primary;
+// 		}
+// 		&:active{
+// 			color: $color-primary;
+// 			background-color: transparent;
+// 		}	
+// 		&:disabled{
+// 			background-color: $color-grey;
+// 			color: $color-main-light;
+// 		}
+// 	}
+// }

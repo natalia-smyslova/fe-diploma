@@ -1,0 +1,9 @@
+@import '../../../../scss/constants';
+
+.bottom-nav{
+  display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 25px 0 35px 0;
+   border-top: 1px solid $color-secondary-light;
+}

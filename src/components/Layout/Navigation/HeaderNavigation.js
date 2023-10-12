@@ -1,6 +1,5 @@
 import React from 'react';
 import { HashLink } from 'react-router-hash-link';
-// import { useLocation } from 'react-router-dom';
 
 import Logo from '../Logo/Logo';
 
@@ -15,7 +14,7 @@ function HeaderNavigation() {
 			<Logo />
 			<ul className={styles['nav-bar']}>
 				<li className={styles['nav-link']}>
-					<HashLink smooth to={`${links.main}/#aboutUsS`}>
+					<HashLink smooth to={`${links.main}/#aboutUs`}>
 						<div>О нас</div>
 					</HashLink>
 				</li>
