@@ -1,12 +1,32 @@
 @import '../../../scss/constants';
+@import '../../../scss/mixins';
+@import '../../../scss/placeholders';
+
+.header-navigation {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 
 .nav-bar {
   display: flex;
   background-color: $color-main-dark;
   padding: 26px 0 26px 0;
+  @include font($size: 3rem, $height: 3.5rem, $weight: 300, $text-transform: none);
+  // justify-content: space-around;
 }
 
-.nav-link {
+.nav-link{
+    padding: 0 80px 0 0;
+  &>* {
+  // padding-left: 40px;
   cursor: pointer;
-  color: $color-main-light
+  color: $color-main-light;
+
+  &:hover {
+    color: $color-hover;
+    @extend %transition;
+  }
+}
 }

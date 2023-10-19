@@ -1,0 +1,25 @@
+@import '../../scss/constants';
+@import '../../scss/mixins';
+@import '../../scss/placeholders';
+
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .title {
+    @extend %font-add;
+    @include font($size: 7.2rem,
+      $height: 8.4rem,
+      $weight: 100,
+      $text-transform: none);
+    color: $color-main-light;
+
+    width: 510px;
+
+    &-bold {
+      font-weight: bold;
+    }
+  }
+}

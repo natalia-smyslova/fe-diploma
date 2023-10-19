@@ -1,10 +1,13 @@
 import React from 'react';
 
-function ContactItem(icon, alt, children) {
+import styles from './ContactItem.module.scss';
+
+function ContactItem({icon, alt, children}) {
+
   return (
-    <li className='item'>
-      <img className='item__icon' src={icon} alt={alt} />
-      <div className='item__text'>{children}</div>
+    <li className={styles.item}>
+      <img className={styles.item__icon} src={icon} alt={alt} />
+      <div className={styles.item__text}>{children}</div>
     </li>)
 };
 export default ContactItem;

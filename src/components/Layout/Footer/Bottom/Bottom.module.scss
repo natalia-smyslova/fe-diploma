@@ -1,9 +1,21 @@
 @import '../../../../scss/constants';
+@import '../../../../scss/mixins';
 
-.bottom-nav{
+.bottom {
   display: flex;
-   justify-content: space-between;
-   align-items: center;
-   padding: 25px 0 35px 0;
-   border-top: 1px solid $color-secondary-light;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 0 35px 0;
+  border-top: 1px solid $color-secondary-light;
+
+  &__year {
+    @include font($size: 2.4rem, $height: 2.8rem, $weight: light);
+    color: $color-secondary-light;
+  }
+
+  &__arrow {
+    width: 36px;
+    height: 36px;
+  }
+
 }

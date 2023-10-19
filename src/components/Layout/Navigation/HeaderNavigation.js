@@ -10,7 +10,7 @@ import links from '../../../utils/constants/links';
 
 function HeaderNavigation() {
 	return (
-		<nav className='header-navigation'>
+		<nav className={styles['header-navigation']}>
 			<Logo />
 			<ul className={styles['nav-bar']}>
 				<li className={styles['nav-link']}>
@@ -30,7 +30,7 @@ function HeaderNavigation() {
 				</li>
 				<li className={styles['nav-link']}>
 					<HashLink smooth to={`${links.main}/#contacts`}>
-						<div>онтакты</div>
+						<div>Kонтакты</div>
 					</HashLink>
 				</li>
 			</ul>

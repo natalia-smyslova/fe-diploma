@@ -1,0 +1,39 @@
+@import '../../../../../scss/mixins';
+@import '../../../../../scss/constants';
+@import '../../../../../scss/placeholders';
+
+
+.item {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 30px;
+
+  &__icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  &__text {
+    @include font($size: 2.4rem,
+      $height: 2.8rem,
+      $weight: 400,
+      $text-transform: none);
+    color: $color-secondary-light;
+    padding-left: 40px;
+
+    &>* {
+      cursor: pointer;
+      color: $color-main-light;
+
+      &:hover {
+        color: $color-hover;
+        @extend %transition;
+      }
+    }
+
+    // &:hover {
+    //   filter: invert(50%) sepia(55%) saturate(500%) hue-rotate(335deg) brightness(140%) contrast(140%);
+    //   @extend %transition;
+    // }
+  }
+}

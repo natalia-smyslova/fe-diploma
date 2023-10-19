@@ -1,0 +1,10 @@
+@import '../../scss/mixins';
+
+.about__text {
+  margin: 0 0 2rem 0;
+  @include font($weight: 400, $size: 2.4rem, $height: 2.8rem, $text-transform: none);
+
+  &-bold {
+    @include font($weight: 700, $size: 2.4rem, $height: 2.8rem, $text-transform: none);
+  }
+}

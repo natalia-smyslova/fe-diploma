@@ -1,0 +1,26 @@
+@import '../../scss/constants';
+@import '../../scss/mixins';
+@import '../../scss/placeholders';
+
+.about {
+  padding: 145px 0 90px 0;
+  background: $color-main-light;
+  color: $color-main-dark;
+
+  &__title {
+    margin-bottom: 30px;
+    @include font($size: 3.6rem,
+      $height: 4.2rem,
+      $weight: 500,
+    );
+    color: $color-main-dark;
+    @extend %drop-shadow;
+  }
+
+  &__text {
+    padding: 0 0 0 19px;
+    display: flex;
+    flex-direction: column;
+    border-left: solid 9px $color-primary;
+  }
+}

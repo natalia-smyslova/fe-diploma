@@ -1,6 +1,33 @@
+@import '../../scss/constants';
+
+
 .wrapper {
   max-width: 1920px;
   width: 100%;
   margin: auto;
-  
+}
+
+.header {
+  height: 590px;
+  // max-height: 985px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &-main {
+    background-image: url('./img/background-main.jpg');
+    border-bottom: solid 8px $color-primary;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+  }
+
+  &-selection {
+    background-image: url('./img/background-selection.jpg');
+  }
+
+  &-successful {
+    background-image: url('./img/background-successful.jpg');
+    min-height: 830px;
+  }
 }

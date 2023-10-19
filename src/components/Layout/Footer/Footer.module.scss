@@ -2,4 +2,9 @@
 
 .footer{
   background-color: $color-main-dark;
+  &__wrapper{
+    display: flex;
+    justify-content: space-around;
+    padding: 52px 0 52px 0;
+  }
 }

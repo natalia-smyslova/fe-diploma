@@ -1,0 +1,19 @@
+@import '../../../scss/constants';
+@import '../../../scss/mixins';
+@import '../../../scss/placeholders';
+
+.logo {
+  @include font($size: 3.6rem,
+    $weight: 900,
+    $height: 4.2rem,
+    $text-transform: none);
+  color: $color-secondary-light;
+
+  height: 49px;
+  margin-top: 15px;
+
+  &:hover {
+    color: $color-hover;
+    @extend %transition;
+  }
+}

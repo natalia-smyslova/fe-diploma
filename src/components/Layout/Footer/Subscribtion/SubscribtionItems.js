@@ -16,15 +16,31 @@ import linkedin from './icons/inactive/linkedin.svg';
 import twitter from './icons/inactive/twitter.svg';
 import youtube from './icons/inactive/youtube.svg';
 
+import contacts from '../../../../utils/constants/contacts';
 
 function SubscribtionItems() {
 	return (
 		<ul className='subscriptions'>
-			<li className='subscription__item'></li>
-			<li className='subscription__item'></li>
-			<li className='subscription__item'></li>
-			<li className='subscription__item'></li>
-			<li className='subscription__item'></li>
+			<li className='subscription__item'>
+				<a href={contacts.youtube}>
+				</a>
+			</li>
+			<li className='subscription__item'>
+				<a href={contacts.linkedin}>
+				</a>
+			</li>
+			<li className='subscription__item'>
+				<a href={contacts.google}>
+				</a>
+			</li>
+			<li className='subscription__item'>
+				<a href={contacts.facebook}>
+				</a>
+			</li>
+			<li className='subscription__item'>
+				<a href={contacts.twitter}>
+				</a>
+			</li>
 		</ul>
 	)
 }

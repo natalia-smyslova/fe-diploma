@@ -1,30 +1,25 @@
 import React from 'react';
-import PropTypes from 'prop-types'
 
-// import styles from './Layout.module.scss'
+import styles from './Layout.module.scss'
 
 import HeaderNavigation from './Navigation/HeaderNavigation';
 import Footer from './Footer/Footer';
 
-function Layout(props) {
-  console.log(props.children);
 
+function Layout({ body, children, picture, }) {
 
   return (
     <div className='wrapper'>
-      <header className='header'>
+      <header className={styles[`header-${picture}`]}>
         <HeaderNavigation />
+        {children}
       </header>
-      <main>
-        {props.children.type}
-      </main>
+      {body}
+
       <Footer />
     </div>
   );
 }
 
-Layout.propTypes = {
-  body: PropTypes.object
-};
 
 export default Layout;

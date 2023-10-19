@@ -1,7 +1,16 @@
-// // import React from 'react';
+import  React  from 'react';
 
-// function AboutUs(){
-//   return(<></>)
-// };
+import styles from './AboutUs.module.scss';
 
-// export default AboutUs;
+import aboutUsInfo from './AboutUsInfo';
+
+function AboutUs() {
+  return (
+    <div className={styles.about} id="about">
+      <div className={styles.about__title}>о нас</div>
+      <div className={styles.about__text}>{aboutUsInfo}</div>
+    </div>
+  )
+};
+
+export default AboutUs;

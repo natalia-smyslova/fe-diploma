@@ -1,0 +1,36 @@
+@import '../../scss/constants';
+@import '../../scss/mixins';
+@import '../../scss/placeholders';
+
+.howItWorks {
+  // padding: 6rem 2rem 10rem 0;
+  min-width: 100%;
+  min-height: 575px;
+  max-height: 575px;
+  background: $color-main-light;
+  color: $color-main-light;
+  // border-top: solid 5px var(--color-yellow-orange);
+  background-image: url('./background-how-it-works.png');
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 107px;
+ }
+ &__title {
+  @include font($size: 3.6rem, $height: 4.2rem, $weight: 500);
+  color: $color-main-light;
+  padding-top: 70px;
+}
+&__options {
+  display: flex;
+  justify-content: space-around;
+}
+}
+
+.btn {
+  // @include button-white;
+  @include font($size: 2.4rem, $height: 2.8rem, $weight: 700);
+  padding: 1.5rem 7.5rem;
+  margin-left: 3.3rem;
+}

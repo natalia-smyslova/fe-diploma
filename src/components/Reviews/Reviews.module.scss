@@ -1,0 +1,17 @@
+@import '../../scss/constants';
+@import '../../scss/mixins';
+
+.reviews {
+  padding: 152px 294px 122px 0;
+  min-width: 100%;
+  max-width: 100%;
+  // min-height: 75rem;
+  background: $color-main-light;
+  color: $color-main-dark;
+  @include font($size: 3.6rem, $height: 4.2rem, $weight: 500);
+  &__cards {
+     margin-top: 60px;
+     display: flex;
+     flex-wrap: nowrap;
+  }
+}

@@ -12,14 +12,14 @@ function Bottom() {
   const { pathname } = useLocation();
 
   return (
-    <div className={styles['bottom-nav']}>
+    <div className={styles.bottom}>
       <Logo />
-      <div className='bottom__link'>
+      <div className={styles.bottom__link}>
         <HashLink smooth to={`${pathname}#header-navigation`}>
-          <img className='bottom__arrow' src={arrow} alt='наверх' />
+          <img className={styles.bottom__arrow} src={arrow} alt='наверх' />
         </HashLink>
       </div>
-      <div className='bottom__year'>2023 WEB</div>
+      <div className={styles.bottom__year}>2023 WEB</div>
     </div>
   )
 };

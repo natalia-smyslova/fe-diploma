@@ -12,65 +12,79 @@ body {
 	font-size: 1.6rem;
 }
 
-// h1 {
-// 	@extend %font-add;
-// 	@include font($size: 7.2rem, $height: 8.4rem);
-// }
+// Заголовки
 
-// h2 {
-// 	@extend %font-add;
-// 	@include font($size: 3.6rem, $height: 4.2rem);
-// }
+h1 {
+	@extend %font-add;
+	@include font($size: 7.2rem, $height: 8.4rem);
+}
 
-// h3 {
-// 	@extend %font-add;
-// 	@include font($size: 3rem, $height: 3.5rem);
-// }
+h2 {
+	@extend %font-add;
+	@include font($size: 3.6rem, $height: 4.2rem);
+}
 
-// h4 {
-// 	@extend %font-add;
-// 	@include font($size: 2.4rem, $height: 2.8rem);
-// }
+h3 {
+	@extend %font-add;
+	@include font($size: 3rem, $height: 3.5rem);
+}
 
+h4 {
+	@extend %font-add;
+	@include font($size: 2.4rem, $height: 2.8rem);
+}
 
+// Кнопки
 
-// button {
-// 	@extend %font-add;
-// 	@extend %transition;
-// 	cursor: pointer;
-// 	text-align: center;
-// 	border-radius: 0.5rem;
+button {
+	@extend %font-add;
+	@extend %transition;
+	cursor: pointer;
+	text-align: center;
+	border-radius: 5px;
 
-// 	&_transparent {
-// 		background-color: transparent;
-// 		color: $color-main-light;
+	// Прозрачная
 
-// 		&:hover {
-// 			background-color: $color-hover;
-// 			border-color: $color-hover;
-// 			color: $color-secondary-dark;
-// 		}
+	&__transparent {
+		background-color: transparent;
+		color: $color-main-light;
 
-// 		&:active {
-// 			background-color: $color-main-light;
-// 			border-color: $color-main-light;
-// 			color: $color-secondary-dark;
-// 		}
-// 	}
+		&:hover,
+		&:focus {
+			background-color: $color-hover;
+			border-color: $color-hover;
+			border: 2px solid $color-main-dark;
+			@extend %drop-shadow;
+		}
 
-// 	&_colored {
-// 		background-color: $color-primary;
-// 		&:hover, 
-// 		&:focus{
-// 			background-color: $color-primary;
-// 		}
-// 		&:active{
-// 			color: $color-primary;
-// 			background-color: transparent;
-// 		}	
-// 		&:disabled{
-// 			background-color: $color-grey;
-// 			color: $color-main-light;
-// 		}
-// 	}
-// }
+		&:active {
+			background-color: $color-main-light;
+			border-color: $color-main-light;
+			color: $color-secondary-dark;
+		}
+
+	}
+
+	// Цветная
+
+	&-colored {
+		background-color: $color-primary;
+
+		&:hover,
+		&:focus {
+			background-color: $color-primary;
+			@extend %drop-shadow;
+		}
+
+		&:active {
+			color: $color-primary;
+			background-color: transparent;
+			border: 0.1rem solid $color-primary;
+		}
+
+		&:disabled {
+			background-color: $color-grey;
+			color: $color-main-light;
+		}
+	}
+}
