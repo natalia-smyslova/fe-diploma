@@ -1,5 +1,13 @@
-function TrainSelectionPage(){
-    
-};
+// import Layout from "../../components/Layout/Layout";
 
-export default TrainSelectionPage;
+// import options from "../../components/HowItWorks/Options/options";
+
+// import styles from './TrainSelectionPage.module.scss';
+
+// function TrainSelectionPage() {
+//   <>
+//     <Layout pic={options.search} body={body} />
+//   </>
+// };
+
+// export default TrainSelectionPage;

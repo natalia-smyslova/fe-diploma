@@ -16,7 +16,7 @@ function Bottom() {
       <Logo />
       <div className={styles.bottom__link}>
         <HashLink smooth to={`${pathname}#header-navigation`}>
-          <img className={styles.bottom__arrow} src={arrow} alt='наверх' />
+          <img className={styles.bottom__arrow} src={arrow} alt="наверх" />
         </HashLink>
       </div>
       <div className={styles.bottom__year}>2023 WEB</div>

@@ -9,14 +9,13 @@
   align-items: center;
 
   .title {
+    padding: 576px 0 239px 349px;
     @extend %font-add;
     @include font($size: 7.2rem,
       $height: 8.4rem,
       $weight: 100,
       $text-transform: none);
     color: $color-main-light;
-
-    width: 510px;
 
     &-bold {
       font-weight: bold;

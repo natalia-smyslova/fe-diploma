@@ -8,13 +8,12 @@
   justify-content: space-between;
 }
 
-
 .nav-bar {
+  margin-top: 25px;
   display: flex;
   background-color: $color-main-dark;
-  padding: 26px 0 26px 0;
+  padding: 26px 0 26px 258px;
   @include font($size: 3rem, $height: 3.5rem, $weight: 300, $text-transform: none);
-  // justify-content: space-around;
 }
 
 .nav-link{

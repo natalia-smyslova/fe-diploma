@@ -12,11 +12,7 @@ function PopUp({ reason }) {
 		<div className='wrapper'>
 			<div className='popUp'>
 				<div className={styles[`popUp__${reason}`]}>
-					<img
-						className={styles.popUp__img}
-						src={img}
-						alt={`${reason} icon`}
-					/>
+					<img className={styles.popUp__img} src={img} alt={`${reason} icon`}/>
 				</div>
 			</div>
 		</div >

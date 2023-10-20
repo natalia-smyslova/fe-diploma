@@ -1,0 +1,55 @@
+@import '../../../../scss/constants';
+
+.subscriptions {
+  display: flex;
+
+}
+
+.subscription {
+  padding-right: 48px;
+
+  & svg:hover {
+    stroke: $color-hover;
+    fill: $color-hover
+  }
+
+  &:hover {
+    stroke: $color-hover;
+    fill: $color-hover
+  }
+}
+
+.subscription__href {
+  & svg:hover {
+    stroke: $color-hover;
+    fill: $color-hover
+  }
+
+  &:hover {
+    stroke: $color-hover;
+    fill: $color-hover
+  }
+}
+
+.subscription__icon {
+  svg path {
+    stroke: inherit;
+    stroke-width: inherit;
+    fill: inherit;
+  }
+  width: 30px;
+  height: 30px;
+  color: red;
+  fill: #E5E5E5;
+  stroke: #E5E5E5;
+
+  & svg:hover {
+    stroke: $color-hover;
+    fill: $color-hover
+  }
+
+  &:hover {
+    stroke: $color-hover;
+    fill: $color-hover
+  }
+}
