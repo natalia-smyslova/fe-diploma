@@ -15,6 +15,8 @@ $color-black: #000000;
 // buttons 
 $color-primary: #ffa800;
 $color-hover: #ffca62;
+
+// bars
 $color-bars: #3e3c41;
 $color-bars-light: #c4c4c4;
 
@@ -26,12 +28,12 @@ $color-error-light: rgba(245, 126, 106, 0.892);
 $color-info: rgba(255, 245, 0, 0.36);
 $color-bg-calendar: rgba(255, 168, 0, 0.31);
 
-
 $color-grey: #928f94;
 $color-light-grey: #f4f3f6;
 $color-popover: #f5f4f6;
 $color-search-block: rgba(41, 41, 41, 0.8);
 
+//shadows
 $border-shadow-last-ticket: 0px 0.2rem 0.2rem rgba(62, 60, 65, 0.25);
 $border-shadow-trains-card: 0px 0.2rem 0.2rem rgba(0, 0, 0, 0.3);
 $box-shadow-popover: 0px 0.4rem 0.4rem rgba(0, 0, 0, 0.25);

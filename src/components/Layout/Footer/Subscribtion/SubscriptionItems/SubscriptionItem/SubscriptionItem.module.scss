@@ -1,0 +1,20 @@
+@import '../../../../../../scss/mixins';
+@import '../../../../../../scss/constants';
+@import '../../../../../../scss/placeholders';
+
+.item {
+  display: flex;
+  margin-right: 48px;
+  align-items: center;
+  fill: $color-secondary-light;
+  height: 30px;
+  
+  &:last-of-type {
+    margin-right: 0;
+  }
+
+  &:hover svg {
+    fill: $color-hover;
+    @extend %transition;
+  }
+}

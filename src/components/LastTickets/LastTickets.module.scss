@@ -1,0 +1,12 @@
+@import '../../../src/scss/mixins';
+@import '../../../src/scss/constants';
+
+.last-tickets {
+  margin: 94px 0 673px 258px;
+  width: 360px;
+
+  &__header {
+    @include font($size: 3rem, $weight: 500, $height: 3.5rem);
+    margin-bottom: 26px;
+  }
+}

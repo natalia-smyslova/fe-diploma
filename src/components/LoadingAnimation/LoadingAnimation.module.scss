@@ -1,0 +1,21 @@
+@import '../../../src/scss/constants';
+@import '../../../src/scss/mixins';
+
+.animation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: $color-bars;
+
+  // .image {
+  //   padding-bottom: 100px;
+  // }
+
+  .text {
+    @include font($size: 2.4rem, $weight: 700, $height: 2.8rem);
+    color: $color-grey;
+    padding-top: 261px;
+    text-align: center;
+  }
+}

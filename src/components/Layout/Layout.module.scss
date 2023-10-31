@@ -24,10 +24,14 @@
 
   &-selection {
     background-image: url('./img/background-selection.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
   &-successful {
     background-image: url('./img/background-successful.jpg');
     min-height: 830px;
+    background-size: cover;
+    background-repeat: no-repeat;
   }
 }

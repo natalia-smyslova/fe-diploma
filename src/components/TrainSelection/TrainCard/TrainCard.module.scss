@@ -1,0 +1,36 @@
+@import '../../../scss/constants';
+@import '../../../scss/placeholders';
+@import '../../../scss/mixins';
+
+.card {
+  @include card();
+  display: flex;
+  @extend %border-shadow-trains-card;
+
+  &:not(:last-child) {
+    margin-bottom: 5rem;
+  }
+
+  &__train {
+    // width: 19.7rem;
+    padding: 29px 23px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: $color-quaterniary-light;
+  }
+
+  &__direction {
+    // width: 48rem;
+    border-right: 0.1rem dashed $color-secondary-light;
+    padding: 52px 36rpx 87px 40px;
+  }
+
+  &__seats {
+    // width: 28.3rem;
+    padding: 41px 22px 21px 27px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}

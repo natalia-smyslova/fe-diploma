@@ -1,0 +1,73 @@
+@import '../../../scss/mixins';
+@import '../../../scss/constants';
+@import '../../../scss/placeholders';
+
+.card {
+  @include card($padding: 18px, $margin-bottom: 17px);
+  @include font($size: 1.6rem, $height: 1.9rem, $weight: 400);
+  color: $color-grey;
+  @extend %border-shadow-last-ticket;
+
+  &__firstWrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__secondWrapper {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 30px;
+  }
+}
+
+.direction {
+  &__city {
+    @include font($weight: 400, $size: 2rem, $height: 2.3rem, $text-transform: capitalize);
+    color: $color-main-dark;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__station {
+    @include font($weight: 400, $size: 1.6rem, $height: 1.8rem, $text-transform: capitalize);
+    color: $color-grey;
+  }
+}
+
+.icons {
+  display: flex;
+  align-items: flex-end;
+
+  &__content {
+    width: 21px;
+    height: 21px;
+    margin-right: 10px;
+  }
+}
+
+.price {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+
+  &__wrapper {
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-end;
+  }
+
+  &__start {
+    margin-right: 5px;
+  }
+
+  &__number {
+    @include font($weight: 700, $size: 3.6rem, $height: 4.2rem);
+    color: $color-primary;
+  }
+
+  &__currency {
+    margin-left: 5px;
+    width: 20px;
+    height: 25px;
+  }
+}

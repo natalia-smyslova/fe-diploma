@@ -1,8 +1,13 @@
 @import '../../scss/constants';
 @import '../../scss/mixins';
+@import '../../scss/placeholders';
 
 .wrapper {
-  content: '';
+  display: none;
+} 
+
+.wrapper.active{
+  // content: '';
   position: fixed;
   top: 0;
   left: 0;
@@ -10,6 +15,49 @@
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.75);
 }
+
 .popUp {
+  width: 664px;
+  border: 1px solid $color-bars-light;
+  background-color: #fbfbfb;
+  @extend %box-shadow-selection-block;
   position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  &__info {
+    background-color: $color-info;
+  }
+
+  &__error {
+    background-color: $color-error;
+  }
+
+  &__img {
+    width: 32px;
+    height: 32px;
+    margin: 38px 594px 38px 38px;
+  }
+
+  &__wrapper {
+    border-top: 1px dashed $color-grey;
+    border-bottom: 1px dashed $color-grey;
+  }
+
+  &__message {
+    // width: 59.5rem;
+    @include font($weight: 400, $size: 1.8rem, $height: 2.1rem, $text-transform: none);
+    color: $color-black;
+    padding: 46px 24px 25px 46px;
+  }
+
+  .btn {
+    @include font($weight: 700, $size: 2.4rem, $height: 2.8rem, $text-transform: capitalize);
+    color: $color-main-dark;
+    padding: 11px 67px;
+    border: 0.1rem solid $color-main-dark;
+    margin: 31px 215px 31px 215px;
+    // margin: 31px;
+  }
 }

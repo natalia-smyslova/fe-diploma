@@ -1,0 +1,123 @@
+@import '../../scss/constants';
+@import '../../scss/mixins';
+@import '../../scss/placeholders';
+
+.orderSuccess {
+  margin: -320px 258px 175px 258px;
+  // margin-bottom: 175px;
+  // padding: 0 258px 175px;
+
+  .congratulations {
+    @include font($size: 7.2rem, $weight: 700, $height: 8.4rem, $text-transform: none);
+    padding-bottom: 35px;
+    color: $color-main-light;
+    // margin-right: auto;
+    // margin-left: auto;
+    // max-width: 140rem;
+  }
+
+  .afterOrder {
+    // max-width: 140rem;
+    background: $color-main-light;
+    // border: 0.1rem solidvar(--color-bars-light);
+    @extend %box-shadow-selection-block;
+    // margin-right: auto;
+    // margin-left: auto;
+
+    .orderData {
+      padding: 60px 82px 39px;
+      @include font($weight: 700, $size: 3.6rem, $height: 4.2rem, $text-transform: none);
+      color: $color-bars;
+      display: flex;
+      justify-content: space-between;
+
+      .priceWord {
+        font-weight: 400;
+        color: $color-grey;
+        margin-right: 40px;
+      }
+
+      .currency {
+        margin-left: 10px;
+        // margin-bottom: 7px;
+      }
+    }
+
+    .nextSteps {
+      padding: 40px;
+      display: flex;
+      justify-content: center;
+      background: $color-light-grey;
+
+      .stepItem {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &:not(:last-child) {
+          margin-right: 120px;
+        }
+
+        .stepIcon {
+          margin-bottom: 10px;
+        }
+
+        .stepText {
+          @include font($weight: 400, $height: 2.1rem, $size: 1.8rem, $text-transform: none);
+          color: $color-main-dark;
+          text-align: center;
+
+          &-bold {
+            font-weight: 500;
+          }
+        }
+      }
+    }
+
+    .congratulationsMessage {
+      padding: 95px 110px 130px 205px;
+
+      .top {
+        @include font($weight: 700, $size: 3.6rem, $height: 4.2rem, $text-transform: capitalize);
+        color: $color-main-dark;
+        margin-bottom: 50px;
+      }
+
+      .middle {
+        @include font($weight: 400, $size: 2.4rem, $height: 2.8rem, $text-transform: none);
+        color: $color-main-dark;
+        margin-bottom: 90px;
+      }
+
+      .bottom {
+        @include font($weight: 700, $size: 2.4rem, $height: 2.8rem, $text-transform: none);
+        color: $color-main-dark;
+      }
+    }
+
+    .review {
+      display: flex;
+      justify-content: space-between;
+      padding: 60px 80px 50px;
+      background: $color-primary;
+
+      .left {
+        display: flex;
+        align-items: center;
+
+        .reviewText {
+          @include font($weight: 400, $size: 2.4rem, $height: 2.8rem, $text-transform: none);
+          color: $color-main-dark;
+          margin-right: 40px;
+        }
+      }
+    }
+  }
+}
+
+.btn {
+  // text-transform: uppercase;
+  @include font($size: 2.4rem, $height: 2.8rem, $weight: 700);
+  padding: 17px 12px;
+  border: 1px solid $color-main-dark;
+}

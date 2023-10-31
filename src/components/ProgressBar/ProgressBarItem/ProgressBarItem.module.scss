@@ -1,0 +1,57 @@
+@import '../../../scss/mixins';
+@import '../../../scss/constants';
+
+.step {
+  // height: 9.8rem;
+  display: flex;
+  align-items: center;
+
+  &__icon {
+    margin-left: 35px;
+    width: 56px;
+    height: 56px;
+  }
+
+  &__name {
+    @include font($size: 3rem, $height: 3.5rem, $weight: 700, $text-transform: capitalize);
+    color: $color-main-light;
+    margin-left: 24px;
+  }
+
+  &-first {
+    width: 620px;
+  }
+
+  &-second {
+    width: 360px;
+  }
+
+  &-third {
+    width: 360px;
+  }
+
+  &-fourth {
+    width: 570px;
+  }
+
+  &-done {
+    background-color: $color-primary;
+  }
+
+}
+
+.breaker {
+  background-color: $color-bars;
+  // height: 98px;
+  // width: 3.7rem;
+  // clip-path: none;
+
+  &-done {
+    background-color: $color-primary;
+  }
+
+  &-cut {
+    background-color: $color-primary;
+    clip-path: polygon(100% 50%, 0 0, 0 100%);
+  }
+}

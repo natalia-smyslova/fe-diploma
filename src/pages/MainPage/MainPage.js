@@ -13,11 +13,11 @@ function MainPage() {
 	const body = <MainPageBody />
 	return (
 		<Layout body={body} picture={pictures.main}>
-			 <div className={styles.wrapper}>
-			<h1 className={styles.title}>
-				Вся жизнь -{' '}
-				<span className={styles['title-bold']}>путешествие!</span>
-			</h1>
+			<div className={styles.wrapper}>
+				<h1 className={styles.title}>
+					Вся жизнь -{' '}
+					<span className={styles['title-bold']}>путешествие!</span>
+				</h1>
 			</div>
 		</Layout>
 	)

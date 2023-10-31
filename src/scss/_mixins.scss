@@ -1,7 +1,16 @@
-@mixin font ($size, $height, $weight: bold, $style: normal, $text-transform:  uppercase ) {
+@import './constants';
+
+@mixin font ($size, $height, $weight: bold, $style: normal, $text-transform: uppercase) {
   font-size: $size;
   font-style: $style;
   font-weight: $weight;
   line-height: $height;
   text-transform: $text-transform;
+}
+
+@mixin card ($color: $color-main-light, $border: 1px solid $color-bars-light, $padding, $margin-bottom) {
+  background-color: $color;
+  border: $border;
+  padding: $padding;
+  margin-bottom: $margin-bottom;
 }
