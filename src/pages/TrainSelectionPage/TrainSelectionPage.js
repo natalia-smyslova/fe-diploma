@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
-import { useDispatch,  useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import Layout from "../../components/Layout/Layout";
 import TrainSelectionBody from '../../components/Bodies/TrainSelectionBody/TrainSelectionBody';
-import PaginationBlock from '../../components/TrainSelection/Pagination/PaginationBlock';
+// import PaginationBlock from '../../components/TrainSelection/Pagination/PaginationBlock';
 
 import pictures from '../../components/Layout/pictures';
 
@@ -12,21 +12,21 @@ import {
   fetchLastTickets
 } from '../../store/Thunks/thunks';
 
-import {
-  selectTotalCount,
-  // selectLoading as selectLoadingTrains,
-} from '../../store/Slices/trainsSlice';
-// import { selectLoading as selectLoadingLastTickets } from '../../store/Slices/lastTicketsSlice';
+// import {
+//   selectTotalCount,
+//   // selectLoading as selectLoadingTrains,
+// } from '../../store/Slices/trainsSlice';
+// // import { selectLoading as selectLoadingLastTickets } from '../../store/Slices/lastTicketsSlice';
 
 
-import {
-  // selectSort,
-  selectLimit,
-  // selectOffset,
-  selectCurrentPage,
-  changeOffset,
-  setCurrentPage,
-} from '../../store/Slices/sortSlice';
+// import {
+//   // selectSort,
+//   selectLimit,
+//   // selectOffset,
+//   selectCurrentPage,
+//   changeOffset,
+//   setCurrentPage,
+// } from '../../store/Slices/sortSlice';
 
 // let url = useMemo(
 //   () => `${process.env.REACT_APP_TICKETS}from_city_id=${departureCity.id
@@ -61,35 +61,35 @@ import {
 function TrainSelectionPage() {
 
   const dispatch = useDispatch();
-  const limit = useSelector(selectLimit);
+  // const limit = useSelector(selectLimit);
   // const sort = useSelector(selectSort);
   // const offset = useSelector(selectOffset);
-  const total = useSelector(selectTotalCount);
-  const currentPage = useSelector(selectCurrentPage);
+  // const total = useSelector(selectTotalCount);
+  // const currentPage = useSelector(selectCurrentPage);
   // const loadingLastTickets = useSelector(selectLoadingLastTickets);
 
   useEffect(() => {
     dispatch(fetchLastTickets(process.env.REACT_APP_LAST_TICKETS));
   }, [dispatch]);
 
-  const onChangePage = (value) => {
-    dispatch(setCurrentPage(value));
-    dispatch(changeOffset(value * limit - limit));
-  };
+  // const onChangePage = (value) => {
+  //   dispatch(setCurrentPage(value));
+  //   dispatch(changeOffset(value * limit - limit));
+  // };
   
 
   const body = <TrainSelectionBody />
 
   return (
-    <>
+
       <Layout body={body} picture={pictures.selection} />
-      <PaginationBlock
-        current={currentPage}
-        onChange={onChangePage}
-        total={total}
-        pageSize={limit}
-      />
-    </>
+      // {/* <PaginationBlock
+      //   current={currentPage}
+      //   onChange={onChangePage}
+      //   total={total}
+      //   pageSize={limit}
+      // /> */}
+  
   )
 
 };
