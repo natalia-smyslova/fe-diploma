@@ -1,7 +1,7 @@
 /* eslint-disable no-param-reassign */
 import { createSlice } from '@reduxjs/toolkit';
 
-import { fetchTrainsOptions } from '../Thunks/thunks';
+import fetchTrainsOptions from '../thunks/fetchTrainsOptions';
 
 const savedData = localStorage.getItem('trains');
 const empty = {
@@ -43,9 +43,9 @@ const trainsSlice = createSlice({
 
 export const { removeTrainsData } = trainsSlice.actions;
 
-export const selectTotalCount = (state) => state.trains.totalCount;
-export const selectTrainsOptions = (state) => state.trains.trainsOptions;
-export const selectLoading = (state) => state.trains.loading;
-export const selectError = (state) => state.trains.error;
+// export const selectTotalCount = (state) => state.trains.totalCount;
+// export const selectTrainsOptions = (state) => state.trains.trainsOptions;
+// export const selectLoading = (state) => state.trains.loading;
+// export const selectError = (state) => state.trains.error;
 
 export default trainsSlice;

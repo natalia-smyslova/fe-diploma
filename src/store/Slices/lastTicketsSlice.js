@@ -1,12 +1,12 @@
-/* eslint-disable no-param-reassign */
-import { createSlice } from '@reduxjs/toolkit';
-import { fetchLastTickets } from '../Thunks/thunks';
+import { createSlice } from "@reduxjs/toolkit";
+
+import fetchLastTickets from '../thunks/fetchLastTickets';
 
 const initialState = {
   lastTickets: null,
   loading: false,
-  error: null,
-};
+  error: null
+}
 
 const lastTicketsSlice = createSlice({
   name: 'lastTicketsSlice',
@@ -14,11 +14,11 @@ const lastTicketsSlice = createSlice({
   reducers: {
     removeLastTicketsData() {
       return initialState;
-    },
+    }
   },
   extraReducers: {
     [fetchLastTickets.pending]: (state) => {
-      state.loading = true;
+      state.loaing = true;
       state.error = null;
     },
     [fetchLastTickets.fulfilled]: (state, action) => {
@@ -26,33 +26,29 @@ const lastTicketsSlice = createSlice({
       state.error = null;
       state.lastTickets = action.payload.map((ticket, index) => ({
         id: index,
-        price: ticket.departure.min_price,
         from: {
           city: ticket.departure.from.city.name,
-          station: ticket.departure.from.railway_station_name,
+          station: ticket.departure.from.railway_station_name
         },
         to: {
           city: ticket.departure.to.city.name,
-          station: ticket.departure.to.railway_station_name,
+          station: ticket.departure.to.railway_station_name
         },
-        icons: {
+        minPrice: ticket.departure.min_price,
+        conditions: {
           wifi: ticket.departure.have_wifi,
-          conditioner: ticket.departure.have_air_conditioning,
-          express: ticket.departure.is_express,
-        },
+          isExpress: ticket.departure.is_express,
+          airConditioning: ticket.departure.have_air_conditioning
+        }
       }));
     },
     [fetchLastTickets.rejected]: (state, action) => {
       state.loading = false;
       state.error = action.payload;
-    },
-  },
+    }
+  }
 });
 
 export const { removeLastTicketsData } = lastTicketsSlice.actions;
-
-export const selectLastTickets = (state) => state.lastTickets.lastTickets;
-export const selectLoading = (state) => state.lastTickets.loading;
-export const selectError = (state) => state.lastTickets.error;
 
 export default lastTicketsSlice;

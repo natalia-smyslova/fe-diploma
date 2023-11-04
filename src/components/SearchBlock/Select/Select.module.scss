@@ -1,0 +1,7 @@
+@import '../../../scss/mixins';
+
+.input {
+  width: 325px;
+  height: 65px;
+  @include font($size: 1.8rem, $height: 2.1rem, $weight: 400);
+}

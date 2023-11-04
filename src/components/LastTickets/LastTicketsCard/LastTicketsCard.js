@@ -5,8 +5,8 @@ import styles from './LastTicketsCard.module.scss';
 import wifi from './icons/wifi.svg';
 import rub from './icons/rub.svg';
 import food from './icons/food.svg';
-import express from './icons/express.svg';
-import conditioner from './icons/conditioner.svg';
+import isExpress from './icons/express.svg';
+import airConditioning from './icons/conditioner.svg';
 
 function LastTicketsCard({ ticket }) {
 
@@ -17,12 +17,12 @@ function LastTicketsCard({ ticket }) {
   );
   const conditionerImg = (
     <div className={styles.icons__content}>
-      <img src={conditioner} alt="кондиционер" />
+      <img src={airConditioning} alt="кондиционер" />
     </div>
   );
   const expressImg = (
     <div className={styles.icons__content}>
-      <img src={express} alt="экспресс" />
+      <img src={isExpress} alt="экспресс" />
     </div>
   )
 
@@ -44,11 +44,11 @@ function LastTicketsCard({ ticket }) {
       </div>
       <div className={styles.card__secondWrapper}>
         <div className={styles.icons}>
-          {ticket.icons.wifi && wifiImg}
+          {ticket.conditions.wifi && wifiImg}
 
-          {ticket.icons.conditioner && conditionerImg}
+          {ticket.conditions.airConditioning && conditionerImg}
 
-          {ticket.icons.express && expressImg}
+          {ticket.conditions.isExpress && expressImg}
           <div className={styles.icons__content}>
             <img src={food} alt="еда" />
           </div>
@@ -56,7 +56,7 @@ function LastTicketsCard({ ticket }) {
         <div className={styles.price}>
           <div className={styles.price__wrapper}>
             <span className={styles.price__start}>от</span>
-            <span className={styles.price__number}>{ticket.price}</span>
+            <span className={styles.price__number}>{ticket.minPrice}</span>
             <img
               className={styles.price__currency}
               src={rub}

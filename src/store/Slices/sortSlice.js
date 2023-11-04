@@ -41,9 +41,9 @@ export const {
   removeSortData,
 } = sortSlice.actions;
 
-export const selectLimit = (state) => state.sort.limit;
-export const selectSort = (state) => state.sort.sort;
-export const selectOffset = (state) => state.sort.offset;
-export const selectCurrentPage = (state) => state.sort.currentPage;
+// export const selectLimit = (state) => state.sort.limit;
+// export const selectSort = (state) => state.sort.sort;
+// export const selectOffset = (state) => state.sort.offset;
+// export const selectCurrentPage = (state) => state.sort.currentPage;
 
 export default sortSlice;

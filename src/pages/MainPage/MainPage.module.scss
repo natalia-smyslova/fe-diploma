@@ -3,13 +3,23 @@
 @import '../../scss/placeholders';
 
 
+
+
 .wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 253px 232px 0 349px;
+
+  .header-container {
+    display: flex;
+    margin-right: 104px;
+  }
 
   .title {
-    padding: 576px 0 239px 349px;
+    display: block;
+    width: 506px;
+    // padding: 576px 0 239px 349px;
     @extend %font-add;
     @include font($size: 7.2rem,
       $height: 8.4rem,

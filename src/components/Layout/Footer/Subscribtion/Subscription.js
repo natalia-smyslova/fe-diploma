@@ -16,9 +16,9 @@ function Subscribtion() {
 	const [reason, setReason] = useState('');
 
 	useEffect(() => {
-		console.log(isDisabled);
+		// console.log(isDisabled);
 		setDisabled(!isDisabled);
-		console.log(isDisabled);
+		// console.log(isDisabled);
 	}, []);
 
 

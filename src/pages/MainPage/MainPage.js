@@ -6,6 +6,7 @@ import MainPageBody from '../../components/Bodies/MainPageBody/MainPageBody';
 import pictures from '../../components/Layout/pictures';
 
 import styles from './MainPage.module.scss';
+import SearchBlock from '../../components/SearchBlock/SearchBlock';
 
 
 function MainPage() {
@@ -14,10 +15,13 @@ function MainPage() {
 	return (
 		<Layout body={body} picture={pictures.main}>
 			<div className={styles.wrapper}>
-				<h1 className={styles.title}>
-					Вся жизнь -{' '}
-					<span className={styles['title-bold']}>путешествие!</span>
-				</h1>
+				<div className={styles['header-container']}>
+					<h1 className={styles.title}>
+						Вся жизнь -{' '}
+							<span className={styles['title-bold']}>путешествие!</span>
+					</h1>
+				</div>
+				<SearchBlock />
 			</div>
 		</Layout>
 	)

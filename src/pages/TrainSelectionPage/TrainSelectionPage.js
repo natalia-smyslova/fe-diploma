@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+import fetchLastTickets from '../../store/thunks/fetchLastTickets';
 
 import Layout from "../../components/Layout/Layout";
 import TrainSelectionBody from '../../components/Bodies/TrainSelectionBody/TrainSelectionBody';
@@ -7,10 +8,12 @@ import TrainSelectionBody from '../../components/Bodies/TrainSelectionBody/Train
 
 import pictures from '../../components/Layout/pictures';
 
-import {
-  // fetchTrainsOptions,
-  fetchLastTickets
-} from '../../store/Thunks/thunks';
+
+
+// import {
+//   // fetchTrainsOptions,
+//   fetchLastTickets
+// } from '../../store/thunks/thunks';
 
 // import {
 //   selectTotalCount,

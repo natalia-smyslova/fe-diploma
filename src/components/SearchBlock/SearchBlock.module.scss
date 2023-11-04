@@ -1,0 +1,45 @@
+@import '../../scss/constants'; 
+@import '../../scss/mixins'; 
+ 
+.form-container { 
+  display: flex; 
+  flex-direction: column; 
+  padding: 79px 24px 52px 21px; 
+  background-color: rgba($color-main-dark, 0.8); 
+ 
+  .header { 
+    @include font($size: 3rem, $height: 3.5rem, $weight: 300, $text-transform: none); 
+    display: block; 
+    height: 43px; 
+    color: $color-main-light; 
+    margin-bottom: 8px; 
+  } 
+ 
+  .destination-container { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    margin-bottom: 61px; 
+  } 
+ 
+  .date-container { 
+    display: flex; 
+    justify-content: space-between; 
+    margin-bottom: 92px; 
+  } 
+ 
+  .btn { 
+    @include font($size: 2.4rem, $height: 2.8rem, $weight: 700); 
+    padding: 17px 68px; 
+    align-self: flex-end; 
+  } 
+} 
+ 
+.image { 
+  margin: auto 6px; 
+   
+  &:hover { 
+    cursor: pointer; 
+    transform: scale(1.1); 
+  } 
+}
