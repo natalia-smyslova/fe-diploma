@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from "styled-components"
+import styled from "styled-components";
 import { Carousel } from 'antd';
 
 import Review from '../Reviews/Review';
@@ -10,9 +10,9 @@ import styles from './CarouselSlider.module.scss';
 
 function CarouselSlider() {
 
-  const onChange = (currentSlide) => {
-    console.log(currentSlide);
-  };
+  // const onChange = (currentSlide) => {
+  //   console.log(currentSlide);
+  // };
 
   const CarouselWrapper = styled(Carousel)`
   > slick-track>*{
@@ -34,7 +34,7 @@ function CarouselSlider() {
 `;
 
   return (
-    <CarouselWrapper afterChange={onChange}>
+    <CarouselWrapper>
       <div>
         <div className={styles.cards}>
           <Review

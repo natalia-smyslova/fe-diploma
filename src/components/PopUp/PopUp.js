@@ -23,7 +23,7 @@ function PopUp({ disabled, reason, message }) {
 
 	useEffect(() => {
 
-	}, disabled, popupClassNames);
+	}, [disabled, popupClassNames]);
 
 	return (
 			<div id="popup" className={popupClassNames}>

@@ -4,25 +4,17 @@
 
 .orderSuccess {
   margin: -320px 258px 175px 258px;
-  // margin-bottom: 175px;
-  // padding: 0 258px 175px;
 
   .congratulations {
     @include font($size: 7.2rem, $weight: 700, $height: 8.4rem, $text-transform: none);
     padding-bottom: 35px;
     color: $color-main-light;
-    // margin-right: auto;
-    // margin-left: auto;
-    // max-width: 140rem;
+
   }
 
   .afterOrder {
-    // max-width: 140rem;
     background: $color-main-light;
-    // border: 0.1rem solidvar(--color-bars-light);
     @extend %box-shadow-selection-block;
-    // margin-right: auto;
-    // margin-left: auto;
 
     .orderData {
       padding: 60px 82px 39px;
@@ -39,7 +31,6 @@
 
       .currency {
         margin-left: 10px;
-        // margin-bottom: 7px;
       }
     }
 
@@ -116,7 +107,6 @@
 }
 
 .btn {
-  // text-transform: uppercase;
   @include font($size: 2.4rem, $height: 2.8rem, $weight: 700);
   padding: 17px 12px;
   border: 1px solid $color-main-dark;

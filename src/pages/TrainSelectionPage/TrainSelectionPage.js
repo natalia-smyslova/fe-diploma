@@ -8,6 +8,7 @@ import SearchBlockHorizontal from '../../components/SearchBlock/SearchBlockHoriz
 import TrainSelectionBody from '../../components/Bodies/TrainSelectionBody/TrainSelectionBody';
 // import PaginationBlock from '../../components/TrainSelection/Pagination/PaginationBlock';
 
+
 import pictures from '../../components/Layout/pictures';
 
 import styles from './TrainSelectionPage.module.scss';

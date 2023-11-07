@@ -1,0 +1,28 @@
+@import '../../../scss/mixins';
+@import '../../../scss/constants';
+
+
+.filters {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 47px;
+}
+
+.sort {
+  display: flex;
+}
+
+.sorting {
+  @include font($size: 1.8rem, $height: 2.1rem, $weight: 400, $text-transform: none);
+  color: $color-grey;
+}
+
+.found {
+  @include font($size: 1.8rem, $height: 2.1rem, $weight: 400, $text-transform: none);
+  color: $color-grey;
+}
+
+.show__title {
+  @include font($size: 1.8rem, $height: 2.1rem, $weight: 400, $text-transform: none);
+  color: $color-grey;
+}
