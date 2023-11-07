@@ -12,8 +12,7 @@ import {
 import storage from 'redux-persist/lib/storage';
 import searchSlice from './slices/searchSlice';
 import lastTicketsSlice from './slices/lastTicketsSlice';
-
-import trainsSlice from './Slices/trainsSlice';
+import trainsSlice from './slices/trainsSlice';
 // import  sortSlice  from './Slices/sortSlice';
 
 const persistConfig = {

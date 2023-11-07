@@ -3,7 +3,7 @@
 @import '../../../scss/mixins';
 
 .card {
-  @include card();
+  @include card($color: $color-main-light, $border: 1px solid $color-bars-light, $padding: 25px, $margin-bottom: 50px);
   display: flex;
   @extend %border-shadow-trains-card;
 

@@ -1,0 +1,67 @@
+@import '../../scss/constants'; 
+@import '../../scss/mixins'; 
+ 
+.form-container { 
+  display: flex; 
+  flex-direction: column;
+  align-items: center;
+  padding: 28px 42px 76px;
+  background-color: rgba($color-main-dark, 0.69);
+  
+  .select-container {
+    display: flex;
+    margin-bottom: 47px;
+  }
+
+  .destination-wrapper,
+  .date-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .destination-wrapper {
+    margin-right: 35px;
+  }
+ 
+  .header { 
+    @include font($size: 3rem, $height: 3.5rem, $weight: 300, $text-transform: none); 
+    display: block; 
+    height: 43px; 
+    color: $color-main-light; 
+    margin-bottom: 8px; 
+  } 
+ 
+  .destination-container { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+  } 
+ 
+  .date-container { 
+    display: flex; 
+    // justify-content: space-between; 
+
+    :first-child {
+      margin-right: 35px;
+    }
+  } 
+
+  .button-wrapper {
+    align-self: end;
+  }
+ 
+  .btn { 
+    @include font($size: 2.4rem, $height: 2.8rem, $weight: 700); 
+    padding: 17px 68px; 
+    align-self: flex-end; 
+  } 
+} 
+ 
+.image { 
+  margin: auto 6px; 
+   
+  &:hover { 
+    cursor: pointer; 
+    transform: scale(1.1); 
+  } 
+}

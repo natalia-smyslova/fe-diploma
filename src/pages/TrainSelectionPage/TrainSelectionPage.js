@@ -1,14 +1,16 @@
-import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useEffect, useMemo } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import fetchLastTickets from '../../store/thunks/fetchLastTickets';
+import fetchTrainsOptions from '../../store/thunks/fetchTrainsOptions';
 
 import Layout from "../../components/Layout/Layout";
+import SearchBlockHorizontal from '../../components/SearchBlock/SearchBlockHorizontal';
 import TrainSelectionBody from '../../components/Bodies/TrainSelectionBody/TrainSelectionBody';
 // import PaginationBlock from '../../components/TrainSelection/Pagination/PaginationBlock';
 
 import pictures from '../../components/Layout/pictures';
 
-
+import styles from './TrainSelectionPage.module.scss';
 
 // import {
 //   // fetchTrainsOptions,
@@ -62,8 +64,9 @@ import pictures from '../../components/Layout/pictures';
 
 
 function TrainSelectionPage() {
-
   const dispatch = useDispatch();
+  const departureCity = useSelector(state => state.search.departureCity);
+  const arrivalCity = useSelector(state => state.search.arrivalCity);
   // const limit = useSelector(selectLimit);
   // const sort = useSelector(selectSort);
   // const offset = useSelector(selectOffset);
@@ -75,17 +78,29 @@ function TrainSelectionPage() {
     dispatch(fetchLastTickets(process.env.REACT_APP_LAST_TICKETS));
   }, [dispatch]);
 
+  const url = useMemo(() => `
+    ${process.env.REACT_APP_SEARCH_ROUTES}?from_city_id=${departureCity.id}&to_city_id=${arrivalCity.id}`,
+    [departureCity, arrivalCity]
+  );
+
+  useEffect(() => {
+    dispatch(fetchTrainsOptions(url));
+  }, [dispatch, url]);
+
   // const onChangePage = (value) => {
   //   dispatch(setCurrentPage(value));
   //   dispatch(changeOffset(value * limit - limit));
   // };
   
-
   const body = <TrainSelectionBody />
 
   return (
 
-      <Layout body={body} picture={pictures.selection} />
+      <Layout body={body} picture={pictures.selection}>
+        <div className={styles.wrapper}>
+          <SearchBlockHorizontal />
+        </div>
+      </Layout>
       // {/* <PaginationBlock
       //   current={currentPage}
       //   onChange={onChangePage}

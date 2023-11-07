@@ -1,0 +1,60 @@
+@import '../../scss/constants';
+@import '../../scss/mixins';
+
+// @mixin header {
+//   @include font-no-color(var(--fw-4), var(--fs-30), var(--fh-35));
+//   padding-top: 2rem;
+//   padding-bottom: 1.5rem;
+
+//   color: var(--color-main-light);
+
+//   &-invalid {
+//     color: var(--color-error-light);
+//   }
+// }
+
+.wrapper {
+  background-color: $color-bars;
+
+  .module {
+    min-height: 5rem;
+    padding: 20px 35px 30px 30px;
+
+    border-bottom: 1px solid $color-secondary-light;
+
+    &__title {
+      @include font($size: 3rem, $weight: 400, $height: 3.5rem, $text-transform: none);
+      color: $color-main-light;
+      margin: 20px 0 15px;
+    }
+
+    &__vector{
+      @include font($size: 3rem, $weight: 700, $height: 3.5rem, $text-transform: none);
+      color: $color-main-light;
+    }
+
+    &__direction{
+      display: flex;
+      flex-wrap: nowrap;
+      padding: 25px 35px 30px 25px;
+      justify-content: space-between;
+    }
+
+    &__wrapper{
+      display: flex;
+      flex-wrap: nowrap;
+    }
+
+    &__icon{
+      margin-right: 12px;
+    }
+
+    .info{
+      display: none;
+    }
+    // .date {
+    //   @include inputs(2rem, 2.2rem, 1rem, 2rem, uppercase, 29.5rem, 4.3rem);
+    //   margin-bottom: 1.5rem;
+    // }
+  }
+}

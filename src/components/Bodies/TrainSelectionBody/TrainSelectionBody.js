@@ -4,8 +4,8 @@ import ProgressBar from '../../ProgressBar/ProgressBar';
 
 // import LoadingAnimation from '../../LoadingAnimation/LoadingAnimation';
 import LastTickets from '../../LastTickets/LastTickets';
-// import SidebarSelection from '../../SidebarSelection/SidebarSelection';
-// import TrainSelection from '../../TrainSelection/TrainSelection';
+import SidebarSelection from '../../SidebarSelection/SidebarSelection';
+import TrainSelection from '../../TrainSelection/TrainSelection';
 
 import styles from './TrainSelectionBody.module.scss';
 
@@ -13,16 +13,15 @@ function TrainSelectionBody() {
 
   return (
     <>
-      <div>blablabla</div>
-      <ProgressBar steps={1} />
+      <ProgressBar step={1} />
       {/* <LoadingAnimation /> */}
       <div className={styles.body}> 
-      <div>
-        {/* <SidebarSelection /> */}
+      <div className={styles.body__left}>
+        <SidebarSelection />
         <LastTickets />
       </div>
       <div>
-        {/* <TrainSelection /> */}
+        <TrainSelection />
       </div>
       </div>
     </>

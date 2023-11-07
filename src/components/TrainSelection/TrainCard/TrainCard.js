@@ -4,11 +4,11 @@ import Direction from './Direction/Direction';
 import Train from './Train/Train';
 import Seats from './Seats/Seats';
 
-import arrowRight from './img/arrow-right.svg';
-import arrowLeft from './img/arrow-left.svg';
+// import arrowRight from './img/arrow-right.svg';
+// import arrowLeft from './img/arrow-left.svg';
 
-import links from '../../../utils/constants/links';
-import directions from '../../../utils/constants/directions';
+// import links from '../../../utils/constants/links';
+// import directions from '../../../utils/constants/directions';
 
 import styles from './TrainCard.module.scss';
 

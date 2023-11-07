@@ -11,15 +11,15 @@ function Subscribtion() {
 	const [loading, setLoading] = useState(false);
 	// eslint-disable-next-line no-unused-vars
 	const [error, setError] = useState(null);
-	const [isDisabled, setDisabled] = useState(false);
+	const [isDisabled, setDisabled] = useState(true);
 	const [message, setMessage] = useState('');
 	const [reason, setReason] = useState('');
 
 	useEffect(() => {
 		// console.log(isDisabled);
-		setDisabled(!isDisabled);
+		// setDisabled(!isDisabled);
 		// console.log(isDisabled);
-	}, []);
+	}, [setDisabled]);
 
 
 	const changeHandler = e => {
@@ -41,17 +41,17 @@ function Subscribtion() {
 			});
 
 			if (!response.ok) {
-				// setDisabled(true);
+				setDisabled(false);
 				setReason('error');
 				setMessage(messages.error);
-				throw new Error('Что-то пошло не так. Попробуйте еще раз');
+				throw new Error('Response Error');
 			}
 			else {
-				// setDisabled(true);
+				setDisabled(false);
 				setReason('info');
 				setMessage(messages.info);
 				const input = document.querySelector('input');
-				input.value = ' ';
+				input.value = '';
 			}
 		}
 
