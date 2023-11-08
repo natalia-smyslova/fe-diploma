@@ -1,7 +1,7 @@
 const domainName = '';
 
 const links = {
-   main: domainName ,
+   main: domainName,
    trains: `${domainName}/trains`,
    seats: `${domainName}/seats`,
    passengers: `${domainName}/passengers`,

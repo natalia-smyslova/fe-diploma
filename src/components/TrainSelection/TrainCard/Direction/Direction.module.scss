@@ -1,2 +1,14 @@
 @import '../../../../scss/constants';
 @import '../../../../scss/mixins';
+
+.direction {
+  padding: 54px 36px 87px 40px;
+  &__from {
+    display: flex;
+    margin-bottom: 56px;
+  }
+
+  &__to {
+    display: flex;
+  }
+}

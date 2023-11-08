@@ -2,7 +2,6 @@ import React from 'react';
 
 import openQuote from './symbols/quote-open.svg';
 import closeQuote from './symbols/quote-close.svg';
-// import carouselSlider from '../Slider/carouselSlider';
 
 import styles from './Review.module.scss';
 

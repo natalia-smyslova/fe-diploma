@@ -43,9 +43,4 @@ const trainsSlice = createSlice({
 
 export const { removeTrainsData } = trainsSlice.actions;
 
-// export const selectTotalCount = (state) => state.trains.totalCount;
-// export const selectTrainsOptions = (state) => state.trains.trainsOptions;
-// export const selectLoading = (state) => state.trains.loading;
-// export const selectError = (state) => state.trains.error;
-
 export default trainsSlice;

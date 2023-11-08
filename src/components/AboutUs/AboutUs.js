@@ -6,7 +6,7 @@ import aboutUsInfo from './AboutUsInfo';
 
 function AboutUs() {
   return (
-    <div className={styles.about} id="about">
+    <div className={styles.about} id="aboutUs">
       <div className={styles.about__title}>о нас</div>
       <div className={styles.about__text}>{aboutUsInfo}</div>
     </div>

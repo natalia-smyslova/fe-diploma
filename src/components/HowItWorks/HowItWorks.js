@@ -13,10 +13,10 @@ function HowItWorks() {
    const buttonClassNames = `button button__transparent ${styles.btn}`;
 
    return (
-      <div className={styles.howItWorks}>
+      <div className={styles.howItWorks} id='how-it-works'>
          <div className={styles.howItWorks__wrapper}>
             <div className={styles.howItWorks__title}>как это работает</div>
-            <HashLink smooth to={`${pathname}/#contacts`}>
+            <HashLink smooth to={`${pathname}#contacts`}>
                <button className={buttonClassNames} type="button">
                   Узнать больше
                </button>

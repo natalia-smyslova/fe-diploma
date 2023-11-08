@@ -14,7 +14,7 @@ import ContactItem from './ContactItem/ContactItem';
 function ContactUs() {
 
 	return (
-		<section className="contacts">
+		<section className="contacts" id='contacts'>
 			<ul className="contacts__list">
 				<ContactItem icon={phone} alt="телефон">
 					<a href={`tel:${contacts.phone}`}>{contacts.phoneDisplay}</a>
