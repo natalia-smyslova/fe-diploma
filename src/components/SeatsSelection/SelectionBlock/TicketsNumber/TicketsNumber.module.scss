@@ -1,0 +1,45 @@
+@import '../../../../scss/constants';
+@import '../../../../scss/mixins';
+@import '../../../../scss/placeholders';
+.title {
+  padding: 40px 0 13px 19px;
+}
+
+.form {
+  @include font($size: 1.6rem, $height: 1.9rem, $weight: 400, $text-transform: none);
+  display: flex;
+
+  .formItem {
+    margin-bottom: 49px;
+    padding: 20px 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    color: $color-grey;
+
+    &:hover {
+      background-color: $color-options;
+    }
+
+    &:focus-within {
+      color: $color-black;
+      background: $color-quinary-light;
+      border: 0 2px 2px solid $color-quinary-light;
+      @extend %box-shadow-selection-block;
+      // box-shadow: var(--box-shadow-selection-block);
+    }
+
+
+    .input {
+      margin-bottom: 25px;
+      box-sizing: border-box;
+      min-width: 10;
+      max-width: 24rem;
+      height: 5rem;
+      background: v$color-main-light;
+      border: 1px solid $color-grey;
+      border-radius: 5px;
+    }
+  }
+}

@@ -1,0 +1,34 @@
+@import '../../../../scss/constants';
+@import '../../../../scss/mixins';
+
+.coaches {
+  background-color: $color-options;
+  width: 100%;
+  padding: 4px 17px 4px 33px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .text {
+    @include font($size: 1.6rem, $height: 1.9rem, $weight: 400, $text-transform: none);
+    color: $color-main-dark;
+  }
+
+  .available {
+    display: flex;
+    align-items: center;
+
+    .title {
+      margin-right: 0.5rem;
+    }
+
+    .coachNames {
+      @include font($size: 2.4rem, $height: 2.8rem, $weight: 700, $text-transform: none);
+      margin-right: 0.5rem;
+
+      &-active {
+        color: $color-main-light;
+      }
+    }
+  }
+}

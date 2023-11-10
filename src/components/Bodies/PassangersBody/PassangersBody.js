@@ -1,8 +1,8 @@
 import React from 'react';
 
 import ProgressBar from '../../ProgressBar/ProgressBar';
-// import SidebarDetails from '../../SidebarDetails/SidebarDetails';
-// import PassangersSelection from '../../PassangersSelection/PassangersSelection';
+import SidebarDetails from '../../SidebarDetails/SidebarDetails';
+import PassangersSelection from '../../PassangersSelection/PassangersSelection';
 // import Redirect from '../../Redirect/Redirect';
 
 // import directions from '../../../utils/constants/directions';
@@ -14,11 +14,11 @@ function PassangersBody() {
     <>
       <ProgressBar step={2} />
       <div className={styles.body}>
-        {/* <div>
+        <div>
           <SidebarDetails />
-        </div> */}
+        </div>
         <div className={styles['wrapper-main']}>
-          {/* <PassangersSelection /> */}
+          <PassangersSelection />
         </div>
       </div>
     </>

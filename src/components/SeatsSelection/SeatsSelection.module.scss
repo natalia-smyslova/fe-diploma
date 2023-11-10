@@ -1,0 +1,18 @@
+@import '../../scss/mixins';
+@import '../../scss/constants';
+
+.seats{
+  margin-left: 82px;
+  &__title{
+    @include font($size: 3rem, $height: 3.5rem, $weight: 500);
+    color: $color-main-dark;
+    padding-bottom: 48px;
+  }
+}
+
+.btn{
+  margin: 102px 0 122px 708px;
+  padding: 16px 70px;
+  color: $color-main-light;
+  @include font($size: 2.4rem, $height: 2.8rem, $weight: 700);
+}

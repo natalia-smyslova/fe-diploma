@@ -1,0 +1,19 @@
+@import '../../../scss/mixins';
+@import '../../../scss/constants';
+
+.card {
+  @include card($margin-bottom: 29px);
+
+  &__header {
+    padding: 36px 0 32px 19px;
+    display: flex;
+  }
+}
+
+.btn {
+  border: 1px solid $color-main-dark;
+  color: $color-main-dark;
+  @include font($size: 2.4rem, $height: 2.8rem, $weight: 700, $text-transform: none);
+  padding: 16px 34px;
+  margin-left: 43px;
+}

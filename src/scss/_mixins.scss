@@ -8,7 +8,7 @@
   text-transform: $text-transform;
 }
 
-@mixin card ($color: $color-main-light, $border: 1px solid $color-bars-light, $padding, $margin-bottom) {
+@mixin card ($color: $color-main-light, $border: 1px solid $color-bars-light, $padding: 0, $margin-bottom) {
   background-color: $color;
   border: $border;
   padding: $padding;

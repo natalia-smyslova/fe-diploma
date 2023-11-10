@@ -1,0 +1,26 @@
+@import '../../../../scss/mixins';
+@import '../../../../scss/constants';
+
+
+.train {
+  display: flex;
+  background-color: $color-quinary-light;
+  align-items: center;
+  justify-content: space-between;
+  padding: 17px 35px;
+}
+
+.left{
+  display: flex;
+  &__info{
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.middle{
+  border-left: 0.1rem solid $color-main-light;
+  border-right: 0.1rem solid $color-main-light;
+  padding: 0 36px 0 36px;
+  display: flex;
+}

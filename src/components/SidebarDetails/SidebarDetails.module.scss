@@ -1,0 +1,17 @@
+@import '../../scss/mixins';
+@import '../../scss/constants';
+
+.wrapper {
+  background-color: $color-bars;
+}
+
+.title {
+  @include font($size: 3rem, $height: 3.5rem, $weight: 500);
+  color: $color-main-light;
+  padding: 35px 45px;
+}
+
+.total {
+  @include font($size: 3rem, $height: 3.5rem, $weight: 700);
+  color: $color-main-light;
+}
