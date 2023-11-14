@@ -3,17 +3,22 @@
 @import '../../../scss/mixins';
 
 .card {
-  @include card($color: $color-main-light, $border: 1px solid $color-bars-light, $padding: 0, $margin-bottom: 50px);
+  // @include card($color: $color-main-light, $border: 1px solid $color-bars-light, $padding: 0, $margin-bottom: 50px);
   display: flex;
-  @extend %border-shadow-trains-card;
+  // @extend %border-shadow-trains-card;
 
   &:not(:last-child) {
     margin-bottom: 5rem;
   }
 
+  // :hover{
+  //   @include card($color: $color-main-light, $border: 1px solid $color-primary, $padding: 0, $margin-bottom: 50px)
+  //   // border-color: $color-primary;
+  // }
+
   &__train {
-    // width: 19.7rem;
-    padding: 29px 23px;
+    width: 196px;
+    padding: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -21,16 +26,26 @@
   }
 
   &__direction {
-    // width: 48rem;
+    width: 479px;
     border-right: 0.1rem dashed $color-secondary-light;
     padding: 52px 36rpx 87px 40px;
   }
 
   &__seats {
-    // width: 28.3rem;
+    width: 283px;
     padding: 41px 22px 21px 27px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
+}
+
+.card {
+  @include card($color: $color-main-light, $border: 1px solid $color-bars-light, $padding: 0, $margin-bottom: 50px);
+  @extend %border-shadow-trains-card;
+
+  // :hover{
+  //   @include card($color: $color-main-light, $border: 1px solid $color-primary, $padding: 0, $margin-bottom: 50px)
+  //   // border-color: $color-primary;
+  // }
 }

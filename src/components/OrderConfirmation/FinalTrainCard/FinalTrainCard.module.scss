@@ -1,0 +1,19 @@
+@import '../../../scss/constants';
+@import '../../../scss/mixins';
+@import '../../../scss/placeholders';
+
+
+.card{
+  @extend %box-shadow-selection-block;
+  @include card($border: none, $margin-bottom: 45px);
+}
+
+
+.header{
+  height: 100px;
+  background-color: $color-main-light;
+  padding: 28px 0 30px 31px;
+  border-bottom: 1px solid $color-grey; 
+  @include font($size: 3rem, $height: 3.5rem, $weight:400, $text-transform: none);
+  color: $color-main-dark;
+}

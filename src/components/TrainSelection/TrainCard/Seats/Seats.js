@@ -11,9 +11,7 @@ import SeatsItem from './SeatsItem/SeatsItem';
 
 import styles from './Seats.module.scss';
 
-
-
-function Seats({ availableSeats, minPrice }) {
+function Seats({ availableSeats, priceInfo }) {
   const navigate = useNavigate();
 
   function clickHandler () {
@@ -25,19 +23,19 @@ function Seats({ availableSeats, minPrice }) {
   return (
     <div>
       {availableSeats?.fourth && (
-        <SeatsItem type="Сидячий" seatNumber={availableSeats.fourth} priceFrom={minPrice} />
+        <SeatsItem type="Сидячий" seatNumber={availableSeats.fourth} priceInfo={priceInfo?.fourth} />
       )}
 
       {availableSeats?.third && (
-        <SeatsItem type="Плацкарт" seatNumber={availableSeats.third} priceFrom={minPrice} />
+        <SeatsItem type="Плацкарт" seatNumber={availableSeats.third} priceInfo={priceInfo?.third} />
       )}
 
       {availableSeats?.second && (
-        <SeatsItem type="Купе" seatNumber={availableSeats.second} priceFrom={minPrice} />
+        <SeatsItem type="Купе" seatNumber={availableSeats.second} priceInfo={priceInfo?.second} />
       )}
 
       {availableSeats?.first && (
-        <SeatsItem type="Люкс" seatNumber={availableSeats.first} priceFrom={minPrice} />
+        <SeatsItem type="Люкс" seatNumber={availableSeats.first} priceInfo={priceInfo?.first} />
       )}
 
       <button onClick={clickHandler} type="button" className={buttonClassNames}>

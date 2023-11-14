@@ -3,15 +3,40 @@
 
 .wrapper {
   background-color: $color-bars;
+  width: 360px;
 }
 
 .title {
   @include font($size: 3rem, $height: 3.5rem, $weight: 500);
   color: $color-main-light;
   padding: 35px 45px;
+  border-bottom: 1px solid $color-secondary-light;
 }
 
-.total {
+.section__total{
+height: 109px;
+padding: 30px 27px 33px 28px;
+display: flex;
+justify-content: space-between;
+align-items: flex-end;
+}
+
+.total__text {
   @include font($size: 3rem, $height: 3.5rem, $weight: 700);
   color: $color-main-light;
+}
+
+.amount{
+  @include font($size: 4.8rem, $height: 5.6rem, $weight: 700, $text-transform: none);
+  color: $color-primary;
+}
+
+.sum{
+  display: flex;
+}
+
+.currency{
+  margin-left: 10px;
+  height: 32px;
+  margin-top: 14px;
 }

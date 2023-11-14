@@ -1,8 +1,8 @@
 import React from 'react';
 
 import ProgressBar from '../../ProgressBar/ProgressBar';
-// import SidebarDetails from '../../SidebarDetails/SidebarDetails';
-// import OrderConfirmation from '../../OrderConfirmation/OrderConfirmation';
+import SidebarDetails from '../../SidebarDetails/SidebarDetails';
+import OrderConfirmation from '../../OrderConfirmation/OrderConfirmation';
 
 import styles from './OrderConfirmationPageBody.module.scss';
 
@@ -11,11 +11,11 @@ function OrderConfirmationPageBody() {
     <>
       <ProgressBar step={4} />
       <div className={styles.body}>
-        {/* <div>
+        <div>
           <SidebarDetails />
-        </div> */}
+        </div>
         <div className={styles['wrapper-main']}>
-          {/* <PassangersSelection /> */}
+          <OrderConfirmation />
         </div>
       </div>
     </>

@@ -1,0 +1,15 @@
+@import '../../scss/constants';
+@import '../../scss/mixins';
+
+.wrapper{
+  padding: 0 0 0 85px;
+  display: flex;
+  flex-direction: column;
+}
+
+.btn{
+  padding: 16px 57px;
+  @include font($size: 2.4rem, $height: 2.8rem, $weight:700);
+  color: $color-main-light;
+  margin: 123px 0 181px 637px;
+  }

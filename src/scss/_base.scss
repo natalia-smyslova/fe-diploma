@@ -75,7 +75,7 @@ h4 {
 
 	&-colored {
 		background-color: $color-primary;
-		
+
 
 		&:hover,
 		&:focus {
@@ -92,6 +92,25 @@ h4 {
 		&:disabled {
 			background-color: $color-grey;
 			color: $color-main-light;
+		}
+	}
+
+	&__transperant-light {
+		background-color: transparent;
+		border: 1px solid $color-main-dark;
+		color: $color-main-dark;
+
+		&:hover,
+		&:focus {
+			color: $color-primary;
+			@extend %drop-shadow;
+		}
+
+		&:active {
+			background-color: $color-primary;
+			border-color: $color-primary;
+			color: $color-secondary-dark;
+			@extend %drop-shadow;
 		}
 	}
 }

@@ -1,0 +1,41 @@
+@import '../../scss/constants';
+@import '../../scss/mixins';
+@import '../../scss/placeholders';
+
+.wrapper{
+  padding: 0 0 0 85px;
+}
+
+.card{
+  width: 960px;
+  @extend %box-shadow-selection-block;
+}
+
+.header{
+  height: 107px;
+  background-color: $color-senary-light;
+  padding: 34px 0 36px 35px;
+  border-bottom: 1px dashed $color-grey;
+}
+
+.text{
+  @include font($size: 3rem, $height: 3.5rem, $weight:400, $text-transform: none);
+  color: $color-main-dark;
+}
+
+.section__first{
+  background-color: $color-main-light;
+  border-bottom: 1px dashed $color-grey;
+  height: 454px;
+}
+
+.section__second{
+  background-color: $color-main-light;
+}
+
+.btn{
+  padding: 16px 56px;
+  @include font($size: 2.4rem, $height: 2.8rem, $weight:700);
+  color: $color-main-light;
+  margin: 116px 0 173px 636px;
+}

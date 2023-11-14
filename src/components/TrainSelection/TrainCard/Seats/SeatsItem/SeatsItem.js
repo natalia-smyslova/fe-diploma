@@ -4,7 +4,14 @@ import styles from './SeatsItem.module.scss';
 
 import currency from '../img/currency.svg';
 
-function SeatsItem({ type, seatNumber, priceFrom }) {
+function SeatsItem({ type, seatNumber, priceInfo }) {
+  const getMinPrice = () => {
+    if (priceInfo) {
+      return Math.min.apply(null, Object.values(priceInfo));
+    }
+  }
+
+  const minPrice = getMinPrice();
 
   return (
     <div className={styles.card}>
@@ -14,8 +21,7 @@ function SeatsItem({ type, seatNumber, priceFrom }) {
         <div className={styles.price__wrapper}>
           <span className={styles.price__start}>от </span>
           <span className={styles.price__number}>
-            {/* {Math.min(...priceCombiner())} */}
-            {priceFrom}
+            {minPrice}
           </span>
           <img src={currency} alt="иконка - рубль" />
         </div>

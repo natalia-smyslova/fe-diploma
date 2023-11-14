@@ -1,0 +1,59 @@
+@import '../../../../../scss/constants';
+@import '../../../../../scss/mixins';
+
+.ant-radio-group.ant-radio-group-solid {
+  border: 0.1rem solid $color-grey;
+  border-radius: 5px;
+}
+
+.ant-radio-button-wrapper.ant-radio-button-wrapper-in-form-item {
+  height: 50px;
+  width: 100px;
+  padding: 5px 35px;
+  @include font($size: 3rem, $weight: 900, $height: 3.5rem);
+  color: $color-black;
+
+  &:focus {
+    background-color: $color-primary;
+  }
+}
+
+.ant-radio-group-solid .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled),
+.ant-radio-button-checked {
+  background-color: $color-primary;
+  color: $color-black;
+}
+
+.ant-radio-button-wrapper:hover {
+  background-color: $color-primary;
+}
+
+.ant-checkbox {
+  margin-right: 10px;
+
+  &-inner::after {
+    width: 10px;
+    height: 22px;
+    top: 10px;
+  }
+
+  &,
+  &-checked,
+  &-input,
+  &-inner {
+    width: 28px;
+    height: 28px;
+    border: 1px solid $color-grey;
+    border-radius: 5px;
+  }
+
+  &-checked &-inner {
+    background-color: $color-primary;
+    border: $color-primary;
+  }
+
+  &-wrapper.ant-checkbox-wrapper-in-form-item.passengerCard-checkbox {
+    @include font($size: 1.8rem, $height: 2.1rem, $weight: 400, $text-transform: none);
+    color: $color-main-dark;
+  }
+}

@@ -12,6 +12,7 @@
     "antd": "^5.10.2",
     "dayjs": "^1.11.10",
     "prop-types": "^15.8.1",
+    "rc-picker": "^3.14.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.1.3",

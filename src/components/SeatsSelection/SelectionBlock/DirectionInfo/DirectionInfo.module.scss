@@ -6,21 +6,92 @@
   display: flex;
   background-color: $color-quinary-light;
   align-items: center;
-  justify-content: space-between;
+  // justify-content: space-between;
   padding: 17px 35px;
+  height: 123px;
 }
 
-.left{
+.left {
   display: flex;
-  &__info{
-    display: flex;
-    flex-direction: column;
-  }
+  align-items: center;
+  width: 240px;
 }
 
-.middle{
+.left__info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 27px;
+}
+
+.middle {
   border-left: 0.1rem solid $color-main-light;
   border-right: 0.1rem solid $color-main-light;
   padding: 0 36px 0 36px;
   display: flex;
+  justify-content: space-around;
+  width: 480px;
+}
+
+.middle__wrapper{
+  display: flex;
+  flex-direction: column;
+}
+
+.arrow-icon{
+  width: 30px;
+  height: 20px;
+  margin-top: 25px;
+}
+
+.right {
+  width: 237px;
+  margin: 0 35px;
+  display: flex;
+}
+
+.icon__right {
+  width: 30px;
+  height: 30px;
+}
+
+
+.icon__left {
+  width: 30px;
+  height: 30px;
+}
+
+.info {
+  margin-left: 7px;
+}
+
+.time {
+  @include font($size: 2.4rem, $height: 2.8rem, $weight: 700, $text-transform: none);
+  color: #000000;
+}
+
+.city {
+  @include font($size: 1.8rem, $height: 2.1rem, $weight: 400, $text-transform: none);
+  color: $color-main-dark;
+}
+
+.station {
+  @include font($size: 1.6rem, $height: 1.8rem, $weight: 400, $text-transform: none);
+  color: $color-grey;
+}
+
+.departure-city,
+.arrival-city {
+  @include font($size: 1.6rem, $height: 1.8rem, $weight: 400, $text-transform: none);
+  color: $color-main-dark;
+}
+
+.train-name {
+  @include font($size: 2.4rem, $height: 2.8rem, $weight: 700, $text-transform: none);
+  color: $color-bars;
+}
+
+.hours,
+.minutes {
+  @include font($size: 1.8rem, $height: 2.1rem, $weight: 400, $text-transform: none);
+  color: #000000;
 }

@@ -1,5 +1,6 @@
 @import '../../scss/constants';
 @import '../../scss/mixins';
+@import '../../scss/placeholders';
 
 .wrapper{
   padding: 0 0 0 85px;
@@ -11,6 +12,27 @@
 padding: 16px 70px;
 @include font($size: 2.4rem, $height: 2.8rem, $weight:700);
 color: $color-main-light;
-margin: 0 0 140px 820px;
+margin: 103px 0 140px 820px;
 }
 
+.button__wrapper{
+@include card($margin-bottom: 0, $padding: 28px 38px 32px 26px, $border: none);
+margin-top: 46px;
+height: 97px;
+display: flex;
+justify-content: space-between;
+@extend %box-shadow-selection-block;
+}
+
+.addPassenger{
+  @include font($size: 3rem, $weight: 400, $height: 3.5rem, $text-transform: none);
+  color: $color-main-dark;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+// .plus{
+//   margin-left: 570px;
+// }

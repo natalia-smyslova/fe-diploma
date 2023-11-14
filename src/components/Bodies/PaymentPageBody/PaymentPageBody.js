@@ -2,8 +2,8 @@ import React from 'react';
 
 import ProgressBar from "../../ProgressBar/ProgressBar";
 // import SeatsSelection from "../../SeatsSelection/SeatsSelection";
-// import SidebarDetails from '../../SidebarDetails/SidebarDetails';
-// import PaymentOptions from '../../PaymentOptions/PaymentOptions';
+import SidebarDetails from '../../SidebarDetails/SidebarDetails';
+import PaymentOptions from '../../PaymentOptions/PaymentOptions';
 
 
 import styles from './PaymentPageBody.module.scss';
@@ -14,11 +14,11 @@ function PaymentPageBody() {
       <ProgressBar step={3} />
       <div className={styles.body}>
         {/* <SidebarSelection /> */}
-        {/* <SidebarDetails /> */}
+        <SidebarDetails />
+        <div className={styles['wrapper-main']}>
+          <PaymentOptions />
+        </div>
       </div>
-      {/* <div className={styles.body__main}>
-        <PaymentOptions />
-      </div> */}
     </>
   )
 

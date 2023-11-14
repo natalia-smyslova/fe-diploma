@@ -1,0 +1,34 @@
+@import '../../../../../scss/constants';
+@import '../../../../../scss/mixins';
+
+.ant-input-affix-wrapper.passengerCard-input,
+.ant-input {
+  @include font($size: 2.4rem, $height: 2.8rem, $weight: 400, $text-transform: capitalize);
+  color: $color-main-dark;
+  width: 205px;
+  // height: 50px;
+  border: 1px solid $color-grey;
+  border-radius: 5px;
+}
+
+.ant-input-affix-wrapper.passengerCard-input {
+  height: 50px;
+}
+
+.fullname {
+  display: flex;
+  justify-content: space-around;
+}
+
+.ant-row.ant-form-item-row {
+  .ant-form-item-label {
+    >label {
+      @include font($weight: 400, $size: 1.6rem, $height: 1.9rem, $text-transform: none);
+      color: $color-grey;
+
+      &::before {
+        content: '';
+      }
+    }
+  }
+}

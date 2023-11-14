@@ -1,3 +1,19 @@
+@import '../../../../scss/mixins';
+@import '../../../../scss/constants';
+
+
 .title {
   padding: 27px 0 25px 19px;
+  @include font($size: 3rem, $weight: 700, $height: 3.5rem, $text-transform: none);
+  color: $color-main-dark;
+}
+
+.coach{
+  border-top: 1px dashed $color-bars-light;
+}
+
+.coachTypes{
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 26px;
 }

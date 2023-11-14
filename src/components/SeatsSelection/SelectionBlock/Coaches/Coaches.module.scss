@@ -17,7 +17,7 @@
   .available {
     display: flex;
     align-items: center;
-
+    height: 37px;
     .title {
       margin-right: 0.5rem;
     }
@@ -31,4 +31,13 @@
       }
     }
   }
+}
+
+.coaches__amount{
+  @include font($size: 1.8rem, $height: 2.1rem, $weight: 400, $text-transform: none);
+  $color: $color-main-dark;
+}
+.text {
+  @include font($size: 1.6rem, $height: 1.8rem, $weight: 400, $text-transform: none);
+  $color: $color-secondary-dark;
 }

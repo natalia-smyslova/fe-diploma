@@ -1,0 +1,46 @@
+@import '../../../../scss/constants';
+@import '../../../../scss/mixins';
+
+.card {
+  display: flex;
+  padding: 30px;
+
+  &:not(:last-child) {
+    border-bottom: 1px dashed $color-secondary-light;
+  }
+
+  &:first-child {
+    padding-top: 60px;
+  }
+
+  &:last-child {
+    padding-bottom: 90px;
+  }
+
+  @include font($size: 1.8rem, $height: 2.1rem, $weight: 400, $text-transform: none);
+  color: $color-main-dark;
+
+  .left {
+    margin-right: 30px;
+    text-align: center;
+
+    .icon {
+      margin-bottom: 20px;
+    }
+  }
+
+  .right {
+    .fullName {
+      margin-bottom: 20px;
+      text-transform: capitalize;
+    }
+
+    .data {
+      color: $color-grey;
+
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}

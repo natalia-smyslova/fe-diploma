@@ -1,0 +1,9 @@
+@import '../../../../../scss/constants';
+@import '../../../../../scss/mixins';
+
+
+.name{
+  margin-top: 18px;
+  @include font($size: 2.4rem, $height: 2.8rem, $weight: 400, $text-transform: none);
+  color: $color-grey;
+}

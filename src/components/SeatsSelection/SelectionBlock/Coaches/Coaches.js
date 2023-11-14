@@ -6,7 +6,7 @@ function Coaches() {
   return (
     <div className={styles.coaches}>
       <div className={styles.available}>
-        <span>Вагоны</span>
+        <div className={styles.coaches__amount}>Вагоны</div>
         {/* {coachesToDisplay?.map((item) => (
           <CoachItem
             coachId={item?.coach?._id}

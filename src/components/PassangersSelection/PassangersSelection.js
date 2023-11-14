@@ -5,6 +5,8 @@ import PassengerCard from "./PassengerCard/PassengerCard";
 
 import links from '../../utils/constants/links';
 
+import plus from './img/plus.svg';
+
 import styles from './PassangersSelection.module.scss';
 
 function PassangersSelection() {
@@ -36,12 +38,20 @@ function PassangersSelection() {
       {/* ))} */}
       {/* {unchosenSeats.length > 0 && addPassenger} */}
       {/* {(seatsDep.length > 0 || seatsArr.length > 0) && button} */}
-      <div className={styles.buttonWrapper}>
-        <button className={buttonClassNames} onClick={clickHandler} type="button" >
-          {/* // disabled={unchosenSeats.length > 0} */}
-          далее
+      <div className={styles.button__wrapper}>
+        <button type="button" className={styles.addPassenger} // onClick={clickOnAddPassHandler}
+        >
+          <div className={styles.text}>Добавить пассажира</div>
+          <div className={styles.plus}>
+          <img src={plus} alt="иконка - добавить" />
+        </div>
         </button>
+        
       </div>
+      <button className={buttonClassNames} onClick={clickHandler} type="button" >
+        {/* // disabled={unchosenSeats.length > 0} */}
+        далее
+      </button>
     </div>
   );
 };

@@ -3,12 +3,40 @@
 
 .direction {
   padding: 54px 36px 87px 40px;
+  display: flex;
+  justify-content: space-around;
+
   &__from {
     display: flex;
+    flex-direction: column;
     margin-bottom: 56px;
   }
 
   &__to {
     display: flex;
+    flex-direction: column;
   }
+}
+
+.from__city,
+.to__city {
+  color: $color-main-dark;
+  @include font($size: 1.8rem, $height: 2.1rem, $weight: 400, $text-transform: none);
+}
+
+.from__station,
+.to__station {
+  color: $color-grey;
+  @include font($size: 1.6, $height: 1.8rem, $weight: 400, $text-transform: none);
+}
+
+.from__time,
+.to__time {
+  color: #000000;
+  @include font($size: 2.4rem, $height: 2.8rem, $weight: 700, $text-transform: none);
+}
+
+.time__time {
+  color: $color-bars-light;
+  @include font($size: 1.8rem, $height: 2.1rem, $weight: 400, $text-transform: none);
 }

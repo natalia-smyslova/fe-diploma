@@ -1,0 +1,47 @@
+@import '../../../scss/mixins';
+@import '../../../scss/constants';
+@import '../../../scss/placeholders';
+
+.passangerCard{
+  $border: 1px solid $color-bars-light;
+  @extend %box-shadow-selection-block;
+}
+
+.header {
+  height: 107px;
+  display: flex;
+  background-color: $color-senary-light;
+  justify-content: space-between;
+  padding: 30px 41px 40px 23px;
+  border-bottom: 1px dashed $color-grey;
+}
+
+.header__text {
+  @include font($size: 3rem, $height: 3.5rem, $weight: 400, $text-transform: none);
+  color: $color-main-dark;
+  margin-left: 16px;
+}
+
+.section__first{
+  height: 452px;
+  border-bottom: 1px dashed $color-grey;
+  padding: 38px 35px 31px;
+  background-color: $color-main-light;
+}
+
+.section__second{
+  height: 153px;
+  background-color: $color-main-light;
+  border-bottom: 1px dashed $color-grey;
+  padding: 37px 0 33px 35px;
+}
+
+.section__third{
+  height: 117px;
+  background-color: $color-main-light;
+}
+
+.sex__group{
+  margin-bottom: 45px;
+  margin-top: 45px;
+}

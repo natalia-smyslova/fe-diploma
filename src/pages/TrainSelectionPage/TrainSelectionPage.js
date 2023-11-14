@@ -6,12 +6,11 @@ import fetchTrainsOptions from '../../store/thunks/fetchTrainsOptions';
 import Layout from "../../components/Layout/Layout";
 import SearchBlockHorizontal from '../../components/SearchBlock/SearchBlockHorizontal';
 import TrainSelectionBody from '../../components/Bodies/TrainSelectionBody/TrainSelectionBody';
-// import PaginationBlock from '../../components/TrainSelection/Pagination/PaginationBlock';
-
 
 import pictures from '../../components/Layout/pictures';
 
 import styles from './TrainSelectionPage.module.scss';
+import dayjs from 'dayjs';
 
 // import {
 //   // fetchTrainsOptions,
@@ -68,6 +67,8 @@ function TrainSelectionPage() {
   const dispatch = useDispatch();
   const departureCity = useSelector(state => state.search.departureCity);
   const arrivalCity = useSelector(state => state.search.arrivalCity);
+  const departureDate = useSelector(state => state.search.departureDate);
+  const arrivalDate = useSelector(state => state.search.arrivalDate);
   // const limit = useSelector(selectLimit);
   // const sort = useSelector(selectSort);
   // const offset = useSelector(selectOffset);
@@ -79,10 +80,17 @@ function TrainSelectionPage() {
     dispatch(fetchLastTickets(process.env.REACT_APP_LAST_TICKETS));
   }, [dispatch]);
 
-  const url = useMemo(() => `
+  let url = useMemo(() => `
     ${process.env.REACT_APP_SEARCH_ROUTES}?from_city_id=${departureCity.id}&to_city_id=${arrivalCity.id}`,
     [departureCity, arrivalCity]
   );
+
+  if (departureDate) {
+    url = `${url}&date_start=${dayjs(departureDate).format('YYYY-MM-DD')}`
+  }
+  if (arrivalDate) {
+    url = `${url}&date_end=${dayjs(arrivalDate).format('YYYY-MM-DD')}`
+  }
 
   useEffect(() => {
     dispatch(fetchTrainsOptions(url));

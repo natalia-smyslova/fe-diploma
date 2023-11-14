@@ -1,0 +1,14 @@
+@import '../../../scss/mixins';
+@import '../../../scss/constants';
+
+
+.section {
+  padding: 14px 27px 34px 29px;
+  border-bottom: 1px solid $color-secondary-light;
+}
+
+.header__text {
+  @include font($size: 3rem, $weight: 700, $height: 3.5rem, $text-transform: none);
+  color: $color-main-light;
+  margin-left: 17px;
+}

@@ -1,17 +1,17 @@
-import econom from '../../components/SeatsSelection/SelectionBlock/CoachType/img/econom.svg';
-import luxury from '../../components/SeatsSelection/SelectionBlock/CoachType/img/luxury.svg';
-import seat from '../../components/SeatsSelection/SelectionBlock/CoachType/img/seat.svg';
-import compartment from '../../components/SeatsSelection/SelectionBlock/CoachType/img/compartment.svg';
+import third from '../../components/SeatsSelection/SelectionBlock/CoachType/img/third-class.svg';
+import first from '../../components/SeatsSelection/SelectionBlock/CoachType/img/first-class.svg';
+import fourth from '../../components/SeatsSelection/SelectionBlock/CoachType/img/fourth-class.svg';
+import second from '../../components/SeatsSelection/SelectionBlock/CoachType/img/second-class.svg';
 import express from '../../components/LastTickets/LastTicketsCard/icons/express.svg';
 import wifi from '../../components/LastTickets/LastTicketsCard/icons/wifi.svg';
 
 const options = [
-  { id: 1, img: compartment, title: 'Купе', name: 'compartment' },
-  { id: 2, img: econom, title: 'Плацкарт', name: 'econom' },
-  { id: 3, img: seat, title: 'Сидячий', name: 'seat' },
-  { id: 4, img: luxury, title: 'Люкс', name: 'luxury' },
-  { id: 5, img: wifi, title: 'Wi-Fi', name: 'wifi' },
-  { id: 6, img: express, title: 'Экспресс', name: 'express' },
+  { id: 1, img: second, title: 'Купе', name: 'secondClass' },
+  { id: 2, img: third, title: 'Плацкарт', name: 'thirdClass' },
+  { id: 3, img: fourth, title: 'Сидячий', name: 'fourthClass' },
+  { id: 4, img: first, title: 'Люкс', name: 'firstClass' },
+  { id: 5, img: express, title: 'Wi-Fi', name: 'wifi' },
+  { id: 6, img: wifi, title: 'Экспресс', name: 'express' },
 ];
 
 export default options;
