@@ -4,7 +4,7 @@ import styles from './LastTicketsCard.module.scss';
 
 import wifi from './icons/wifi.svg';
 import rub from './icons/rub.svg';
-import food from './icons/food.svg';
+// import food from './icons/food.svg';
 import isExpress from './icons/express.svg';
 import airConditioning from './icons/conditioner.svg';
 
@@ -49,9 +49,9 @@ function LastTicketsCard({ ticket }) {
           {ticket.conditions.airConditioning && conditionerImg}
 
           {ticket.conditions.isExpress && expressImg}
-          <div className={styles.icons__content}>
+          {/* <div className={styles.icons__content}>
             <img src={food} alt="еда" />
-          </div>
+          </div> */}
         </div>
         <div className={styles.price}>
           <div className={styles.price__wrapper}>

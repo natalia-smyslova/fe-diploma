@@ -22,6 +22,10 @@
   color: $color-grey;
 }
 
+.show{
+  display: flex;
+}
+
 .show__title {
   @include font($size: 1.8rem, $height: 2.1rem, $weight: 400, $text-transform: none);
   color: $color-grey;

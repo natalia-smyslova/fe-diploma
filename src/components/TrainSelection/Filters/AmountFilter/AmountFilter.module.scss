@@ -4,8 +4,10 @@
 
 .button {
   color: $color-grey;
+  margin-left: 5px;
 
   &-active {
     color: $color-main-dark;
+    margin-left: 5px;
   }
 }

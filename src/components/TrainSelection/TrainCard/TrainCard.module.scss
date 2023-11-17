@@ -6,7 +6,7 @@
   // @include card($color: $color-main-light, $border: 1px solid $color-bars-light, $padding: 0, $margin-bottom: 50px);
   display: flex;
   // @extend %border-shadow-trains-card;
-
+  // height: 354px;
   &:not(:last-child) {
     margin-bottom: 5rem;
   }
@@ -33,10 +33,10 @@
 
   &__seats {
     width: 283px;
-    padding: 41px 22px 21px 27px;
+    padding: 0 22px 21px 27px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-end;
   }
 }
 

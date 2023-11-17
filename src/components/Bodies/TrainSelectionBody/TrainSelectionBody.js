@@ -6,7 +6,7 @@ import ProgressBar from '../../ProgressBar/ProgressBar';
 import LastTickets from '../../LastTickets/LastTickets';
 import SidebarSelection from '../../SidebarSelection/SidebarSelection';
 import TrainSelection from '../../TrainSelection/TrainSelection';
-import Filters from '../../TrainSelection/Filters/Filters';
+// import Filters from '../../TrainSelection/Filters/Filters';
 
 import PaginationBlock from '../../TrainSelection/PaginationBlock/PaginationBlock';
 
@@ -25,7 +25,7 @@ function TrainSelectionBody() {
           <LastTickets />
         </div>
         <div>
-          <Filters />
+          {/* <Filters /> */}
           <div className={styles.body__rigt}>
             <TrainSelection />
             <PaginationBlock

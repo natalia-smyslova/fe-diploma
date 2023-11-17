@@ -49,7 +49,7 @@ function Filters() {
         </div>
       </div>
       <div className={styles.show}>
-        <span className={styles.show__title}>показывать по:</span>
+        <div className={styles.show__title}>показывать по:</div>
         {numberOfShownItems.map(numberOfItem => (
           <AmountFilter key={numberOfItem} numberOfItem={numberOfItem} totalCount={totalCount} onChangeFilter={onChangeFilter} />
         ))}

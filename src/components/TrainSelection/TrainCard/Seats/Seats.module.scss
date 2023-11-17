@@ -1,10 +1,29 @@
 @import '../../../../scss/mixins';
 @import '../../../../scss/constants';
 
+
+.seats{
+  display: flex;
+  flex-direction: column;
+  // justify-content: flex-end;
+  // padding-top: 41px;
+}
+
 .btn {
   @include font($size: 2.4rem, $height: 2.8rem, $weight: 700, $text-transform: none);
   padding: 6px 14px 9px 14px;
   color: $color-main-light;
-  margin-top: 18px;
+  margin-top: 17px;
   width: 228px;
+}
+
+.icons{
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 24px;
+  // margin-right: 10px;
+}
+
+.icons__content{
+  margin-left: 5px;
 }

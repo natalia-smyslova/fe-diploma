@@ -13,7 +13,7 @@ function Train({
   arrivalCity2
 }) {
   return (
-    <>
+    <div className={styles.wrapper}>
       <div className={styles.img}>
         <img src={train} alt="иконка поезда" />
       </div>
@@ -55,7 +55,7 @@ function Train({
         <div className={styles['train-name']}>{trainName2}</div>
       )}
 
-    </>
+    </div>
   )
 }
 

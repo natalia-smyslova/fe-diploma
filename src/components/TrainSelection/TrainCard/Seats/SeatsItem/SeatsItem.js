@@ -1,28 +1,38 @@
+/* eslint-disable consistent-return */
+
 import React from 'react';
 
 import styles from './SeatsItem.module.scss';
 
 import currency from '../img/currency.svg';
 
-function SeatsItem({ type, seatNumber, priceInfo }) {
+function SeatsItem({ type, seatNumber, priceInfoDeparture, priceInfoArrival }) {
   const getMinPrice = () => {
-    if (priceInfo) {
-      return Math.min.apply(null, Object.values(priceInfo));
+    if (priceInfoDeparture) {
+      const minPriceDeparture = Math.min.apply(null, Object.values(priceInfoDeparture));
+      return minPriceDeparture;
     }
+
+    if (priceInfoArrival) {
+      const minPriceArrival = Math.min.apply(null, Object.values(priceInfoArrival));
+      return minPriceArrival;
+    }
+
+    return Math.min.apply(null, minPriceDeparture, minPriceArrival);
   }
 
   const minPrice = getMinPrice();
 
   return (
     <div className={styles.card}>
-      <span className={styles.type}>{type}</span>
-      <span className={styles.seats}>{seatNumber}</span>
+      <div className={styles.type}>{type}</div>
+      <div className={styles.seats}>{seatNumber}</div>
       <div className={styles.price}>
         <div className={styles.price__wrapper}>
-          <span className={styles.price__start}>от </span>
-          <span className={styles.price__number}>
+          <div className={styles.price__start}>от </div>
+          <div className={styles.price__number}>
             {minPrice}
-          </span>
+          </div>
           <img src={currency} alt="иконка - рубль" />
         </div>
       </div>
