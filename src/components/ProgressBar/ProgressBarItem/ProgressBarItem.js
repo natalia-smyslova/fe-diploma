@@ -9,7 +9,7 @@ function ProgressBarItem({ step, number, id, name, totalSteps, img }) {
     } ${id === step ? `${styles['breaker-cut']}` : ''}`;
 
   return (
-    <>
+    <div className={styles.wrapper}>
       <div
         className={`${styles.step} ${styles[`step-${number}`]} ${styles[`${id <= step ? 'step-done' : ''}`]
           } `}
@@ -26,7 +26,7 @@ function ProgressBarItem({ step, number, id, name, totalSteps, img }) {
           <img className={imgClasses} src={vector} alt="vector" />
         </div>
       )}
-    </>
+    </div>
   );
 };
 export default ProgressBarItem;

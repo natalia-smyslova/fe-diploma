@@ -4,15 +4,22 @@ import React from 'react';
 
 import Layout from '../../components/Layout/Layout';
 import PassangersBody from '../../components/Bodies/PassangersBody/PassangersBody';
+import SearchBlockHorizontal from '../../components/SearchBlock/SearchBlockHorizontal';
 
 import pictures from '../../components/Layout/pictures';
 
-function PassengersPage(){
+import styles from './PassangersPage.module.scss';
+
+function PassengersPage() {
   const body = <PassangersBody />
-  
-  return(
-  <Layout picture={pictures.selection} body={body} />
-  // {/* <MainSearchBlock width={widthOptions.wide} /> */}
+
+  return (
+    <Layout picture={pictures.selection} body={body}>
+      <div className={styles.wrapper}>
+        <SearchBlockHorizontal />
+      </div>
+    </Layout>
+    // {/* <MainSearchBlock width={widthOptions.wide} /> */}
   )
 };
 

@@ -26,7 +26,7 @@ function SelectionBlock({ direction }) {
 
   return (
     <div className={styles.card}>
-      <div className={styles.card__header}>
+      <div className={(direction === 'departure') ? styles.header__departure : styles.header__arrival}>
         <div className={styles.img}>
           <img alt="иконка - направление" src={img}/>
         </div>
@@ -36,8 +36,8 @@ function SelectionBlock({ direction }) {
       </div>
       <DirectionInfo direction={direction} />
       <TicketsNumber direction={direction} />
-      <CoachType />
-      <Coaches />
+      <CoachType direction={direction} />
+      <Coaches direction={direction} />
       {/* <NumberOfPassengers
         direction={direction}
         adultSeats={adultSeats}

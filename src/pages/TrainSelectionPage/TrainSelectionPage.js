@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import dayjs from 'dayjs';
 import fetchLastTickets from '../../store/thunks/fetchLastTickets';
 import fetchTrainsOptions from '../../store/thunks/fetchTrainsOptions';
 
@@ -10,7 +11,7 @@ import TrainSelectionBody from '../../components/Bodies/TrainSelectionBody/Train
 import pictures from '../../components/Layout/pictures';
 
 import styles from './TrainSelectionPage.module.scss';
-import dayjs from 'dayjs';
+
 
 // import {
 //   // fetchTrainsOptions,
@@ -69,7 +70,7 @@ function TrainSelectionPage() {
   const arrivalCity = useSelector(state => state.search.arrivalCity);
   const departureDate = useSelector(state => state.search.departureDate);
   const arrivalDate = useSelector(state => state.search.arrivalDate);
-  // const limit = useSelector(selectLimit);
+  const limit = useSelector(state => state.sort.limit);
   // const sort = useSelector(selectSort);
   // const offset = useSelector(selectOffset);
   // const total = useSelector(selectTotalCount);
@@ -81,8 +82,8 @@ function TrainSelectionPage() {
   }, [dispatch]);
 
   let url = useMemo(() => `
-    ${process.env.REACT_APP_SEARCH_ROUTES}?from_city_id=${departureCity.id}&to_city_id=${arrivalCity.id}`,
-    [departureCity, arrivalCity]
+    ${process.env.REACT_APP_SEARCH_ROUTES}?from_city_id=${departureCity.id}&to_city_id=${arrivalCity.id}&limit=${limit}`,
+    [departureCity, arrivalCity, limit]
   );
 
   if (departureDate) {

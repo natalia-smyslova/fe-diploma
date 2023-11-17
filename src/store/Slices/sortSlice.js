@@ -1,19 +1,22 @@
 /* eslint-disable no-param-reassign */
 import { createSlice } from '@reduxjs/toolkit';
 
-const savedData = localStorage.getItem('sort');
-const empty = {
+const localStorageData = localStorage.getItem('sort');
+const emptyData = {
   limit: 5,
   sort: { label: 'времени', value: 'date' },
   offset: 0,
   currentPage: 1,
 };
-const initialState = savedData ? JSON.parse(savedData) : empty;
+const initialState = localStorageData ? JSON.parse(localStorageData) : emptyData;
 
 const sortSlice = createSlice({
   name: 'sortSlice',
   initialState,
   reducers: {
+    removeSortData() {
+      return emptyData;
+    },
     changeLimit(state, action) {
       state.limit = action.payload;
     },
@@ -25,12 +28,8 @@ const sortSlice = createSlice({
     },
     setCurrentPage(state, action) {
       state.currentPage = action.payload;
-    },
-    removeSortData() {
-      return empty;
-    },
-  },
-  extraReducers: {},
+    }
+  }
 });
 
 export const {
@@ -40,10 +39,5 @@ export const {
   setCurrentPage,
   removeSortData,
 } = sortSlice.actions;
-
-// export const selectLimit = (state) => state.sort.limit;
-// export const selectSort = (state) => state.sort.sort;
-// export const selectOffset = (state) => state.sort.offset;
-// export const selectCurrentPage = (state) => state.sort.currentPage;
 
 export default sortSlice;

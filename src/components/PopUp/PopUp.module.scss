@@ -2,55 +2,27 @@
 @import '../../scss/mixins';
 @import '../../scss/placeholders';
 
-.wrapper {
-  display: none;
-} 
 
-// .wrapper.active{
-//   // content: '';
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   width: 100%;
-//   height: 100vh;
-//   background-color: rgba(0, 0, 0, 0.75);
-// }
+.popup {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0);
+}
 
-.popUp {
+.popup__active {
+  transform: scale(1);
+  position: fixed;
+  top: 35%;
+  left: 35%;
+}
+
+.content {
   width: 664px;
   border: 1px solid $color-bars-light;
   background-color: #fbfbfb;
   @extend %box-shadow-selection-block;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  &__info {
-    background-color: $color-info;
-  }
-
-  &__error {
-    background-color: $color-error;
-  }
-
-  &__img {
-    width: 32px;
-    height: 32px;
-    margin: 38px 594px 38px 38px;
-  }
-
-  &__wrapper {
-    border-top: 1px dashed $color-grey;
-    border-bottom: 1px dashed $color-grey;
-  }
-
-  &__message {
-    // width: 59.5rem;
-    @include font($weight: 400, $size: 1.8rem, $height: 2.1rem, $text-transform: none);
-    color: $color-black;
-    padding: 46px 24px 25px 46px;
-  }
 
   .btn {
     @include font($weight: 700, $size: 2.4rem, $height: 2.8rem, $text-transform: capitalize);
@@ -58,6 +30,30 @@
     padding: 11px 67px;
     border: 0.1rem solid $color-main-dark;
     margin: 31px 215px 31px 215px;
-    // margin: 31px;
   }
+}
+
+.header__info {
+  background-color: $color-info;
+}
+
+.header__error {
+  background-color: $color-error;
+}
+
+.content__img {
+  width: 32px;
+  height: 32px;
+  margin: 38px 594px 38px 38px;
+}
+
+.content__wrapper {
+  border-top: 1px dashed $color-grey;
+  border-bottom: 1px dashed $color-grey;
+}
+
+.content__message {
+  @include font($weight: 400, $size: 1.8rem, $height: 2.1rem, $text-transform: none);
+  color: $color-black;
+  padding: 46px 24px 25px 46px;
 }

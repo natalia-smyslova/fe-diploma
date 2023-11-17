@@ -1,0 +1,11 @@
+@import '../../../../scss/constants';
+@import '../../../../scss/mixins';
+
+
+.button {
+  color: $color-grey;
+
+  &-active {
+    color: $color-main-dark;
+  }
+}

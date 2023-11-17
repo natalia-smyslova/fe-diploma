@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import styles from './Subscription.module.scss';
 import SubscribtionItems from './SubscriptionItems/SubscribtionItems';
 import PopUp from '../../../PopUp/PopUp';
@@ -11,15 +11,9 @@ function Subscribtion() {
 	const [loading, setLoading] = useState(false);
 	// eslint-disable-next-line no-unused-vars
 	const [error, setError] = useState(null);
-	const [isDisabled, setDisabled] = useState(true);
 	const [message, setMessage] = useState('');
 	const [reason, setReason] = useState('');
-
-	useEffect(() => {
-		// console.log(isDisabled);
-		// setDisabled(!isDisabled);
-		// console.log(isDisabled);
-	}, [setDisabled]);
+	const [popupActive, setPopupActive] = useState(false);
 
 
 	const changeHandler = e => {
@@ -28,40 +22,49 @@ function Subscribtion() {
 	const submitHandler = async (e) => {
 		e.preventDefault();
 
+		const regex = /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/;
+		const isEmail = regex.test(inputValue);
+		if (isEmail === true) {
+			try {
+				setError(null);
+				setLoading(true);
 
-		try {
-			setError(null);
-			setLoading(true);
+				const email = `${process.env.REACT_APP_SUBSCRIPTION_URL}${inputValue}`;
+				const response = await fetch(email, {
+					method: 'POST',
+					headers: { 'Content-Type': 'application/json' },
+					body: JSON.stringify(inputValue),
+				});
 
-			const email = `${process.env.REACT_APP_SUBSCRIPTION_URL}${inputValue}`;
-			const response = await fetch(email, {
-				method: 'POST',
-				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify(inputValue),
-			});
-
-			if (!response.ok) {
-				setDisabled(false);
-				setReason('error');
-				setMessage(messages.error);
-				throw new Error('Response Error');
+				if (!response.ok) {
+					setPopupActive(true);
+					setReason('error');
+					setMessage(messages.error);
+					throw new Error('Response Error');
+				}
+				else {
+					setPopupActive(true);
+					setReason('info');
+					setMessage(messages.info);
+					const input = document.querySelector('input');
+					input.value = '';
+				}
 			}
-			else {
-				setDisabled(false);
-				setReason('info');
-				setMessage(messages.info);
-				const input = document.querySelector('input');
-				input.value = '';
+
+			catch (err) {
+				setError(err.message);
+			}
+			finally {
+				setLoading(false);
 			}
 		}
+		else {
+			setPopupActive(true);
+			setReason('error');
+			setMessage(messages.error);
+		};
+	}
 
-		catch (err) {
-			setError(err.message);
-		}
-		finally {
-			setLoading(false);
-		}
-	};
 
 	const buttonClassNames = `button button__transparent ${styles.formBlock__btn}`;
 
@@ -77,7 +80,7 @@ function Subscribtion() {
 			<div className={styles.subscription__subscribe}>
 				<h3 className={styles.subscription__title}>Подписывайтесь на нас</h3>
 				<SubscribtionItems />
-				<PopUp disabled={isDisabled} reason={reason} message={message}/>
+				<PopUp active={popupActive} setActive={setPopupActive} reason={reason} message={message} />
 			</div>
 		</section>
 	)

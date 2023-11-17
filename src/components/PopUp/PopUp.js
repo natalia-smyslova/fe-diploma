@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 // import ReactDOM from 'react-dom';
 
 import styles from './PopUp.module.scss';
@@ -6,41 +6,27 @@ import styles from './PopUp.module.scss';
 import info from './img/info.svg';
 import error from './img/error.svg'
 
-function PopUp({ disabled, reason, message }) {
+function PopUp({ active, setActive, reason, message }) {
 	const img = reason === 'info' ? info : error;
 
 	const buttonClassNames = `button button__transparent ${styles.btn}`;
 	
-	let popupClassNames = (disabled === true)
-		? styles.wrapper
-		: styles.wrapper + styles.active;
-
-
-	const closeHandler = () => {
-		popupClassNames = styles.wrapper;
-		console.log(styles.wrapper);
-	};
-
-	useEffect(() => {
-
-	}, [disabled, popupClassNames]);
-
 	return (
-			<div id="popup" className={popupClassNames}>
-				<div className={styles.popUp}>
-					<div className={styles[`popUp__${reason}`]}>
+			<div id="popup" className={active? styles.popup__active : styles.popup}>
+				<div className={styles.content}>
+					<div className={styles[`header__${reason}`]}>
 						<img
-							className={styles.popUp__img}
+							className={styles.content__img}
 							src={img}
 							alt={`${reason} icon`}
 						/>
 					</div>
-					<div className={styles.popUp__wrapper}>
-						<div className={styles.popUp__message}>{message}</div>
+					<div className={styles.content__wrapper}>
+						<div className={styles.content__message}>{message}</div>
 					</div>
 					<button
 						className={buttonClassNames}
-						onClick={closeHandler}
+						onClick={ () => setActive(false)}
 						type="button"
 					>
 						понятно

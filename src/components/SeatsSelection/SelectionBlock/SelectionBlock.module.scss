@@ -4,15 +4,26 @@
 .card {
   @include card($margin-bottom: 29px);
   width: 959px;
-
-  &__header {
-    padding: 36px 0 32px 19px;
-    display: flex;
-  }
 }
 
 .btn {
   @include font($size: 2.4rem, $height: 2.8rem, $weight: 700, $text-transform: none);
   padding: 16px 34px;
-  margin-left: 43px;
+  margin-left: 10px;
+  height: 60px;
+}
+
+.header__departure {
+  padding: 36px 0 32px 19px;
+  display: flex;
+}
+
+.header__arrival {
+  padding: 40px 24px 28px 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.img{
+  height: 60px;
 }

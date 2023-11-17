@@ -1,14 +1,13 @@
 import React from 'react';
 import { Pagination } from 'antd';
 
-// import 'antd/dist/antd.css';
-import './PaginationBlock.module.scss';
+// import './PaginationBlock.scss';
 
 function PaginationBlock({ current, onChange, total, pageSize }) {
   return (
     <section className="pagination">
       <Pagination
-        current={current}
+        defaultCurrent={current}
         total={total}
         hideOnSinglePage
         onChange={onChange}

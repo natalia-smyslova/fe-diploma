@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 import CoachTypeItem from './CoachTypeItem/CoachTypeItem';
 
@@ -15,7 +16,8 @@ import styles from './CoachType.module.scss';
 
 import classes from '../../classes';
 
-function CoachType() {
+function CoachType({ direction }) {
+  const train = useSelector(state => state.train.trains[direction]);
 
   const coachTypes = [
     {
@@ -24,8 +26,7 @@ function CoachType() {
       imgActive: fourthActive,
       name: classes.fourth,
       nameRus: 'сидячий',
-      // available: train.have_fourth_class,
-      // available: train?.have_fourth_class,
+      available: train?.have_fourth_class
     },
     {
       id: 3,
@@ -33,8 +34,7 @@ function CoachType() {
       imgActive: thirdActive,
       name: classes.third,
       nameRus: 'плацкарт',
-      // available: train.have_third_class,
-      // available: train?.have_third_class,
+      available: train?.have_third_class
     },
     {
       id: 2,
@@ -42,8 +42,7 @@ function CoachType() {
       imgActive: secondActive,
       name: classes.second,
       nameRus: 'купе',
-      // available: train.have_second_class,
-      // available: train?.have_second_class,
+      available: train?.have_second_class
     },
     {
       id: 1,
@@ -51,8 +50,7 @@ function CoachType() {
       imgActive: firstActive,
       name: classes.first,
       nameRus: 'люкс',
-      // available: train.have_first_class,
-      // available: train?.have_first_class,
+      available: train?.have_first_class
     },
   ];
 
@@ -60,15 +58,11 @@ function CoachType() {
     <div className={styles.coach}>
       <h4 className={styles.title}>Тип вагона</h4>
       <div className={styles.coachTypes}>
-        {coachTypes.map(
-          (coach) =>
-          (
-            <CoachTypeItem
-              key={coach.id}
-              coach={coach}
-            // direction={direction}
-            />
-          )
+        {coachTypes.map((coach) => (
+          coach.available &&
+          <CoachTypeItem key={coach.id} coach={coach} direction={direction}
+          />
+        )
         )}
       </div>
     </div>

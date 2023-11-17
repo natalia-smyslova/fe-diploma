@@ -3,7 +3,6 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import MainPage from './pages/MainPage/MainPage';
-import ErrorPage from './pages/ErrorPage/ErrorPage';
 import PassengersPage from './pages/PassangersPage/PassangersPage';
 import PaymentPage from './pages/PaymentPage/PaymentPage';
 import SeatSelectionPage from './pages/SeatsSelectionPage/SeatsSelectionPage';
@@ -24,16 +23,9 @@ function App() {
         <Route path={links.trains} element={<TrainSelectionPage />} />
         <Route path={links.seats} element={<SeatSelectionPage />} />
         <Route path={links.passengers} element={<PassengersPage />} />
-        <Route
-          path={links.payment}
-          element={<PaymentPage />}
-        />
-        <Route
-          path={links.orderConfirmation}
-          element={<OrderConfirmationPage />}
-        />
+        <Route path={links.payment} element={<PaymentPage />} />
+        <Route path={links.orderConfirmation} element={<OrderConfirmationPage />} />
         <Route path={links.success} element={<SuccessfulOrderPage />} />
-        <Route path="*" element={<ErrorPage />} />
       </Routes>
     </BrowserRouter>
   );

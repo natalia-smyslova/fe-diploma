@@ -1,0 +1,61 @@
+@import '../../../scss/constants';
+@import '../../../scss/mixins';
+@import '../../../scss/placeholders';
+
+// @mixin box {
+//   width: 8.5rem;
+//   height: 7.5rem;
+//   border: 0.2rem solid var(--color-bars-light);
+//   padding: 2rem;
+//   border-radius: 0.5rem;
+//   @include font(var(--fw-7), var(--fs-30), var(--fh-35), var(--color-grey));
+// }
+
+.pagination {
+  display: flex;
+  justify-content: flex-end;
+
+  .ant-pagination {
+    &-item {
+      background-color: transparent;
+      width: 85px;
+      height: 75px;
+      border: 2px solid $color-bars-light;
+      padding: 20px;
+      border-radius: 5px;
+      @include font($size: 3rem, $height: 3.5rem, $weight: 700, $text-transform: none);
+      color: $color-grey;
+    }
+
+    >a {
+      text-decoration: none;
+      color: $color-grey;
+    }
+
+    &-active {
+      background: $color-primary;
+
+      >a {
+        color: $color-main-light;
+      }
+    }
+
+    &-link {
+      background-color: transparent;
+    }
+  }
+
+  &-prev,
+  &-next {
+    width: 85px;
+    height: 75px;
+    border: 2px solid $color-bars-light;
+    padding: 20px;
+    border-radius: 5px;
+    @include font($size: 3rem, $height: 3.5rem, $weight: 700, $text-transform: none);
+  }
+
+  &-item-link {
+    border: none;
+  }
+}

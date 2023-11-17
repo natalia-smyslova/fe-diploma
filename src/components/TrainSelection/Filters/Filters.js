@@ -1,13 +1,23 @@
 import React from 'react';
-// import { useSelector, useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
-import AmountFilter from './AmountFilter/AmounFilter';
+import AmountFilter from './AmountFilter/AmountFilter';
 import SelectionFilter from './SelectionFilter/SelectionFilter';
 
 import styles from './Filters.module.scss';
 
+import { setCurrentPage } from '../../../store/slices/sortSlice';
+
 function Filters() {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
+
+  const totalCount = useSelector(state => state.trains.totalCount);
+
+  const onChangeFilter = () => {
+    dispatch(setCurrentPage(1));
+  }
+
+  const numberOfShownItems = [5, 10, 20];
 
 
   // const sortOptions = [
@@ -28,10 +38,9 @@ function Filters() {
 
   return (
     <section className={styles.filters}>
-      <div className={styles.found}>найдено</div>
+      <div className={styles.found}>найдено {totalCount || 0}</div>
       <div className={styles.sort}>
-        <div className={styles.sorting}>        сортировать по:
-        </div>
+        <div className={styles.sorting}>сортировать по:</div>
         <div>
           <SelectionFilter
           // options={sortOptions}
@@ -41,14 +50,9 @@ function Filters() {
       </div>
       <div className={styles.show}>
         <span className={styles.show__title}>показывать по:</span>
-        {/* {amounts.map((amount) => ( */}
-        <AmountFilter
-        // onChangeFilters={onChangeFilters}
-        // key={amount}
-        // className={styles.show__amount}
-        // amount={amount}
-        />
-        {/* ))} */}
+        {numberOfShownItems.map(numberOfItem => (
+          <AmountFilter key={numberOfItem} numberOfItem={numberOfItem} totalCount={totalCount} onChangeFilter={onChangeFilter} />
+        ))}
       </div>
     </section>)
 };
