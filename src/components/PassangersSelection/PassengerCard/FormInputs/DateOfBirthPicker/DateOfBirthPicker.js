@@ -9,6 +9,8 @@ import generatePicker from 'antd/es/date-picker/generatePicker';
 import fieldParams from '../fieldParams';
 import rules from '../rules';
 
+import './DateOfBirthPicker.scss';
+
 dayjs.locale('ru');
 
 function DateOfBirthPicker() {
@@ -16,25 +18,26 @@ function DateOfBirthPicker() {
   const disabledDate = (current) => current && current > dayjs(new Date());
 
   return (
-    <ConfigProvider locale='ru'>
-      <Form.Item
-        label={fieldParams.dateOfBirthLabel}
-        name={fieldParams.dateOfBirth}
-        rules={rules.dateOfBirth}
+    <div className='birthday'>
+      <ConfigProvider locale='ru'>
+        <Form.Item
+          label={fieldParams.dateOfBirthLabel}
+          name={fieldParams.dateOfBirth}
+          rules={rules.dateOfBirth}
         // value={form.dateOfBirth}
-      >
-        <DatePicker
-          className="passengerCard-datepicker"
-          popupClassName="passengerCard-datepicker"
-          placeholder="дд/мм/гг"
-          disabledDate={disabledDate}
-          format="DD.MM.YYYY"
-          allowClear
-          showToday={false}
-        />
-      </Form.Item>
-    </ConfigProvider>
-
+        >
+          <DatePicker
+            className="passengerCard-datepicker"
+            popupClassName="passengerCard-datepicker"
+            placeholder="дд/мм/гг"
+            disabledDate={disabledDate}
+            format="DD.MM.YYYY"
+            allowClear
+            showToday={false}
+          />
+        </Form.Item>
+      </ConfigProvider>
+    </div>
   )
 };
 

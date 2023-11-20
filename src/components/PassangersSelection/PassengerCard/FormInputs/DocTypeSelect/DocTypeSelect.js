@@ -5,9 +5,11 @@ import fieldParams from '../fieldParams';
 import rules from '../rules';
 import docTypes from '../docTypes';
 
+import './DocTypeSelect.scss';
 
 function DocTypeSelect() {
   return (
+    <div className='doc__wrapper'>
     <Form.Item
       label={fieldParams.docTypeLabel}
       name={fieldParams.docType}
@@ -37,7 +39,7 @@ function DocTypeSelect() {
         </Select.Option>
       </Select>
     </Form.Item>
-
+    </div>
   )
 };
 

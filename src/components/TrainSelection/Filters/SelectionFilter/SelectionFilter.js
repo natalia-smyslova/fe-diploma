@@ -1,5 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Select, ConfigProvider } from 'antd';
+
+import { changeSort } from '../../../../store/slices/sortSlice';
 
 // import styled from "styled-components";
 
@@ -23,11 +26,18 @@ import { Select, ConfigProvider } from 'antd';
 // </ConfigProvider> */}
 
 
-function SelectionFilter() {
+function SelectionFilter({sortOptions, onChangeFilter }) {
+  const dispatch = useDispatch();
+  const sort = useSelector(state => state.sort.sort);
 
   const handleChange = (value) => {
-    console.log(`selected ${value}`);
+    dispatch(changeSort(value));
+    onChangeFilter();
   };
+
+  useEffect(() => {
+
+  }, [sort]);
 
   return (
     <ConfigProvider
@@ -60,20 +70,7 @@ function SelectionFilter() {
           width: 139,
         }}
         onChange={handleChange}
-        options={[
-          {
-            value: 'времени',
-            label: 'времени',
-          },
-          {
-            value: 'стоимости',
-            label: 'стоимости',
-          },
-          {
-            value: 'длительности',
-            label: 'длительности',
-          },
-        ]}
+        options={sortOptions}
       />
     </ConfigProvider>
   )

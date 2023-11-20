@@ -1,7 +1,7 @@
 import React from 'react';
 import { Pagination } from 'antd';
 
-// import './PaginationBlock.scss';
+import './PaginationBlock.scss';
 
 function PaginationBlock({ current, onChange, total, pageSize }) {
   return (
@@ -9,9 +9,9 @@ function PaginationBlock({ current, onChange, total, pageSize }) {
       <Pagination
         defaultCurrent={current}
         total={total}
-        hideOnSinglePage
+        // hideOnSinglePage
         onChange={onChange}
-        showLessItems
+        // showLessItems
         showSizeChanger={false}
         pageSize={pageSize}
       />

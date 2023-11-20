@@ -1,0 +1,102 @@
+@import '../../../../../scss/mixins';
+@import '../../../../../scss/constants';
+
+
+.doc__wrapper {
+  margin-bottom: 33px;
+  .ant-row.ant-form-item-row {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .ant-col.ant-form-item-label {
+
+    >label {
+      @include font($size: 1.6rem, $height: 1.8rem, $weight: 400, $text-transform: none);
+      color: $color-grey;
+    }
+
+  }
+
+  .ant-col.ant-form-item-control {
+    width: 205px;
+    margin-top: 10px;
+
+  }
+
+  .ant-form-item-control-input {
+    .ant-form-item-control-input-content {
+      .ant-select.ant-select-in-form-item.ant-select-single.ant-select-show-arrow {
+        .ant-select-selector {
+          border: 1px solid $color-grey;
+        }
+      }
+    }
+  }
+
+
+  // .ant-form-item-control-input-content {
+  //   border: 1px solid green;
+  // }
+  // .ant-select{
+  //   // border: 1px solid green;
+  // }   
+  // .ant-select-single{
+  //   border: 1px solid green;
+  // }
+  // .ant-select-show-arrow{
+  //   border: 1px solid green;
+  // }
+
+  .ant-select.ant-select-in-form-item {
+    // border: 1px solid green;
+    height: 50px;
+  }
+
+
+}
+
+
+
+// .passengerCard-doc-select {
+
+//   >.ant-form-item-row {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: start;
+//   }
+
+// .ant-select-item-option-content {
+//   @include font($size: 1.8rem, $height: 2.1rem, $weight: 400, $text-transform: none);
+//   color: $color-main-dark;
+// }
+
+// }
+
+// .ant-form-item-row {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: start;
+// }
+
+
+
+
+
+// .passengerCard-doc-select-birth-sertificate.ant-select.ant-select-in-form-item {
+//   width: 205px;
+//   height: 50px;
+// }
+
+// .passengerCard-doc-select-pass.ant-select.ant-select-in-form-item {
+//   width: 205px;
+//   height: 50px;
+
+//   // @include select(20.5rem, 1.8rem, 2.1rem);
+// }
+
+// @mixin select($w, $s, $lh) {
+//   min-width: $w;
+//   max-width: $w;
+//   @include font(400, $s, $lh, var(--color-main-dark));

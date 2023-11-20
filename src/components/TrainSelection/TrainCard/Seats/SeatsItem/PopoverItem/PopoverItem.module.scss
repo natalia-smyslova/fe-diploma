@@ -1,0 +1,53 @@
+@import '../../../../../../scss/constants';
+@import '../../../../../../scss/mixins';
+
+
+.item {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-around;
+  @include font($size: 1.6rem, $weight: 400, $height: 1.9rem, $text-transform: none);
+
+  &:nth-child(n):not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  .type {
+    color: $color-bars;
+    width: 65px;
+  }
+
+  .seats {
+    font-weight: 500;
+    color: $color-primary;
+  }
+
+  .price {
+    display: flex;
+    align-items: baseline;
+
+    &__wrapper {
+      display: flex;
+      align-items: baseline;
+      justify-content: flex-end;
+
+      .price {
+        &__start {
+          color: $color-grey;
+          margin-right: 5px;
+        }
+
+        &__number {
+          @include font($size: 2.4rem, $height: 2.8rem, $weight: 700, $text-transform: none);
+          color: $color-secondary-dark;
+          margin-right: 5px;
+        }
+
+        &__currency {
+          width: 16px;
+          height: 16px;
+        }
+      }
+    }
+  }
+}

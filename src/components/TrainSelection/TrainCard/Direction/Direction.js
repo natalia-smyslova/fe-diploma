@@ -25,9 +25,9 @@ function Direction({
   <div className={styles.wrapper}>
     <div className={styles.direction__first}>
       <div className={styles.direction__from}>
-        <span className={styles.from__time}>{departureTime1}</span>
-        <span className={styles.from__city}>{departureCity1}</span>
-        <span className={styles.from__station}>{departureStation1}</span>
+        <div className={styles.from__time}>{departureTime1}</div>
+        <div className={styles.from__city}>{departureCity1}</div>
+        <div className={styles.from__station}>{departureStation1}</div>
       </div>
       <div className={styles.from__time}>
         <span className={styles.time__time}>{duration1}</span>
@@ -55,9 +55,9 @@ function Direction({
           </div>
         </div>
         <div className={styles.direction__to}>
-          <span className={styles.to__time}>{arrivalTime2}</span>
-          <span className={styles.to__city}>{arrivalCity2}</span>
-          <span className={styles.to__station}>{arrivalStation2}</span>
+          <div className={styles.to__time}>{arrivalTime2}</div>
+          <div className={styles.to__city}>{arrivalCity2}</div>
+          <div className={styles.to__station}>{arrivalStation2}</div>
         </div>
       </div>
     )}

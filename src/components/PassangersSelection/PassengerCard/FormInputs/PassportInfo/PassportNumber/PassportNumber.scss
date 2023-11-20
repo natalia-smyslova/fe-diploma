@@ -1,0 +1,34 @@
+@import '../../../../../../scss/constants';
+@import '../../../../../../scss/mixins';
+
+.passport__number {
+  margin-left: 35px;
+
+  .ant-row,
+  .ant-form-item-row {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+
+    .ant-form-item-label {
+      >label {
+        @include font($weight: 400, $size: 1.6rem, $height: 1.9rem, $text-transform: none);
+        color: $color-grey;
+
+        &::before {
+          content: '';
+        }
+      }
+    }
+  }
+
+  .ant-input-number.ant-input-number-in-form-item{
+    width: 205px;
+    height: 50px;
+    margin-top: 10px;
+    border: 1px solid $color-grey;
+    @include font($size: 2.4rem, $height: 2.8rem, $weight: 400, $text-transform: none);
+    color: $color-main-dark;
+  }
+
+}

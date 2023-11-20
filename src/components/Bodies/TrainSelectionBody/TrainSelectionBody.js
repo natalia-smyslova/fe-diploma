@@ -1,8 +1,8 @@
 import React from 'react';
-
+import { useSelector } from 'react-redux';
 import ProgressBar from '../../ProgressBar/ProgressBar';
 
-// import LoadingAnimation from '../../LoadingAnimation/LoadingAnimation';
+import LoadingAnimation from '../../LoadingAnimation/LoadingAnimation';
 import LastTickets from '../../LastTickets/LastTickets';
 import SidebarSelection from '../../SidebarSelection/SidebarSelection';
 import TrainSelection from '../../TrainSelection/TrainSelection';
@@ -12,14 +12,15 @@ import PaginationBlock from '../../TrainSelection/PaginationBlock/PaginationBloc
 
 import styles from './TrainSelectionBody.module.scss';
 
-function TrainSelectionBody() {
 
+function TrainSelectionBody() {
+  const loading = useSelector(state => state.trains.loading);
 
   return (
     <>
-      <ProgressBar step={1} />
-      {/* <LoadingAnimation /> */}
-      <div className={styles.body}>
+      <ProgressBar step={1} /> 
+      {loading && <LoadingAnimation />}
+      <div className={styles.body}>    
         <div className={styles.body__left}>
           <SidebarSelection />
           <LastTickets />

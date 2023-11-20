@@ -71,7 +71,7 @@ function TrainSelectionPage() {
   const departureDate = useSelector(state => state.search.departureDate);
   const arrivalDate = useSelector(state => state.search.arrivalDate);
   const limit = useSelector(state => state.sort.limit);
-  // const sort = useSelector(selectSort);
+  const sort = useSelector(state => state.sort.sort);
   // const offset = useSelector(selectOffset);
   // const total = useSelector(selectTotalCount);
   // const currentPage = useSelector(selectCurrentPage);
@@ -82,8 +82,8 @@ function TrainSelectionPage() {
   }, [dispatch]);
 
   let url = useMemo(() => `
-    ${process.env.REACT_APP_SEARCH_ROUTES}?from_city_id=${departureCity.id}&to_city_id=${arrivalCity.id}&limit=${limit}`,
-    [departureCity, arrivalCity, limit]
+    ${process.env.REACT_APP_SEARCH_ROUTES}?from_city_id=${departureCity.id}&to_city_id=${arrivalCity.id}&limit=${limit}&sort=${sort}`,
+    [departureCity, arrivalCity, limit, sort]
   );
 
   if (departureDate) {

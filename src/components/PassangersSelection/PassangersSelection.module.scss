@@ -19,6 +19,7 @@ margin: 103px 0 140px 820px;
 @include card($margin-bottom: 0, $padding: 28px 38px 32px 26px, $border: none);
 margin-top: 46px;
 height: 97px;
+width: 960px;
 display: flex;
 justify-content: space-between;
 @extend %box-shadow-selection-block;

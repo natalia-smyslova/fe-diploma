@@ -14,48 +14,94 @@
 .pagination {
   display: flex;
   justify-content: flex-end;
+}
 
-  .ant-pagination {
-    &-item {
-      background-color: transparent;
-      width: 85px;
-      height: 75px;
-      border: 2px solid $color-bars-light;
-      padding: 20px;
-      border-radius: 5px;
-      @include font($size: 3rem, $height: 3.5rem, $weight: 700, $text-transform: none);
-      color: $color-grey;
-    }
-
-    >a {
-      text-decoration: none;
-      color: $color-grey;
-    }
-
-    &-active {
-      background: $color-primary;
-
-      >a {
-        color: $color-main-light;
-      }
-    }
-
-    &-link {
-      background-color: transparent;
-    }
-  }
-
-  &-prev,
-  &-next {
+.ant-pagination {
+  &-item {
+    background-color: transparent;
     width: 85px;
     height: 75px;
     border: 2px solid $color-bars-light;
     padding: 20px;
     border-radius: 5px;
     @include font($size: 3rem, $height: 3.5rem, $weight: 700, $text-transform: none);
+    color: $color-grey;
   }
 
-  &-item-link {
-    border: none;
+  >a {
+    text-decoration: none;
+    color: $color-grey;
   }
+
+  >.ant-pagination-item,
+  .ant-pagination-item-active {
+    margin-right: 35px;
+    background: $color-primary;
+    border: 2px solid $color-primary;
+    border-radius: 5px;
+    width: 85px;
+    height: 75px;
+    @include font($size: 3rem, $height: 3.5rem, $weight: 700, $text-transform: none);
+
+    >a {
+      color: $color-main-light;
+    }
+  }
+  >.ant-pagination-item-active:hover {
+    border: 2px solid $color-primary;
+    >a {
+      color: $color-main-light;
+    }
+  }
+
+  .ant-pagination-prev,
+  .ant-pagination-next {
+    border: 2px solid $color-bars-light;
+    border-radius: 5px;
+    width: 85px;
+    height: 75px;
+
+    >.anticon,
+    .anticon-left,
+    .anticon-right {
+      height: 29px;
+      width: 18px;
+
+      >svg {
+        height: 29px;
+        width: 18px;
+        color: $color-grey;
+      }
+    }
+  }
+
+  .ant-pagination-prev{
+    margin-right: 35px;
+  }
+
+  // &-active {
+  //   background: $color-primary;
+
+  //   >a {
+  //     color: $color-main-light;
+  //   }
+  // }
+
+  // &-link {
+  //   background-color: transparent;
+  // }
+
+  // &-prev,
+  // &-next {
+  //   width: 85px;
+  //   height: 75px;
+  //   border: 2px solid $color-bars-light;
+  //   padding: 20px;
+  //   border-radius: 5px;
+  //   @include font($size: 3rem, $height: 3.5rem, $weight: 700, $text-transform: none);
+  // }
+
+  // &-item-link {
+  //   border: none;
+  // }
 }

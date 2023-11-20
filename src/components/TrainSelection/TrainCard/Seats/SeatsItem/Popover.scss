@@ -1,0 +1,21 @@
+@import '../../../../../scss/mixins';
+@import '../../../../../scss/constants';
+@import '../../../../../scss/placeholders';
+
+
+
+.right-part .ant-popover {
+  background: $color-popover;
+  @extend %box-shadow-popover;
+  padding: 0;
+
+  &-inner {
+    border-radius: 5px;
+
+    &-content {
+      width: 276px;
+      background: $color-popover;
+      padding: 25px 17px 21px 32px;
+    }
+  }
+}

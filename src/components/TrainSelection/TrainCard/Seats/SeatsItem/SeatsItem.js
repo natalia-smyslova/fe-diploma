@@ -1,42 +1,59 @@
 /* eslint-disable consistent-return */
 
 import React from 'react';
+import { Popover } from 'antd';
 
-import styles from './SeatsItem.module.scss';
-
+import PopoverItem from './PopoverItem/PopoverItem';
 import currency from '../img/currency.svg';
 
+import './Popover.scss';
+import styles from './SeatsItem.module.scss';
+
+
 function SeatsItem({ type, seatNumber, priceInfoDeparture, priceInfoArrival }) {
+
   const getMinPrice = () => {
-    if (priceInfoDeparture) {
-      const minPriceDeparture = Math.min.apply(null, Object.values(priceInfoDeparture));
-      return minPriceDeparture;
+    // let minPriceDeparture = 0;
+    let minPrice;
+    let minPriceArrival = 0;
+    if (priceInfoArrival !== undefined) {
+      minPriceArrival = Math.min.apply(null, Object.values(priceInfoArrival));
     }
-
-    if (priceInfoArrival) {
-      const minPriceArrival = Math.min.apply(null, Object.values(priceInfoArrival));
-      return minPriceArrival;
+    const minPriceDeparture = Math.min.apply({}, Object.values(priceInfoDeparture || {}));
+    if (minPriceArrival === 0) {
+      minPrice = minPriceDeparture;
+    } else {
+      minPrice = Math.min(minPriceDeparture, minPriceArrival);
     }
-
-    return Math.min.apply(null, minPriceDeparture, minPriceArrival);
+    return minPrice;
   }
 
   const minPrice = getMinPrice();
 
+  const popoverContent = <PopoverItem />;
+  // type={type} priceDep={priceDep} priceArr={priceArr} 
+
+
   return (
-    <div className={styles.card}>
-      <div className={styles.type}>{type}</div>
-      <div className={styles.seats}>{seatNumber}</div>
-      <div className={styles.price}>
-        <div className={styles.price__wrapper}>
-          <div className={styles.price__start}>от </div>
-          <div className={styles.price__number}>
-            {minPrice}
+    <Popover
+      overlayClassName="right-part"
+      content={popoverContent}
+      placement="bottom"
+    >
+      <div className={styles.card}>
+        <div className={styles.type}>{type}</div>
+        <div className={styles.seats}>{seatNumber}</div>
+        <div className={styles.price}>
+          <div className={styles.price__wrapper}>
+            <div className={styles.price__start}>от </div>
+            <div className={styles.price__number}>
+              {minPrice}
+            </div>
+            <img src={currency} alt="иконка - рубль" />
           </div>
-          <img src={currency} alt="иконка - рубль" />
         </div>
       </div>
-    </div>
+    </Popover>
   )
 };
 

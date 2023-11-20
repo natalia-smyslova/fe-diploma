@@ -1,0 +1,49 @@
+@import '../../../../../scss/mixins';
+@import '../../../../../scss/constants';
+
+.birthday {
+  display: flex;
+
+  >.ant-form-item {
+
+    >.ant-row,
+    >.ant-form-item-row {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-left: 35px;
+    }
+
+  }
+
+  .ant-col.ant-form-item-label {
+    @include font($size: 1.6rem, $height: 2.3rem, $weight: 400, $text-transform: none);
+    color: $color-grey;
+    margin-bottom: 10px;
+  }
+
+  .ant-picker.passengerCard-datepicker {
+    width: 240px;
+    height: 50px;
+    border: 1px solid $color-grey;
+
+    #dateOfBirth {
+      @include font($size: 2.4rem, $height: 2.8rem, $weight: 400, $text-transform: none);
+      color: $color-main-dark;
+    }
+  }
+
+  .ant-row.ant-form-item-row {
+    .ant-form-item-label {
+      >label {
+        @include font($weight: 400, $size: 1.6rem, $height: 1.9rem, $text-transform: none);
+        color: $color-grey;
+
+        &::before {
+          content: '';
+        }
+      }
+    }
+  }
+
+}

@@ -19,21 +19,20 @@ function Filters() {
 
   const numberOfShownItems = [5, 10, 20];
 
-
-  // const sortOptions = [
-  //   {
-  //     value: 'date',
-  //     label: 'времени',
-  //   },
-  //   {
-  //     value: 'price__min',
-  //     label: 'стоимости',
-  //   },
-  //   {
-  //     value: 'duration',
-  //     label: 'длительности',
-  //   },
-  // ];
+  const sortOptions = [
+    {
+      value: 'date',
+      label: 'времени',
+    },
+    {
+      value: 'min_price',
+      label: 'стоимости',
+    },
+    {
+      value: 'duration',
+      label: 'длительности',
+    },
+  ];
 
 
   return (
@@ -42,9 +41,7 @@ function Filters() {
       <div className={styles.sort}>
         <div className={styles.sorting}>сортировать по:</div>
         <div>
-          <SelectionFilter
-          // options={sortOptions}
-          // onChangeFilters={onChangeFilters}
+          <SelectionFilter key={onChangeFilter} sortOptions={sortOptions} onChangeFilter={onChangeFilter}
           />
         </div>
       </div>

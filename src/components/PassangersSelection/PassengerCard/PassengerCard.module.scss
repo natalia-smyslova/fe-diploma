@@ -2,9 +2,10 @@
 @import '../../../scss/constants';
 @import '../../../scss/placeholders';
 
-.passangerCard{
+.passangerCard {
   $border: 1px solid $color-bars-light;
   @extend %box-shadow-selection-block;
+  width: 960px;
 }
 
 .header {
@@ -22,26 +23,72 @@
   margin-left: 16px;
 }
 
-.section__first{
+.section__first {
   height: 452px;
   border-bottom: 1px dashed $color-grey;
   padding: 38px 35px 31px;
   background-color: $color-main-light;
 }
 
-.section__second{
+.section__second {
   height: 153px;
   background-color: $color-main-light;
   border-bottom: 1px dashed $color-grey;
   padding: 37px 0 33px 35px;
+  display: flex;
 }
 
-.section__third{
+.section__third {
   height: 117px;
-  background-color: $color-main-light;
+  width: 960px;
+  padding: 35px 30px 36px 24px;
+  background-color: $color-error-light;
+  display: flex;
+  justify-content: space-between;
+
+  // background-color: $color-main-light;
+  &-error {
+    background-color: $color-error-light;
+  }
+
+  &-accept {
+    background-color: $color-accept;
+  }
 }
 
-.sex__group{
-  margin-bottom: 45px;
-  margin-top: 45px;
+.btn {
+  padding: 12px 24px;
+  @include font($size: 2.4rem, $height: 2.8rem, $weight: 700, $text-transform: none);
+}
+
+.sex__group {
+  display: flex;
+}
+
+.information {
+  display: flex;
+  align-items: center;
+}
+
+.message {
+  @include font($size: 1.8rem, $height: 2.1rem, $weight: 400, $text-transform: none);
+  margin-left: 15px;
+  // Не забыть убрать цвет по умолчанию
+  color: $color-main-light;
+
+  &__error {
+    color: $color-main-dark;
+    margin-left: 15px;
+    margin-right: 408px;
+  }
+
+  &__accept {
+    margin-left: 15px;
+    color: $color-main-light;
+  }
+}
+
+.icon__submit{
+  width: 32px;
+  height: 32px;
 }

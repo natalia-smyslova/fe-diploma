@@ -4,9 +4,12 @@ import { Form, InputNumber } from 'antd';
 import fieldParams from '../../fieldParams';
 import rules from '../../rules';
 
+import './PassportNumber.scss';
+
 
 function PassportNumber() {
   return (
+    <div className='passport__number'>
     <Form.Item
       label={fieldParams.docNumberPassLabel}
       name={fieldParams.docNumberPass}
@@ -19,7 +22,7 @@ function PassportNumber() {
         controls={false}
       />
     </Form.Item>
-
+    </div>
   )
 };
 

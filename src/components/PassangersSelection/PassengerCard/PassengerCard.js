@@ -5,8 +5,8 @@ import SpecialNeeds from './FormInputs/SpecialNeeds/SpeacialNeeds';
 import FullName from './FormInputs/FullName/FullName';
 // import BirthCertificate from './FormInputs/BirthCertificate/BirthCertificate';
 import DocTypeSelect from './FormInputs/DocTypeSelect/DocTypeSelect';
-// import PassportSeria from './FormInputs/PassportInfo/PassportSeria/PassportSeria';
-// import PassportNumber from './FormInputs/PassportInfo/PassportNumber/PassportNumber';
+import PassportSeria from './FormInputs/PassportInfo/PassportSeria/PassportSeria';
+import PassportNumber from './FormInputs/PassportInfo/PassportNumber/PassportNumber';
 import DateOfBirthPicker from './FormInputs/DateOfBirthPicker/DateOfBirthPicker';
 
 // import { Link } from 'react-router-dom';
@@ -17,49 +17,16 @@ import DateOfBirthPicker from './FormInputs/DateOfBirthPicker/DateOfBirthPicker'
 
 import minusRound from '../img/minus-round.svg';
 import cross from '../img/cross.svg';
+// import acceptIcon from '../img/accept.svg';
+import errorIcon from '../img/error.svg';
+
 // import plusRouns from '../img/plus-round.svg';
 
 import styles from './PassengerCard.module.scss';
 
 function PassengerCard() {
 
-  // const [form] = Form.useForm();
-
-  // const [expanded, setExpanded] = useState(true);
-  // const clickOnHeaderHandler = () => {
-  //   setExpanded(!expanded);
-  // };
-  // const buttonClosedCross = (
-  //   <button
-  //     type="button"
-  //     onClick={clickOnHeaderHandler}
-  //     className={styles.buttonClosedCross}
-  //   >
-  //     <img src={plusRound} alt="иконка - плюс" />
-  //     <span className={styles.text}>Пассажир</span>
-  //   </button>
-  // );
-
-
-  // const button = (
-  //   <Form.Item className={bottomSectionStyles}>
-  //     {!thisPassenger[0] && !disabledForwardBtn && (
-  //       <Button
-  //         type="primary"
-  //         htmlType="submit"
-  //         className="passengerCard__button"
-  //         disabled={disabledForwardBtn}
-  //       >
-  //         Следующий пассажир
-  //       </Button>
-  //     )}
-  //     {thisPassenger[0] && (
-  //       <button type="submit" className={styles.changeButton}>
-  //         Изменить
-  //       </button>
-  //     )}
-  //   </Form.Item>
-  // )
+  // const buttonClassNames = `button button__transperant-light ${styles.btn}`;
 
   return (
     <div className={styles.passangerCard}>
@@ -80,18 +47,29 @@ function PassengerCard() {
             <FullName />
             <div className={styles.sex__group}>
               <SexRadioGroup />
+              <DateOfBirthPicker />
             </div>
-            <DateOfBirthPicker />
+
           </div>
-          <div className={styles.row}>
+          <div className={styles.special__needs}>
             <SpecialNeeds />
           </div>
         </div>
         <div className={styles.section__second}>
           <DocTypeSelect />
+          <PassportSeria />
+          <PassportNumber />
         </div>
       </form>
-      <section className={styles.section__third}>section</section>
+      <section className={styles.section__third}>
+        <div className={styles.information}>
+          <div>
+            <img src={errorIcon} alt="иконка - галочка" className={styles.icon__submit}/>
+          </div>
+          <div className={styles.message__error}>СообщениеСообщение Сообщение Сообщение Сообщение Сообщение v v Сообщение Сообщение Сообщение Сообщение Сообщение </div>
+        </div>
+        {/* <button className={buttonClassNames} type="button"> Следующий пассажир</button> */}
+      </section>
     </div>
 
   )
