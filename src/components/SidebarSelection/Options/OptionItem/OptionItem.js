@@ -1,35 +1,33 @@
 import React from 'react';
 
+import on from './img/on.svg';
+// import off from './img/off.svg';
+
 import styles from './OptionItem.module.scss';
 
 function OptionItem({ img, title }) {
 
-  // const dispatch = useDispatch();
-  // const options = useSelector(selectOptions);
-
-  // const status = options[name];
-
-  // const clickHandler = () => {
-  //   dispatch(changeOptionsFields({ name, value: !status }));
-  //   onChangeOption();
-  // };
+  const imgIcon = on;
+  // const imgIcon = status ? on : off;
 
   return (
     <div className={styles.item}>
+      <div className={styles.item__left}>
       <img
         className={styles.item__icon}
         src={img}
         alt={`Иконка - ${title}`}
       />
       <div className={styles.item__title}>{title}</div>
+      </div>
 
-      {/* <button
+      <button
         type="button"
-        onClick={clickHandler}
+        // onClick={clickHandler}
         className={styles.item__status}
-      > */}
-        {/* <img src={imgIcon} alt="Иконка - переключатель" /> */}
-      {/* </button> */}
+      >
+        <img src={imgIcon} alt="Иконка - переключатель" />
+      </button>
     </div >
   )
 };

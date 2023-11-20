@@ -4,18 +4,30 @@
 .item {
   display: flex;
   align-items: center;
-  // justify-content: space-between;
-  width: 23px;
+  justify-content: space-between;
+  // width: 23px;
   margin-left: 6px;
 
-  // &__left {
-  //   display: flex;
-  //   align-items: baseline;
-  // }
+  &__left {
+    display: flex;
+    align-items: baseline;
+  }
 
   &__title {
     @include font($size: 1.8rem, $height: 2.1rem, $weight: 400, $text-transform: none);
     color: $color-main-light;
     margin: 17px 34px;
+  }
+}
+
+.item__icon{
+  width: 20px;
+  height: 20px;
+}
+
+.item__status {
+  img {
+    width: 72px;
+    height: 28px;
   }
 }
