@@ -21,6 +21,12 @@ function Direction({
   arrivalCity2,
   arrivalStation2
 }) {
+
+  const hours1 = Math.floor(duration1 / 3600); 
+  const minutes1 = Math.floor((duration1 - hours1 * 3600) / 60); 
+  const hours2 = Math.floor(duration2 / 3600); 
+  const minutes2 = Math.floor((duration2 - hours2 * 3600) / 60);
+
   return (
   <div className={styles.wrapper}>
     <div className={styles.direction__first}>
@@ -30,7 +36,7 @@ function Direction({
         <div className={styles.from__station}>{departureStation1}</div>
       </div>
       <div className={styles.from__time}>
-        <span className={styles.time__time}>{duration1}</span>
+        <span className={styles.time__time}>{hours1} : {minutes1}</span>
         <div className={styles.time__arrow}>
           <img src={arrowRight} alt="иконка - стрелка" />
         </div>
@@ -49,7 +55,7 @@ function Direction({
           <span className={styles.from__station}>{departureStation2}</span>
         </div>
         <div className={styles.from__time}>
-          <span className={styles.time__time}>{duration2}</span>
+          <span className={styles.time__time}>{hours2} : {minutes2}</span>
           <div className={styles.time__arrow}>
             <img src={arrowLeft} alt="иконка - стрелка" />
           </div>

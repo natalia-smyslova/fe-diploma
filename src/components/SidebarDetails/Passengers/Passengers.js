@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 
+import PassangerItem from './PassengerItem/PassengerItem';
+
 import passenger from './img/passenger.svg';
+import passengerTypes from '../../SeatsSelection/SelectionBlock/passangerTypes';
 
 import plus from '../img/plus.svg';
 import minus from '../img/minus.svg';
@@ -16,32 +19,16 @@ function Passengers() {
   };
 
   const exp = (
-    <div className={styles.expandBlock}>
-      <div className={styles.direction}>Туда</div>
-      <div className={styles.passengers}> Пассажиры
-        {/* <PassengersRow
-          className={styles.row}
-          number={numOfAdultsDep}
-          sum={sumDepAdults}
+    <div className={styles.expand__block}>
+      <div className={styles.passengers}>
+        <PassangerItem
+          // className={styles.row}
+          number={3}
+          sum={5}
           type={passengerTypes.adults}
         />
-        {numOfChildrenDep > 0 && childrenDep} */}
+        {/* {numOfChildrenDep > 0 && childrenDep} */}
       </div>
-{/* 
-      {numOfAdultsArr + numOfChildrenArr > 0 && ( */}
-        {/* <> */}
-          <div className={styles.direction}>Обратно</div>
-          <div className={styles.passengers}> Пассажиры
-            {/* <PassengersRow
-              className={styles.row}
-              number={numOfAdultsArr}
-              sum={sumArrAdults}
-              type={passengerTypes.adults}
-            />
-            {numOfChildrenArr > 0 && childrenArr} */}
-          </div>
-        {/* </> */}
-      {/* )} */}
     </div>
   );
 

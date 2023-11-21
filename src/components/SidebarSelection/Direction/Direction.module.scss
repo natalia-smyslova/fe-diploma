@@ -1,0 +1,38 @@
+@import '../../../scss/mixins';
+@import '../../../scss/constants';
+
+.wrapper {
+  padding: 24px 35px 30px 32px;
+  border-bottom: 1px solid $color-secondary-light;
+
+  &:last-of-type {
+    border: none;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+.header__left {
+  display: flex;
+}
+
+.direction__text {
+  @include font($size: 3rem, $height: 3.5rem, $weight: 700, $text-transform: none);
+  color: $color-main-light;
+  margin-left: 12px;
+}
+
+.title__left,
+.title__right{
+  @include font($size: 2.4rem, $height: 2.8rem, $weight: 400, $text-transform: none);
+  color: $color-secondary-light;
+}
+
+.title__right{
+  margin-left: 135px;
+  margin-top: 45px;
+}

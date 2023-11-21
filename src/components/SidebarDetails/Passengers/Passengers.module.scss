@@ -3,7 +3,7 @@
 
 
 .section {
-  padding: 14px 27px 34px 29px;
+  padding: 14px 27px 0 29px;
   border-bottom: 1px solid $color-secondary-light;
 }
 
@@ -16,4 +16,9 @@
 .top{
   display: flex;
   justify-content: space-between;
+  margin-bottom: 33px;
+}
+
+.expand__block{
+  margin-bottom: 47px;
 }

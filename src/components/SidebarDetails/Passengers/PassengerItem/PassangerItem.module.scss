@@ -1,0 +1,24 @@
+@import '../../../../scss/constants';
+@import '../../../../scss/mixins';
+
+.passengerType {
+
+  @include font($size: 1.8rem, $height: 2.1rem, $weight: 400, $text-transform: capitalize);
+  color: $color-secondary-light;
+}
+
+.sum {
+  @include font($size: 2.4rem, $height: 2.8rem, $weight: 700, $text-transform: none);
+  color: $color-main-light;
+  display: flex;
+
+  .currency {
+    margin-left: 5px;
+  }
+}
+
+.row{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

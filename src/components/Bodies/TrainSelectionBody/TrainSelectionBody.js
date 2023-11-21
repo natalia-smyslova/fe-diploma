@@ -1,39 +1,43 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
-import ProgressBar from '../../ProgressBar/ProgressBar';
+import { useSelector, useDispatch } from 'react-redux';
 
-import LoadingAnimation from '../../LoadingAnimation/LoadingAnimation';
+import ProgressBar from '../../ProgressBar/ProgressBar';
 import LastTickets from '../../LastTickets/LastTickets';
 import SidebarSelection from '../../SidebarSelection/SidebarSelection';
 import TrainSelection from '../../TrainSelection/TrainSelection';
-// import Filters from '../../TrainSelection/Filters/Filters';
-
 import PaginationBlock from '../../TrainSelection/PaginationBlock/PaginationBlock';
 
 import styles from './TrainSelectionBody.module.scss';
 
+import { changeOffset, setCurrentPage } from '../../../store/slices/sortSlice';
 
 function TrainSelectionBody() {
-  const loading = useSelector(state => state.trains.loading);
+  const dispatch = useDispatch();
+  const total = useSelector(state => state.trains.totalCount);
+  const limit = useSelector(state => state.sort.limit);
+  const currentPage = useSelector(state => state.sort.currentPage);
+
+  const onChangePage = value => {
+    dispatch(setCurrentPage(value));
+    dispatch(changeOffset(limit * (value - 1)));
+  }
 
   return (
     <>
       <ProgressBar step={1} /> 
-      {loading && <LoadingAnimation />}
       <div className={styles.body}>    
         <div className={styles.body__left}>
           <SidebarSelection />
           <LastTickets />
         </div>
         <div>
-          {/* <Filters /> */}
           <div className={styles.body__rigt}>
             <TrainSelection />
             <PaginationBlock
-              current={5}
-              // onChange={onChangePage}
-              total={5}
-              pageSize={50}
+              current={currentPage}
+              onChange={onChangePage}
+              total={total}
+              pageSize={limit}
             />
           </div>
         </div>

@@ -27,6 +27,7 @@
         "react/prop-types": 0,
         "dot-notation": 0,
         "no-param-reassign": 0,
-        "jsx-a11y/click-events-have-key-events": "off"
+        "jsx-a11y/click-events-have-key-events": "off",
+        "prefer-destructuring": ["error", {"object": true, "array": false}]
     }
 }

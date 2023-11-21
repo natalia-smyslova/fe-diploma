@@ -7,12 +7,6 @@ import Direction from './Direction/Direction';
 import Train from './Train/Train';
 import Seats from './Seats/Seats';
 
-// import arrowRight from './img/arrow-right.svg'; 
-// import arrowLeft from './img/arrow-left.svg'; 
-
-// import links from '../../../utils/constants/links'; 
-// import directions from '../../../utils/constants/directions'; 
-
 import styles from './TrainCard.module.scss';
 
 import { setTrains } from '../../../store/slices/trainSlice';
@@ -53,7 +47,7 @@ function TrainCard({ ticket, id }) {
           departureTime1={dayjs.unix(ticket.departure.from.datetime).format('HH:mm')}
           departureCity1={ticket.departure.from.city.name}
           departureStation1={ticket.departure.from.railway_station_name}
-          duration1={dayjs(ticket.departure.duration * 1000).format('HH:mm')}
+          duration1={ticket.departure.duration}
           arrivalTime1={dayjs.unix(ticket.departure.to.datetime).format('HH:mm')}
           arrivalCity1={ticket.departure.to.city.name}
           arrivalStation1={ticket.departure.to.railway_station_name}
@@ -61,7 +55,7 @@ function TrainCard({ ticket, id }) {
           departureCity2={ticket.arrival?.from.city.name}
           departureStation2={ticket.arrival?.from.railway_station_name}
           /* eslint-disable-next-line no-unsafe-optional-chaining */
-          duration2={dayjs(ticket.arrival?.duration * 1000).format('HH:mm')}
+          duration2={ticket.arrival?.duration}
           arrivalTime2={dayjs.unix(ticket.arrival?.to.datetime).format('HH:mm')}
           arrivalCity2={ticket.arrival?.to.city.name}
           arrivalStation2={ticket.arrival?.to.railway_station_name}

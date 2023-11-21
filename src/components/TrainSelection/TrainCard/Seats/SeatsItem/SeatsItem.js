@@ -3,12 +3,11 @@
 import React from 'react';
 import { Popover } from 'antd';
 
-import PopoverItem from './PopoverItem/PopoverItem';
+import PopoverCustom from './Popover/PopoverCustom';
 import currency from '../img/currency.svg';
 
 import './Popover.scss';
 import styles from './SeatsItem.module.scss';
-
 
 function SeatsItem({ type, seatNumber, priceInfoDeparture, priceInfoArrival }) {
 
@@ -30,13 +29,12 @@ function SeatsItem({ type, seatNumber, priceInfoDeparture, priceInfoArrival }) {
 
   const minPrice = getMinPrice();
 
-  const popoverContent = <PopoverItem />;
-  // type={type} priceDep={priceDep} priceArr={priceArr} 
+  const popoverContent = <PopoverCustom seatNumber={seatNumber} type={type} priceInfoDeparture={priceInfoDeparture} priceInfoArrival={priceInfoArrival} />;
 
 
   return (
     <Popover
-      overlayClassName="right-part"
+      overlayClassName="seats"
       content={popoverContent}
       placement="bottom"
     >

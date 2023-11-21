@@ -1,0 +1,25 @@
+@import '../../../scss/constants';
+@import '../../../scss/mixins';
+
+
+.section{
+padding: 55px 0 64px 35px;
+width: 960px;
+border-bottom: 1px dashed $color-grey;
+&:last-of-type{
+  border: none;
+}
+}
+
+.onlinePayments{
+  display: flex;
+  margin-top: 28px;
+  margin-left: -40px;
+  
+}
+
+.paymentMethod{
+  @include font($size: 2.4rem, $weight: 700, $height: 2.8rem, $text-transform: none);
+  color: $color-main-dark;
+  margin-right: 56px;
+}

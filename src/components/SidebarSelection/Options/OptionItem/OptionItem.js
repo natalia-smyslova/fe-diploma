@@ -1,33 +1,39 @@
 import React from 'react';
-
-import on from './img/on.svg';
-// import off from './img/off.svg';
+import { useDispatch, useSelector } from 'react-redux';
 
 import styles from './OptionItem.module.scss';
 
-function OptionItem({ img, title }) {
+import { changeOptions } from '../../../../store/slices/optionsSlice';
 
-  const imgIcon = on;
-  // const imgIcon = status ? on : off;
+function OptionItem({ img, title, name, onChangeOption }) {
+
+  const dispatch = useDispatch();
+  const options = useSelector(state => state.options.options);
+
+  const status = options[name];
+
+  const changeOptionHandler = () => {
+    dispatch(changeOptions({ name, value : !status }));
+    onChangeOption();
+  }
 
   return (
     <div className={styles.item}>
       <div className={styles.item__left}>
-      <img
-        className={styles.item__icon}
-        src={img}
-        alt={`Иконка - ${title}`}
-      />
-      <div className={styles.item__title}>{title}</div>
+        <img
+          className={styles.item__icon}
+          src={img}
+          alt={`Иконка - ${title}`}
+        />
+        <div className={styles.item__title}>{title}</div>
       </div>
 
-      <button
-        type="button"
-        // onClick={clickHandler}
-        className={styles.item__status}
-      >
-        <img src={imgIcon} alt="Иконка - переключатель" />
-      </button>
+      <div className={styles.container}> 
+        <label className={styles.switch} htmlFor={name} > 
+          <input type='checkbox' id={name} onChange={changeOptionHandler} defaultChecked={status} /> 
+          <span className={styles['slider-round']} />
+        </label> 
+      </div>
     </div >
   )
 };

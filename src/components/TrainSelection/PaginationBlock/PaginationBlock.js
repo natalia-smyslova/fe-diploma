@@ -7,11 +7,13 @@ function PaginationBlock({ current, onChange, total, pageSize }) {
   return (
     <section className="pagination">
       <Pagination
-        defaultCurrent={current}
+        defaultCurrent={1}
+        current={current}
         total={total}
-        // hideOnSinglePage
+        defaultPageSize={5}
+        hideOnSinglePage
         onChange={onChange}
-        // showLessItems
+        showLessItems
         showSizeChanger={false}
         pageSize={pageSize}
       />

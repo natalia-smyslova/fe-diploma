@@ -13,6 +13,7 @@ import { Slider } from 'antd';
 // import 'antd/dist/antd.css';
 // import './TimeSlider.scss';
 import styles from './TimeSlider.module.scss';
+import './TimeSlider.scss';
 
 function TimeSlider() {
   // const dispatch = useDispatch();
@@ -40,7 +41,7 @@ function TimeSlider() {
         tooltip={{
           open: true,
           placement: 'bottom',
-          formatter,
+          // formatter,
         }}
         step={10}
         min={min}

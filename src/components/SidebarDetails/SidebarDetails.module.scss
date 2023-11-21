@@ -3,18 +3,19 @@
 
 .wrapper {
   background-color: $color-bars;
-  width: 360px;
+  width: 361px;
 }
 
 .title {
   @include font($size: 3rem, $height: 3.5rem, $weight: 500);
-  color: $color-main-light;
+  color: $color-secondary-light;
   padding: 35px 45px;
+  width: 361px;
   border-bottom: 1px solid $color-secondary-light;
 }
 
 .section__total{
-height: 109px;
+// height: 109px;
 padding: 30px 27px 33px 28px;
 display: flex;
 justify-content: space-between;

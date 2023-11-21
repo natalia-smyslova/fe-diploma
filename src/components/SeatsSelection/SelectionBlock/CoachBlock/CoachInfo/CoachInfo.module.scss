@@ -1,0 +1,73 @@
+@import '../../../../../scss/mixins';
+@import '../../../../../scss/constants';
+
+.top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.service {
+  display: flex;
+  flex-direction: column;
+}
+
+.coach__wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 161px;
+  width: 190px;
+  padding: 30px 59px 32px 32px;
+  background-color: $color-options;
+}
+
+.coach__number {
+  color: $color-main-dark;
+  @include font($size: 7.2rem, $height: 8.4rem, $weight: 700, $text-transform: none);
+}
+
+.coach__name {
+  color: $color-main-dark;
+  @include font($size: 2.4rem, $height: 2.8rem, $weight: 400, $text-transform: none);
+}
+
+.service__header {
+  display: flex;
+  margin: 33px 45px 17px 0;
+}
+
+.service__provider {
+  color: $color-bars-light;
+  @include font($size: 1.8rem, $height: 2.1rem, $weight: 400);
+  margin-left: 10px;
+}
+
+.service__text,
+.price__header,
+.seats__text {
+  color: $color-grey;
+  @include font($size: 1.8rem, $height: 2.1rem, $weight: 400, $text-transform: none);
+}
+
+.seats__header {
+  display: flex;
+  margin-top: 33px;
+}
+
+.seats__total {
+  color: $color-main-dark;
+  @include font($size: 1.8rem, $height: 2.1rem, $weight: 400, $text-transform: none);
+}
+
+.price__header {
+  margin-top: 33px;
+}
+
+.seats__header, 
+.price__header{
+  margin-bottom: 21px;
+}
+
+.seats__text{
+  margin-right: 10px;
+}

@@ -3,7 +3,7 @@ import React from 'react';
 import OptionItem from './OptionItem/OptionItem';
 import options from '../../../utils/constants/options';
 
-function Options() {
+function Options({ onChangeOption }) {
   return (
     <div>
       {options.map((item) => (
@@ -12,7 +12,8 @@ function Options() {
           title={item.title}
           img={item.img}
           name={item.name}
-          // onChangeOption={onChangeOption}
+          value={item.value}
+          onChangeOption={onChangeOption}
         />
       ))}
     </div>

@@ -1,0 +1,19 @@
+@import '../../../../../../scss/constants';
+@import '../../../../../../scss/mixins';
+
+// .wrapper{
+//   display: flex;
+// }
+
+.price__amount{
+  display: flex;
+  margin-bottom: 24px;
+  &:last-of-type{
+    margin-bottom: 0;
+  }
+}
+
+.price__number{
+  @include font($size: 2.4rem, $height: 2.8rem, $weight: 700, $text-transform: none);
+  color: $color-main-dark;
+}

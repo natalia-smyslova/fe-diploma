@@ -7,7 +7,6 @@ import userReviews from '../Reviews/users/userReviews';
 
 import styles from './CarouselSlider.module.scss';
 
-
 function CarouselSlider() {
 
   // const onChange = (currentSlide) => {

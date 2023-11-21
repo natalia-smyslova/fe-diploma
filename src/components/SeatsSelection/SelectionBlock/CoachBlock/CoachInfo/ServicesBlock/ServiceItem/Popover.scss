@@ -1,0 +1,16 @@
+@import '../../../../../../../scss/constants';
+@import '../../../../../../../scss/mixins';
+@import '../../../../../../../scss/placeholders';
+
+.icons-tooltip {
+  background: $color-popover;
+  @extend %box-shadow-popover;
+  padding: 10px;
+  border-radius: 8px;
+
+  .ant-tooltip-inner {
+    @include font($size: 1.6rem, $height: 1.9rem, $weight: 400, $text-transform: none);
+    color: $color-main-dark;
+    text-align: center;
+  }
+}

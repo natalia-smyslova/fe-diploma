@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import links from '../../../../utils/constants/links';
 import SeatsItem from './SeatsItem/SeatsItem';
 
-// import foodIcon from './img/food.svg';
 import conditionerIcon from './img/conditioner.svg';
 import wifiIcon from './img/wifi.svg';
 import expressIcon from './img/express.svg';
@@ -34,14 +33,6 @@ function Seats({ availableSeats, priceInfoDeparture, priceInfoArrival, wifi, air
     </div>
   );
 
-  // const foodImg = (
-  //   <div className={styles.icons__content}>
-  //     <img src={foodIcon} alt="иконкa еда" />
-  //   </div>
-  // );
-
-
-
   const buttonClassNames = `button button-colored ${styles.btn}`;
 
   return (
@@ -67,7 +58,6 @@ function Seats({ availableSeats, priceInfoDeparture, priceInfoArrival, wifi, air
         {wifi && wifiImg}
         {airConditioning && conditionerImg}
         {isExpress && expressImg}
-        {/* {foodImg} */}
       
       </div>
       <div>

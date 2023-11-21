@@ -25,7 +25,7 @@ function Filters() {
       label: 'времени',
     },
     {
-      value: 'min_price',
+      value: 'price_min',
       label: 'стоимости',
     },
     {
@@ -34,13 +34,11 @@ function Filters() {
     },
   ];
 
-
   return (
     <section className={styles.filters}>
       <div className={styles.found}>найдено {totalCount || 0}</div>
       <div className={styles.sort}>
-        <div className={styles.sorting}>сортировать по:</div>
-        <div>
+        <div className={styles.sorting}>сортировать по:
           <SelectionFilter key={onChangeFilter} sortOptions={sortOptions} onChangeFilter={onChangeFilter}
           />
         </div>

@@ -19,12 +19,12 @@ function Direction() {
     <div className={styles.expandBlock}>
       <div className={styles.row}>
         <div className={styles.number}>№ Поезда
-        <div className={styles.number__left}>101C</div>
+          <div className={styles.number__left}>101C</div>
         </div>
         <div className={styles.name}> Название
-        <div className={styles.name__left}>Белые ночи</div>
+          <div className={styles.name__left}>Белые ночи</div>
           {/* {train?.train?.name} */}
-          </div>
+        </div>
       </div>
       <div className={styles.totalTime}> 9:09
         {/* {secsToTime(train?.duration)} */}
@@ -35,9 +35,9 @@ function Direction() {
             <span className={styles.time}> 10:10
               {/* {datetimeToTime(train?.from?.datetime)} */}
             </span>
-            <span className={styles.date}> 02.07.2024
+            <div className={styles.date}> 02.07.2024
               {/* {datetimeToDate(train?.from?.datetime)} */}
-            </span>
+            </div>
           </div>
 
           <div className={styles.arrow}>
@@ -57,8 +57,8 @@ function Direction() {
           <div className={styles.direction}>
             <span className={styles.city}> Москва
               {/* {train?.from?.city?.name} */}
-              </span>
-            <span className={styles.station}> Станция 
+            </span>
+            <span className={styles.station}> Станция
               {/* {train?.from?.railway_station_name} */}
             </span>
             <span className={styles.station}>вокзал</span>
@@ -66,8 +66,8 @@ function Direction() {
           <div className={`${styles.direction} ${styles.right}`}>
             <span className={styles.city}> Архангельск
               {/* {train?.to?.city?.name} */}
-              </span>
-            <span className={styles.station}> Станция 
+            </span>
+            <span className={styles.station}> Станция
               {/* {train?.to?.railway_station_name} */}
             </span>
             <span className={styles.station}>вокзал</span>
@@ -90,7 +90,7 @@ function Direction() {
         <button
           className={styles.button}
           type="button"
-        onClick={clickHandler}
+          onClick={clickHandler}
         >
           <img
             className={styles.expand}

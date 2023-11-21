@@ -1,53 +1,28 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
 import { Slider, ConfigProvider } from 'antd';
-// import styled from "styled-components";
 
-import styles from './PriceSlider.module.scss';
+import './PriceSlider.scss';
 
+import { changePrice } from '../../../store/slices/priceSlice';
 
+function PriceSlider({ onChangePrice }) {
+  const dispatch = useDispatch();
+  const price = useSelector(state => state.price.price);
 
-// const SliderWrapper = styled(Slider)`
-// > ant-slider >*{
-//   display: flex;
-//   flex-wrap: nowrap;
-// }
-// >.ant-slider:hover.ant-slider-track .ant-tooltip-oper{
-//   background-color: #ffa800;
-// }
-// >.ant-slider-track{
-//   background-color: #ffa800;
-// }
-// > .ant-slider-rail {
-//   background: transparent;
-//   height: 19px;
-//   border-radius: 8px;
-//   border: 1px solid #C4C4C4;
-// }
-// >.ant-slider-track-draggable{
-//   background: #ffa800;
-//   height: 19px;
-//   border-radius: 8px;
-// }
+  const min = 0;
+  const max = 5000;
 
-// > .ant-slider-handle {
-//   background: #ffffff;
-//   height: 24px;
-//   width: 24px;
-//   border-radius: 100%;
-// }
-// > .ant-slider-handle::before{
-//   content: none;
-// }
-// > .ant-slider-handle::after{
-//   content: none;
-// }
-// `;
+  const defaultValue = price.min || price.max ? [price.min, price.max] : [min, max];
 
-
-function PriceSlider() {
+  const changeHandler = value => {
+    dispatch(changePrice(value));
+    onChangePrice();
+  }
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.top}>
+    <div className="wrapper">
+      <div className="top">
         <span>от</span>
         <span>до</span>
       </div>
@@ -65,28 +40,28 @@ function PriceSlider() {
                 railSize: 19,
                 handleSize: 19,
               },
-              token: {
-                colorPrimaryBorderHover:'#ffffff',
-                colorPrimaryBorder:'#ffffff',
-                colorPrimary:'#ffffff',
-              }
+              // token: {
+              //   colorPrimaryBorderHover: '#ffffff',
+              //   colorPrimaryBorder: '#ffffff',
+              //   colorPrimary: '#ffffff',
+              // }
             },
           }}
         >
           <Slider
-            range={{
-              draggableTrack: true,
+            range
+            tooltip={{
+              open: true,
+              placement: 'bottom',
             }}
-            defaultValue={[20, 50]} />
+            defaultValue={defaultValue} 
+            step={5}
+            min={min}
+            max={max}
+            onAfterChange={changeHandler}
+            
+            />
         </ConfigProvider>
-        {/* <SliderWrapper
-          range={{
-            draggableTrack: true,
-          }}
-          defaultValue={[20, 50]}
-          min={0}
-          max={10000}
-        /> */}
       </div>
     </div>
   )

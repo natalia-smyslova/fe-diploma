@@ -2,9 +2,7 @@
 @import '../../../../../scss/constants';
 @import '../../../../../scss/placeholders';
 
-
-
-.right-part .ant-popover {
+.seats .ant-popover {
   background: $color-popover;
   @extend %box-shadow-popover;
   padding: 0;

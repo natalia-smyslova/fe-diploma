@@ -8,7 +8,7 @@ import DocTypeSelect from './FormInputs/DocTypeSelect/DocTypeSelect';
 import PassportSeria from './FormInputs/PassportInfo/PassportSeria/PassportSeria';
 import PassportNumber from './FormInputs/PassportInfo/PassportNumber/PassportNumber';
 import DateOfBirthPicker from './FormInputs/DateOfBirthPicker/DateOfBirthPicker';
-
+import PassengerTypeSelect from './FormInputs/PassengerTypeSelect/PassengerTypeSelect';
 // import { Link } from 'react-router-dom';
 
 // import directions from '../../../utils/constants/directions';
@@ -44,6 +44,7 @@ function PassengerCard() {
       <form className={styles.card__form}>
         <div className={styles.section__first}>
           <div className={`${styles.row} ${styles.rowShort}`}>
+            <PassengerTypeSelect />
             <FullName />
             <div className={styles.sex__group}>
               <SexRadioGroup />

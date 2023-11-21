@@ -3,7 +3,7 @@
 
 
 .section {
-  padding: 21px 27px 26px 28px;
+  padding: 21px 27px 34px 28px;
   border-bottom: 1px solid $color-secondary-light;
 }
 
@@ -22,10 +22,19 @@
 .wrapperTop {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .header {
   display: flex;
+  align-items: center;
+
+  >img {
+    width: 32px;
+    height: 26px;
+    width: 100%;
+    margin: 0;
+  }
 }
 
 .button {
@@ -76,7 +85,7 @@
 
 .date {
   @include font($size: 1.8rem, $weight: 400, $height: 2.1rem, $text-transform: none);
-  color: $color-grey;
+  color: $color-main-light;
 }
 
 .city {

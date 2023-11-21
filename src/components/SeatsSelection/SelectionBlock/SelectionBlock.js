@@ -5,6 +5,7 @@ import DirectionInfo from './DirectionInfo/DirectionInfo';
 import TicketsNumber from './TicketsNumber/TicketsNumber';
 import CoachType from './CoachType/CoachType';
 import Coaches from './Coaches/Coaches';
+import CoachBlock from './CoachBlock/CoachBlock';
 
 import links from '../../../utils/constants/links';
 
@@ -38,6 +39,8 @@ function SelectionBlock({ direction }) {
       <TicketsNumber direction={direction} />
       <CoachType direction={direction} />
       <Coaches direction={direction} />
+      <CoachBlock />
+
       {/* <NumberOfPassengers
         direction={direction}
         adultSeats={adultSeats}

@@ -10,11 +10,17 @@
 
 .sort {
   display: flex;
+  // margin-left: 363px;
+  // margin-right: 4px;
 }
 
 .sorting {
   @include font($size: 1.8rem, $height: 2.1rem, $weight: 400, $text-transform: none);
   color: $color-grey;
+  width: 270px;
+  display: flex;
+  flex-wrap: nowrap;
+  text-wrap: nowrap;
 }
 
 .found {

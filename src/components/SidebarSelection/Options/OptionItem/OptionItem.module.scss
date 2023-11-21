@@ -31,3 +31,49 @@
     height: 28px;
   }
 }
+
+.switch {
+  display: inline-block;
+  height: 20px;
+  position: relative;
+  width: 72px;
+  background-color: $color-main-light;
+  border-radius: 10px;
+
+  & input {
+    display: none;
+  }
+}
+
+.slider-round {
+  border-radius: 10px;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $color-main-light;
+  transition: 500ms;
+
+  &:before {
+    position: absolute;
+    content: "";
+    height: 28px;
+    width: 28px;
+    left: 0;
+    bottom: -5px;
+    border-radius: 50%;
+    background-color: $color-bars-light;
+    transition: 500ms;
+  }
+}
+
+input:checked + .slider-round {
+  background-color: $color-checked-background;
+}
+
+input:checked + .slider-round:before {
+  background-color: $color-primary;
+  transform: translateX(44px);
+}

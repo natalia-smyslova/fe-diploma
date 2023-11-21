@@ -1,0 +1,23 @@
+@import '../../../../scss/mixins';
+@import '../../../../scss/constants';
+
+
+.phone__input {
+
+  .ant-input-number-affix-wrapper.inputField {
+    width: 360px;
+    height: 50px;
+    border: 1px solid $color-grey;
+  }
+
+  .ant-input-number-input{
+    color: $color-main-dark;
+    @include font($size: 2.4rem, $height: 2.8rem, $weight: 400, $text-transform: none);
+  }
+  .ant-input-number-prefix{
+    color: $color-bars-light;
+    // color: $color-main-dark;
+    @include font($size: 2.4rem, $height: 2.8rem, $weight: 400, $text-transform: none);
+  }
+
+}

@@ -1,0 +1,13 @@
+@import '../../../../scss/constants';
+@import '../../../../scss/mixins';
+
+.wrapper {
+  .top {
+    @include font($size: 1.8rem, $height: 2.1rem, $weight: 400, $text-transform: none);
+    color: $color-main-light;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  padding-bottom: 20px;
+}

@@ -3,6 +3,11 @@ import { useNavigate } from 'react-router-dom';
 
 import { Form } from 'antd';
 
+import FullName from '../PassangersSelection/PassengerCard/FormInputs/FullName/FullName';
+import PhoneInput from './PaymentInputs/PhoneInput/PhoneInput';
+import EmailInput from './PaymentInputs/EmailInput/EmailInput';
+import PaymentRadio from './PaymentRadio/PaymentRadio';
+
 import links from '../../utils/constants/links';
 import styles from './PaymentOptions.module.scss';
 
@@ -30,13 +35,17 @@ function PaymentOptions() {
             <span className={styles.text}>Персональные данные</span>
           </div>
           <div className={styles.section__first}>
-            fdakl
+            <div className={styles.name}>
+            <FullName />
+            </div>
+            <PhoneInput />
+            <EmailInput />
           </div>
           <div className={styles.header}>
             <span className={styles.text}>Способ оплаты</span>
           </div>
           <div className={styles.section__second}>
-            fafsg
+            <PaymentRadio />
           </div>
         </Form>
       </div>

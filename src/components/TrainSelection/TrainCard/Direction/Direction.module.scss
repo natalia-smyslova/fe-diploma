@@ -60,4 +60,6 @@ margin-bottom: 61px;
   @include font($size: 1.8rem, $height: 2.1rem, $weight: 400, $text-transform: none);
   width: 10%;
   margin-right: 39px;
+  display: inline-block;
+  text-wrap: nowrap;
 }

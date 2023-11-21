@@ -1,61 +1,66 @@
 import React from 'react';
 
+import PricesBlock from './PricesBlock/PricesBlock';
+import ServicesBlock from './ServicesBlock/ServicesBlock';
+import SeatsBlock from './SeatsBlock/SeatsBlock';
+
 import styles from './CoachInfo.module.scss';
 
 function CoachInfo() {
   return (
     <>
       {/* {availableSeats.length > 0 && ( */}
-        <div className={className}>
+        <div>
           <div className={styles.top}>
-            <div className={styles.coachNumber}>
-              <span className={styles.coachNumber__name}>
-                Название вагона
+            <div className={styles.coach__wrapper}>
+              <div className={styles.coach__number}>
+                12
                 {/* {coach?.coach?.name} */}
-              </span>
-              <span className={styles.coachNumber__coach}>вагон</span>
+              </div>
+              <div className={styles.coach__name}>вагон</div>
             </div>
             <div className={styles.seats}>
-              <div className={styles.header}>
-                <span>места</span>
-                <span className={styles.seatsTotal}>
-                  Доступные места
+              <div className={styles.seats__header}>
+                <div className={styles.seats__text}>Места</div>
+                <div className={styles.seats__total}>
+                  13
                   {/* {availableSeats?.length} */}
-                </span>
+                </div>
               </div>
-              <SeatsTable
-                coach={coach}
-                numOfTop={numOfTop}
-                numOfBottom={numOfBottom}
-                numOfSide={numOfSide}
-                numOfSeats={availableSeats?.length}
+              <SeatsBlock
+                // coach={coach}
+                // numOfTop={numOfTop}
+                // numOfBottom={numOfBottom}
+                // numOfSide={numOfSide}
+                // numOfSeats={availableSeats?.length}
               />
             </div>
             <div className={styles.price}>
-              <div className={styles.header}>стоимость</div>
-              <PricesTable
-                coach={coach}
-                numOfTop={numOfTop}
-                numOfBottom={numOfBottom}
-                numOfSide={numOfSide}
+              <div className={styles.price__header}>Стоимость</div>
+              <PricesBlock
+                // coach={coach}
+                // numOfTop={numOfTop}
+                // numOfBottom={numOfBottom}
+                // numOfSide={numOfSide}
               />
             </div>
 
             <div className={styles.service}>
-              <div className={styles.header}>
-                <span>обслуживание</span>
-                <span className={styles.serviceProvider}>фпк</span>
+              <div className={styles.service__header}>
+                <div className={styles.service__text}>Обслуживание</div>
+                <div className={styles.service__provider}>фпк</div>
               </div>
 
-              <CoachServices
-                direction={direction}
-                coachName={coachName}
+              <ServicesBlock
+                // direction={direction}
+                // coachName={coachName}
               />
             </div>
           </div>
-          {viewers}
+          {/* {viewers} */}
           <div className={styles.bottom}>
-            <Seats
+            seats
+            {/* <Seats
               adultSeats={adultSeats}
               childrenSeats={childrenSeats}
               direction={direction}
@@ -64,7 +69,7 @@ function CoachInfo() {
               classType={coach?.coach?.class_type}
               prices={prices}
               coachName={coachName}
-            />
+            /> */}
           </div>
         </div>
       {/* )} */}
