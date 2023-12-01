@@ -3,20 +3,22 @@ import React from 'react';
 import styles from './PaymentCard.module.scss';
 
 function PaymentCard() {
+  const buttonClassNames = `button button__transperant-light ${styles.btn}`;
+
   return (
     <div className={styles.card}>
       <div className={styles.header}>Способ оплаты</div>
       <div className={styles.info}>
         <div className={styles.left}>
           <div className={styles.payment}>
-            sggsggr
+            Наличными
             {/* {paymentOption === paymentTypes.cashEng
               ? paymentTypes.cash
               : paymentTypes.online} */}
           </div>
         </div>
         <div className={styles.right}>
-          aegaeg
+          <button type='button' className={buttonClassNames}>Изменить</button>
           {/* {editBtnMaker(links.paymentOptions)} */}
         </div>
       </div>

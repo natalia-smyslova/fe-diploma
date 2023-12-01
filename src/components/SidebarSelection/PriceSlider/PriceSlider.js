@@ -39,12 +39,7 @@ function PriceSlider({ onChangePrice }) {
                 dotBorderColor: '#ffffff',
                 railSize: 19,
                 handleSize: 19,
-              },
-              // token: {
-              //   colorPrimaryBorderHover: '#ffffff',
-              //   colorPrimaryBorder: '#ffffff',
-              //   colorPrimary: '#ffffff',
-              // }
+              }
             },
           }}
         >

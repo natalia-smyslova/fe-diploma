@@ -8,6 +8,7 @@
 .form {
   @include font($size: 1.6rem, $height: 1.9rem, $weight: 400, $text-transform: none);
   display: flex;
+  justify-content: space-around;
 
   .formItem {
     margin-bottom: 49px;
@@ -17,9 +18,12 @@
     justify-content: flex-start;
     align-items: center;
     color: $color-grey;
+    width: 30%;
+    border: 1px solid transparent;
 
     &:hover {
-      background-color: $color-options;
+      // background-color: $color-options;
+      border: 1px solid $color-options;
     }
 
     &:focus-within {

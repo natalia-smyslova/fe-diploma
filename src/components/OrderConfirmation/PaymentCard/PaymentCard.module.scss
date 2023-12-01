@@ -2,16 +2,43 @@
 @import '../../../scss/constants';
 @import '../../../scss/placeholders';
 
-.card{
+.card {
   @extend %box-shadow-selection-block;
   @include card($border: none, $margin-bottom: 45px);
 }
 
-.header{
+.header {
   height: 100px;
   background-color: $color-main-light;
   padding: 32px 0 32px 32px;
-  border-bottom: 1px solid $color-grey; 
-  @include font($size: 3rem, $height: 3.5rem, $weight:400, $text-transform: none);
+  border-bottom: 1px solid $color-grey;
+  @include font($size: 3rem, $height: 3.5rem, $weight: 400, $text-transform: none);
+  color: $color-main-dark;
+}
+
+.info {
+  display: flex;
+  height: 146px;
+}
+
+.left {
+  width: 680px;
+  border-right: 1px dashed $color-secondary-light;
+  padding: 44px 0 76px 33px;
+}
+
+.payment {
+  @include font($size: 2.4rem, $height: 2.8rem, $weight: 400, $text-transform: none);
+  color: $color-main-dark;
+}
+
+.right {
+  padding: 86px 23px 21px 23px;
+}
+
+.btn {
+  // margin: 86px 23px 21px;
+  padding: 12px 60px;
+  @include font($size: 2.4rem, $height: 2.8rem, $weight: 700, $text-transform: none);
   color: $color-main-dark;
 }

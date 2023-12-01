@@ -11,15 +11,15 @@ function OrderConfirmation() {
 
   // const navigate = useNavigate();
 
-  const buttonClassNames = `button button-colored ${styles.btn}`;
+  const buttonClassNames = `button button__transperant-light ${styles.btn}`;
 
   return (
     <div className={styles.wrapper}>
       <FinalTrainCard />
       <AllPassengersCard />
       <PaymentCard />
-      <div className={buttonClassNames}>
-        <button type="submit">
+      <div >
+        <button  className={buttonClassNames} type="submit">
           подтвердить
         </button>
       </div>

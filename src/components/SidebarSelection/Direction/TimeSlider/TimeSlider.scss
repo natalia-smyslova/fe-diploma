@@ -1,40 +1,16 @@
 @import '../../../../scss/constants';
 @import '../../../../scss/mixins';
 
-.ant-slider.time-slider.ant-slider-horizontal{
-  background-color: transparent;
+.ant-slider-rail {
   border: 1px solid $color-bars-light;
   border-radius: 8px;
-  width: 299px;
-  height: 10px;
+  width: 294px;
+  // height: 19px;
 }
 
-// .time-slider {
-//   &-handle {
-
-//     position: absolute;
-//     height: 18px;
-//     width: 10px;
-
-//     background-color: $color-main-light;
-//     border: 0;
-//     cursor: pointer;
-//   }
-
-//   &-rail {
-//     // @include border($border);
-//     width: 100%;
-//     background-color: $color-bars;
-//   }
-//   &-track {
-//     // @include border($border);
-//     background-color: $color-primary;
-//   }
-
-// }
-
-
-// .ant-tooltip {
-//   @include font($size: 1.6rem, $height: 1.9rem, $weight: 400, $text-transform: none);
-//   color: $color-secondary-light
-// }
+.ant-tooltip {
+  background-color: transparent;
+  .ant-tooltip-inner{
+    background-color: transparent;
+  }
+}

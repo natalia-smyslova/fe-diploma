@@ -9,14 +9,16 @@ import Seats from './Seats/Seats';
 
 import styles from './TrainCard.module.scss';
 
-import { setTrains } from '../../../store/slices/trainSlice';
+import { setId, setTrains } from '../../../store/slices/trainSlice';
 
-function TrainCard({ ticket, id }) {
+function TrainCard({ ticket, id, button }) {
   const dispatch = useDispatch();
 
   const clickHandler = (event) => {
     if (id !== null) {
       event.preventDefault();
+      dispatch(setId(id));
+      
       dispatch(setTrains({
         value: ticket.departure,
         direction: 'departure'
@@ -69,6 +71,7 @@ function TrainCard({ ticket, id }) {
           wifi={ticket.departure.have_wifi || ticket.arrival?.have_wifi}
           airConditioning={ticket.departure.have_air_conditioning || ticket.arrival?.have_air_conditioning}
           isExpress={ticket.departure.is_express || ticket.arrival?.is_express}
+          button={button}
         />
       </div>
     </div>

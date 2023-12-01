@@ -2,9 +2,13 @@
 @import '../../../scss/mixins';
 
 .radio__wrapper {
-  .ant-radio.ant-wave-target {
-    margin-top: -55px;
+
+  .ant-radio-wrapper.ant-radio-wrapper-in-form-item.online__checkbox {
+    .ant-radio.ant-wave-target {
+      margin-top: -55px;
+    }
   }
+
 
 
 
@@ -54,41 +58,3 @@
   color: $color-grey;
   @include font($size: 2.4rem, $height: 2.8rem, $weight: 400, $text-transform: none);
 }
-
-
-
-
-
-
-// .ant-radio-wrapper.ant-radio-wrapper-in-form-item.radioRow {
-//   .ant-radio {
-//     .ant-radio-inner {
-//       width: 28px;
-//       height: 28px;
-//       border: 1px solid $color-grey;
-//       border-radius: 5px;
-//       background-color: transparent;
-//     }
-//   }
-
-//   >span:last-child {
-//     margin-left: 10px;
-//     @include font($size: 2.4rem, $height: 2.8rem, $weight: 400, $text-transform: none);
-//     color: $color-grey;
-//   }
-// }
-
-// .ant-radio-wrapper.ant-radio-wrapper-checked.ant-radio-wrapper-in-form-item.radioRow {
-//   .ant-radio.ant-radio-checked {
-//     color: $color-primary;
-//     background-color: $color-primary;
-
-//   .ant-radio-inner::after {
-//     background-color: $color-primary;
-//   }
-// }
-
-//   >span {
-//     color: $color-primary;
-//   }
-// }

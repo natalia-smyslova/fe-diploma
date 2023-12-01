@@ -28,6 +28,7 @@
 .header {
   display: flex;
   align-items: center;
+  margin-right: 5px;
 
   >img {
     width: 32px;
@@ -37,9 +38,9 @@
   }
 }
 
-.button {
-  margin-left: 62px;
-}
+// .button {
+//   margin-left: 62px;
+// }
 
 .expandBlock {
   margin-top: 40px;

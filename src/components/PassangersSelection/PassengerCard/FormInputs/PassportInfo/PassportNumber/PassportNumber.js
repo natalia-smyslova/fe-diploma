@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, InputNumber } from 'antd';
+import {  InputNumber, Form } from 'antd';
 
 import fieldParams from '../../fieldParams';
 import rules from '../../rules';

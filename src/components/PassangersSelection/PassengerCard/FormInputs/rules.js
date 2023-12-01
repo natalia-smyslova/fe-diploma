@@ -48,8 +48,6 @@ const rules = {
     },
   ],
 
-  // Проверить валидацию паспортов!!!!!!!!!!!
-
   docSerialNumber: [
     {
       required: true,

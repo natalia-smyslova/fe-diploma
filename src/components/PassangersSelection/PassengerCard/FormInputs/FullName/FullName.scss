@@ -3,7 +3,12 @@
 
 .fullname {
   display: flex;
-  margin-bottom: 51px;
+  margin-top: 35px;
+
+  .ant-col.ant-form-item-label,
+  .ant-form-item-required {
+    margin-bottom: 10px;
+  }
 
   .ant-input-affix-wrapper.passengerCard-input,
   >.ant-input {

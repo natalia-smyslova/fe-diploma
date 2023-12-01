@@ -1,5 +1,7 @@
 import React from 'react';
 
+import CoachItem from './CoachItem/CoachItem';
+
 import styles from './Coaches.module.scss';
 
 function Coaches() {
@@ -7,14 +9,14 @@ function Coaches() {
     <div className={styles.coaches}>
       <div className={styles.available}>
         <div className={styles.coaches__amount}>Вагоны</div>
-        {/* {coachesToDisplay?.map((item) => (
+        {/* {coachesToDisplay?.map((item) => ( */}
           <CoachItem
-            coachId={item?.coach?._id}
-            direction={direction}
-            key={item?.coach?.name}
-            name={item?.coach?.name}
+            // coachId={item?.coach?._id}
+            // direction={direction}
+            // key={item?.coach?.name}
+            // name={item?.coach?.name}
           />
-        ))} */}
+        {/* // ))} */}
         <span>Ошибка</span>
       </div>
       <span className={styles.text}>

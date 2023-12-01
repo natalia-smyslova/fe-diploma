@@ -11,6 +11,7 @@ function PersonItem() {
     <article className={styles.card}>
       <div className={styles.left}>
         <img className={styles.icon} src={icon} alt="иконка - пассажир" />
+        <div className={styles.age}>Взрослый</div>
         {/* <div>
           {pas[fieldNames.passengerType] === passengerTypes.adults
             ? pasTypesRus[passengerTypes.adults]

@@ -2,7 +2,7 @@ import React from 'react';
 import { Form, Input} from 'antd';
 
 import fieldNames from '../../fieldNames';
-
+import rules from '../../rules';
 
 import './EmailInput.scss';
 
@@ -13,7 +13,7 @@ function EmailInput() {
         className="paymentOption"
         name={fieldNames.email}
         label={fieldNames.emailLabel}
-        // rules={rules.email}
+        rules={rules.email}
         // onChange={onChangeFullName}
       >
         <Input

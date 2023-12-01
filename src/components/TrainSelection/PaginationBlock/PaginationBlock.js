@@ -1,11 +1,21 @@
 import React from 'react';
-import { Pagination } from 'antd';
+import { Pagination, ConfigProvider } from 'antd';
 
 import './PaginationBlock.scss';
 
 function PaginationBlock({ current, onChange, total, pageSize }) {
   return (
     <section className="pagination">
+      <ConfigProvider
+        theme={{
+          components: {
+            Pagination: {
+              colorBgTextHover: 'transperant',
+              colorText: '#928F94',
+            },
+          },
+        }}
+      >
       <Pagination
         defaultCurrent={1}
         current={current}
@@ -17,6 +27,7 @@ function PaginationBlock({ current, onChange, total, pageSize }) {
         showSizeChanger={false}
         pageSize={pageSize}
       />
+      </ConfigProvider>
     </section>
   );
 }

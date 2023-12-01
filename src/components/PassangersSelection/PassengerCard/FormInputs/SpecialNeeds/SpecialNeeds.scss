@@ -2,7 +2,8 @@
 @import '../../../../../scss/mixins';
 
 .special__needs {
-  margin-top: 31px;
+  // margin-top: 31px;
+  margin-bottom: 31px;
   
 }
 
@@ -10,24 +11,11 @@
   .ant-checkbox-inner {
     width: 28px;
     height: 28px;
-    margin-right: 20px;
-    border: 1px solid $color-grey;
-    // &:hover{
-    //   border: 1px solid salmon;
-    //   // border: 1px solid $color-grey;
-    // }
-    // .ant-checkbox-inner:hover{
-    //   border: 1px solid salmon;
-    // }
-    // @include font($size: 1.8rem, $weight: 400, $height: 2.1rem, $text-transform: none);
-    // color: $color-main-dark;
   }
 }
 
 
-.ant-checkbox-wrapper-in-form-item,
-.passengerCard-checkbox {
-  @include font($size: 1.8rem, $weight: 400, $height: 2.1rem, $text-transform: none);
-  color: $color-main-dark;
-}
-
+// .discription{
+//   @include font($size: 1.8rem, $weight: 400, $height: 2.1rem, $text-transform: none);
+//   color: $color-main-dark;
+// }

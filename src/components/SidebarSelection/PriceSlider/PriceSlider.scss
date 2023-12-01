@@ -22,24 +22,21 @@
     width: 294px;
   }
 
-  // margin-bottom: 40px;
-}
+  .ant-tooltip {
+    @include font($size: 1.6rem, $height: 1.9rem, $weight: 400, $text-transform: none);
+    color: $color-secondary-light;
 
+    .ant-tooltip-inner {
+      box-shadow: none;
+      background-color: transparent;
+    }
 
-.ant-tooltip {
-  @include font($size: 1.6rem, $height: 1.9rem, $weight: 400, $text-transform: none);
-  color: $color-secondary-light;
+    .ant-tooltip-placement-bottom {
+      padding-top: 0;
+    }
 
-  .ant-tooltip-inner {
-    box-shadow: none;
-    background-color: transparent;
-  }
-
-  .ant-tooltip-placement-bottom {
-    padding-top: 0;
-  }
-
-  .ant-tooltip-arrow {
-    display: none;
+    .ant-tooltip-arrow {
+      display: none;
+    }
   }
 }

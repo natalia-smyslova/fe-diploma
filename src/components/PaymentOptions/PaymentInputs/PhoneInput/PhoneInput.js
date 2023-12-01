@@ -2,6 +2,7 @@ import React from 'react';
 import { Form, InputNumber} from 'antd';
 
 import fieldNames from '../../fieldNames';
+import rules from '../../rules';
 
 import './PhoneInput.scss';
 
@@ -14,7 +15,7 @@ function PhoneInput() {
         className="paymentOption"
         name={fieldNames.phone}
         label={fieldNames.phoneLabel}
-        // rules={rules.phone}
+        rules={rules.phone}
       >
         <InputNumber
           className="inputField"

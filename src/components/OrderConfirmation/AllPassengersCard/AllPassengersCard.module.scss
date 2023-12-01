@@ -2,28 +2,53 @@
 @import '../../../scss/mixins';
 @import '../../../scss/constants';
 
-.card{
+.card {
   @extend %box-shadow-selection-block;
   @include card($border: none, $margin-bottom: 45px);
+  // margin-top: 45px;
 }
 
-.header{
+.header {
   height: 100px;
   background-color: $color-main-light;
   padding: 32px 0 32px 32px;
-  border-bottom: 1px solid $color-grey; 
-  @include font($size: 3rem, $height: 3.5rem, $weight:400, $text-transform: none);
+  border-bottom: 1px solid $color-grey;
+  @include font($size: 3rem, $height: 3.5rem, $weight: 400, $text-transform: none);
   color: $color-main-dark;
 }
 
-.info{
+.info {
   display: flex;
 }
 
-.left{
-  padding: 61px 0 32px 30px;
+.left {
+  border-right: 1px dashed $color-secondary-light;
 }
 
-.right{
-  padding: 621px 23px 25px 25px;
+.sum {
+  display: flex;
+  padding: 0 26px;
+  margin-bottom: 28px;
+}
+
+.sum__text {
+  @include font($size: 3rem, $height: 3.5rem, $weight: 400, $text-transform: none);
+  color: $color-main-dark;
+}
+
+.amount {
+  @include font($size: 3rem, $height: 3.5rem, $weight: 700, $text-transform: none);
+  color: $color-main-dark;
+  margin-left: 30px;
+}
+
+.currency {
+  margin-left: 10px;
+}
+
+.btn{
+  @include font($size: 2.4rem, $height: 2.8rem, $weight: 700, $text-transform: none);
+  // color: $color-main-dark;
+  padding: 12px 60px;
+  margin: 0 0 28px 25px;
 }

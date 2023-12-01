@@ -1,0 +1,11 @@
+@import '../../../../../scss/constants';
+@import '../../../../../scss/mixins';
+
+
+.birth__wrapper {
+  margin-left: 35px;
+  .ant-col.ant-form-item-label{
+    margin-bottom: 10px;
+  }
+
+}

@@ -3,6 +3,7 @@
 
 .seria {
   margin-left: 35px;
+  // margin-top: 4px;
 
   .ant-row,
   .ant-form-item-row {
@@ -20,6 +21,12 @@
         }
       }
     }
+  }
+
+
+  .ant-col.ant-form-item-label
+  {
+    padding: 0 0 0px;
   }
 
   .ant-input-number.ant-input-number-in-form-item {

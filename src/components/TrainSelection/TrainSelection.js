@@ -10,6 +10,8 @@ function TrainSelection() {
   const trainsOptions = useSelector(state => state.trains.trainsOptions);
   const totalCount = useSelector(state => state.trains.totalCount);
 
+  const button = 'chooseButton';
+
   return (
     <section className={styles.trainSelection}>
       {totalCount !== 0 && (
@@ -21,7 +23,7 @@ function TrainSelection() {
       )}
 
       {trainsOptions?.map((item) => (
-        <TrainCard key={item.id} ticket={item.ticket} id={item.id} />
+        <TrainCard key={item.id} ticket={item.ticket} id={item.id} button={button} />
       ))}
     </section>
   );

@@ -1,43 +1,44 @@
 import React from 'react';
-// import { useDispatch, useSelector } from 'react-redux';
+import { Slider, ConfigProvider } from 'antd';
 
-import { Slider } from 'antd';
-
-// import {
-//   selectTime,
-//   changeTimeFields,
-// } from '../../../../store/slices/sidebarSelectSlice';
-
-// import { formatter } from '../../../../utils/timeFormatters';
-
-// import 'antd/dist/antd.css';
-// import './TimeSlider.scss';
 import styles from './TimeSlider.module.scss';
 import './TimeSlider.scss';
 
 function TimeSlider() {
-  // const dispatch = useDispatch();
+
 
   const min = 0;
   const max = 24 * 60;
 
-  const defaultValue = 5;
-  // const defaultValue = [time.min, time.max];
-
-  // const onAfterChange = (value) => {
-  //   dispatch(changeTimeFields({ name, direction, value }));
-  //   onChangeOption();
-  // };
+  const defaultValue = [min, max];
 
   return (
     <div className={styles.wrapper}>
-      <div className={styles.top}>
-        <span>от</span>
-        <span>до</span>
-      </div>
+      <ConfigProvider
+          theme={{
+            components: {
+              Slider: {
+                trackHoverBg: '#ffa800',
+                trackBg: '#ffa800',
+                dotActiveBorderColor: '#ffffff',
+                handleActiveColor: '#ffffff',
+                handleColor: '#ffffff',
+                dotBorderColor: '#ffffff',
+                railSize: 10,
+                controlSize: 10,
+                handleSize: 18,
+                dotSize: 18,
+                borderRadiusXS: 8,
+                colorPrimaryBorderHover: 'transperant',
+              }
+            },
+          }}
+        > 
       <Slider
         className="time-slider"
-        range
+        range={{
+          draggableTrack: true,
+        }}
         tooltip={{
           open: true,
           placement: 'bottom',
@@ -49,6 +50,7 @@ function TimeSlider() {
         defaultValue={defaultValue}
         // onAfterChange={onAfterChange}
       />
+      </ConfigProvider>
     </div>
   );
 }

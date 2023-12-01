@@ -23,20 +23,25 @@ function PaymentOptions() {
     //    console.log(errorInfo);
     // });
   };
-
+  const [form] = Form.useForm();
   const buttonClassNames = `button button-colored ${styles.btn}`;
 
   return (
 
     <div className={styles.wrapper}>
       <div className={styles.card}>
-        <Form layout="vertical" scrollToFirstError >
+        <Form
+          form={form}
+          layout="vertical"
+          scrollToFirstError
+        // initialValues={initialValues}
+        >
           <div className={styles.header}>
             <span className={styles.text}>Персональные данные</span>
           </div>
           <div className={styles.section__first}>
             <div className={styles.name}>
-            <FullName />
+              <FullName />
             </div>
             <PhoneInput />
             <EmailInput />

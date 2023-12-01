@@ -10,56 +10,56 @@ import styles from './TicketsNumber.module.scss';
 function TicketsNumber({ direction }) {
   const dispatch = useDispatch();
 
-  const numberOfTickets = useSelector(state => state.numberOfPassengers.numberOfPassengers[direction]); 
- 
-  const adultTickets = numberOfTickets.adults; 
-  const childrenTickets = numberOfTickets.children; 
-  const babiesTickets = numberOfTickets.babies; 
- 
-  const maxAdultsTickets = useSelector(state => state.numberOfPassengers.maxNumberOfAdults); 
-  const maxChildrenTickets = useSelector(state => state.numberOfPassengers.maxNumberOfChildren); 
+  const numberOfTickets = useSelector(state => state.numberOfPassengers.numberOfPassengers[direction]);
+
+  const adultTickets = numberOfTickets.adults;
+  const childrenTickets = numberOfTickets.children;
+  const babiesTickets = numberOfTickets.babies;
+
+  const maxAdultsTickets = useSelector(state => state.numberOfPassengers.maxNumberOfAdults);
+  const maxChildrenTickets = useSelector(state => state.numberOfPassengers.maxNumberOfChildren);
   // const maxBabiesTickets = useSelector(state => state.numberOfPassengers.maxNumberOfBabies); 
- 
-  const changeAdultHandler = (event) => { 
-    if (Number(event.target.value) !== adultTickets) { 
-      dispatch( 
-        setNumberOfPassengers({ 
-          age: 'adults', 
-          direction, 
-          value: Number(event.target.value) 
-        }) 
-      ); 
-    } 
-  } 
- 
-  const changeChildrenHandler = (event) => { 
-    if (Number(event.target.value) !== childrenTickets) { 
-      dispatch( 
-        setNumberOfPassengers({ 
-          age: 'children', 
-          direction, 
-          value: Number(event.target.value) 
-        }) 
-      ); 
-    } 
-  } 
- 
-  const changeBabiesHandler = (event) => { 
-    if (Number(event.target.value) !== babiesTickets) { 
-      dispatch( 
-        setNumberOfPassengers({ 
-          age: 'babies', 
-          direction, 
-          value: Number(event.target.value) 
-        }) 
-      ); 
-    } 
-  } 
- 
-  const currentAdults = maxAdultsTickets - adultTickets - childrenTickets; 
-  const currentChildren = adultTickets !== 0 ? adultTickets * 2 - childrenTickets : 0; 
-  const maxCurrentChildren = currentChildren !== 0 ? maxChildrenTickets - currentChildren : 0; 
-  const currentBabies = currentAdults; 
+
+  const changeAdultHandler = (event) => {
+    if (Number(event.target.value) !== adultTickets) {
+      dispatch(
+        setNumberOfPassengers({
+          age: 'adults',
+          direction,
+          value: Number(event.target.value)
+        })
+      );
+    }
+  }
+
+  const changeChildrenHandler = (event) => {
+    if (Number(event.target.value) !== childrenTickets) {
+      dispatch(
+        setNumberOfPassengers({
+          age: 'children',
+          direction,
+          value: Number(event.target.value)
+        })
+      );
+    }
+  }
+
+  const changeBabiesHandler = (event) => {
+    if (Number(event.target.value) !== babiesTickets) {
+      dispatch(
+        setNumberOfPassengers({
+          age: 'babies',
+          direction,
+          value: Number(event.target.value)
+        })
+      );
+    }
+  }
+
+  const currentAdults = maxAdultsTickets - adultTickets - childrenTickets;
+  const currentChildren = adultTickets !== 0 ? adultTickets * 2 - childrenTickets : 0;
+  const maxCurrentChildren = currentChildren !== 0 ? maxChildrenTickets - currentChildren : 0;
+  const currentBabies = currentAdults;
   const maxCurrentBabies = adultTickets !== 0 ? maxAdultsTickets : 0;
 
   return (

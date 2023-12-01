@@ -3,6 +3,7 @@
 
 .passport__number {
   margin-left: 35px;
+  // margin-top: 4px;
 
   .ant-row,
   .ant-form-item-row {
@@ -22,7 +23,7 @@
     }
   }
 
-  .ant-input-number.ant-input-number-in-form-item{
+  .ant-input-number.ant-input-number-in-form-item {
     width: 205px;
     height: 50px;
     margin-top: 10px;
@@ -31,4 +32,13 @@
     color: $color-main-dark;
   }
 
+}
+
+// .ant-col.ant-form-item-label {
+//   padding: 0 0 3px;
+// }
+
+
+.ant-col.ant-form-item-label {
+  padding: 0;
 }

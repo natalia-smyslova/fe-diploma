@@ -10,10 +10,14 @@ import expressIcon from './img/express.svg';
 
 import styles from './Seats.module.scss';
 
-function Seats({ availableSeats, priceInfoDeparture, priceInfoArrival, wifi, airConditioning, isExpress }) {
+function Seats({ availableSeats, priceInfoDeparture, priceInfoArrival, wifi, airConditioning, isExpress, button }) {
   const navigate = useNavigate();
 
-  function clickHandler() {
+  function clickHandlerChange() {
+    navigate(links.seats);
+  }
+
+  function clickHandlerChoose() {
     navigate(links.seats);
   }
 
@@ -33,7 +37,8 @@ function Seats({ availableSeats, priceInfoDeparture, priceInfoArrival, wifi, air
     </div>
   );
 
-  const buttonClassNames = `button button-colored ${styles.btn}`;
+  const buttonClassNamesChoose = `button button-colored ${styles.btn}`;
+  const buttonClassNamesChange = `button button__transperant-light ${styles.btn}`;
 
   return (
     <div className={styles.seats}>
@@ -58,12 +63,17 @@ function Seats({ availableSeats, priceInfoDeparture, priceInfoArrival, wifi, air
         {wifi && wifiImg}
         {airConditioning && conditionerImg}
         {isExpress && expressImg}
-      
       </div>
       <div>
-        <button onClick={clickHandler} type="button" className={buttonClassNames}>
-          Выбрать места
-        </button>
+          {button === 'chooseButton' ? (
+            <button onClick={clickHandlerChoose} type="button" className={buttonClassNamesChoose}>
+              Выбрать места
+            </button>
+          ) : (
+            <button onClick={clickHandlerChange} type="button" className={buttonClassNamesChange}>
+              Изменить
+            </button>
+          )}
       </div>
     </div>
   )

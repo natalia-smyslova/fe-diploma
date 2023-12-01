@@ -15,11 +15,11 @@ function SidebarDetails() {
         <h3 className={styles.title}> Детали поездки</h3>
       </div>
       <div className={styles.direction__to}>
-        <Direction />
+        <Direction direction='departure' />
       </div>
       {/* {sumArrAdults + sumArrChildren > 0 && ( */}
       <div className={styles.direction__back}>
-        <Direction />
+        <Direction direction='arrival' />
       </div>
       {/* )} */}
       <div className={styles.section}>
