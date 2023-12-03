@@ -29,13 +29,6 @@ function Train({
         />
       </span>
 
-      {/* <span className={styles['arrival-city']}> 
-        <img 
-          className={styles['departure-arrow']} 
-          src={arrow} 
-          alt="иконка - стрелка" 
-        /> 
-      </span> */}
       <span className={styles['arrival-city']}>
         {arrivalCity1}
         {trainName2 && (

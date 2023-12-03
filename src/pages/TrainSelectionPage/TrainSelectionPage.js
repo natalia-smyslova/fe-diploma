@@ -28,6 +28,7 @@ function TrainSelectionPage() {
   const options = useSelector(state => state.options.options);
   const price = useSelector(state => state.price.price);
   const offset = useSelector(state => state.sort.offset);
+  const time = useSelector(state => state.time.time);
 
   useEffect(() => {
     dispatch(fetchLastTickets(process.env.REACT_APP_LAST_TICKETS));
@@ -35,7 +36,7 @@ function TrainSelectionPage() {
 
   let url = useMemo(() => `
     ${process.env.REACT_APP_SEARCH_ROUTES}?from_city_id=${departureCity.id}&to_city_id=${arrivalCity.id}`,
-    [departureCity, arrivalCity, limit, sort, offset, options, price]
+    [departureCity, arrivalCity, limit, sort, offset, options, price, time]
   );
 
   if (limit) {
@@ -93,6 +94,22 @@ function TrainSelectionPage() {
     url = `${url}&price_to=${price.max}`
   }
 
+  if (time) { 
+    url = `${url}&start_departure_hour_from=${ 
+      time.from.departure?.min}&start_departure_hour_to=${ 
+      time.from.departure?.max}&start_arrival_hour_from=${ 
+      time.from.arrival?.min}&start_arrival_hour_to=${ 
+      time.from.arrival?.max}`; 
+ 
+    if (arrivalDate) { 
+      url = `${url}&end_departure_hour_from=${ 
+        time.to?.departure?.min}&end_departure_hour_to=${ 
+        time.to?.departure?.max}&end_arrival_hour_from=${ 
+        time.to?.arrival?.min}&end_arrival_hour_to=${ 
+        time.to?.arrival?.max}` 
+    } 
+  }
+
   useEffect(() => {
     dispatch(fetchTrainsOptions(url));
   }, [dispatch, url]);
@@ -100,7 +117,7 @@ function TrainSelectionPage() {
   useEffect(() => {
     dispatch(changeOffset(0));
     dispatch(setCurrentPage(1));
-  }, [departureCity, arrivalCity, departureDate, arrivalDate, limit, sort, options, price]);
+  }, [departureCity, arrivalCity, departureDate, arrivalDate, limit, sort, options, price, time]);
   
   const body = loading && <LoadingAnimation /> || <TrainSelectionBody />
 

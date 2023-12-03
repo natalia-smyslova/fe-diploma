@@ -5,7 +5,8 @@
 
 .card{
   @extend %box-shadow-selection-block;
-  @include card($border: none, $margin-bottom: 0);
+  @include card($border: none, $padding: 0, $margin-bottom: 0);
+  margin-bottom: 0;
 }
 
 

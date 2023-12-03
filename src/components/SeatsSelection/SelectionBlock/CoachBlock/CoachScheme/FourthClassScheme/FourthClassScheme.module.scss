@@ -1,0 +1,64 @@
+@import '../../../../../../scss/constants';
+@import '../../../../../../scss/mixins';
+
+.coach {
+  width: 805px;
+  margin: auto;
+
+  .top {
+    .topRow {
+      border-top: 4px solid $color-grey;
+      display: flex;
+      justify-content: center;
+    }
+
+    .bottomRow {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  .bottom {
+    display: flex;
+    height: 27px;
+    margin-top: 30px;
+    border: 4px solid $color-grey;
+    border-top: none;
+  }
+}
+
+.coach__fourthCl {
+  width: 805px;
+  margin: auto;
+
+  .top__fourthCl {
+    border: 4px solid $color-grey;
+    border-bottom: none;
+
+    .topRow__fourthCl {
+      margin-top: 5px;
+      display: flex;
+    }
+
+    .bottomRow__fourthCl {
+      display: flex;
+    }
+
+    padding-bottom: 10px;
+  }
+
+  .bottom__fourthCl {
+    padding-top: 10px;
+
+    .topRow__fourthCl {
+      display: flex;
+    }
+
+    .bottomRow__fourthCl {
+      display: flex;
+      border-right: 4px solid $color-grey;
+    }
+
+    border-bottom: 4px solid $color-grey;
+  }
+}

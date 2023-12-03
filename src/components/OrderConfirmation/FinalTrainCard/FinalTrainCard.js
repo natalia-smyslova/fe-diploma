@@ -10,7 +10,7 @@ function FinalTrainCard({ button }) {
   const trainsOptions = useSelector(state => state.trains.trainsOptions);
 
   return (
-    <div className={styles.card}>
+    <div className={styles.card} style={{margin: 0}}>
       <div className={styles.header}>Поезд</div>
       <TrainCard
         ticket={trainsOptions[selectedTrainIndex]?.ticket}

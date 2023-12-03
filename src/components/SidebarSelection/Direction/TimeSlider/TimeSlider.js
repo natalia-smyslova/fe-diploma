@@ -1,16 +1,28 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
 import { Slider, ConfigProvider } from 'antd';
 
 import styles from './TimeSlider.module.scss';
 import './TimeSlider.scss';
 
-function TimeSlider() {
+import { changeTime } from '../../../../store/slices/timeSlice';
 
+function TimeSlider({ name, direction, onChangeTime }) {
+
+  const dispatch = useDispatch();
+  const time = useSelector(state => state.time.time);
+  const timeDirection = time[name][direction];
 
   const min = 0;
-  const max = 24 * 60;
+  const max = 24;
 
-  const defaultValue = [min, max];
+  const defaultValue = timeDirection?.min || timeDirection?.max ? [timeDirection.min, timeDirection.max] : [min, max];
+
+  const changeHandler = value => {
+    dispatch(changeTime({ name, direction, value }));
+    onChangeTime();
+  }
 
   return (
     <div className={styles.wrapper}>
@@ -36,19 +48,16 @@ function TimeSlider() {
         > 
       <Slider
         className="time-slider"
-        range={{
-          draggableTrack: true,
-        }}
+        range
         tooltip={{
           open: true,
-          placement: 'bottom',
-          // formatter,
+          placement: 'bottom'
         }}
-        step={10}
+        step={1}
         min={min}
         max={max}
         defaultValue={defaultValue}
-        // onAfterChange={onAfterChange}
+        onAfterChange={changeHandler}
       />
       </ConfigProvider>
     </div>

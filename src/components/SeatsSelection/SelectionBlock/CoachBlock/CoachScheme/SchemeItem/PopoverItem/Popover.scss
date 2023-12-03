@@ -1,0 +1,33 @@
+@import '../../../../../../../scss/constants';
+@import '../../../../../../../scss/mixins';
+@import '../../../../../../../scss/placeholders';
+
+
+.seatItem .ant-popover {
+  &-title {
+    text-align: center;
+  }
+
+  &-inner {
+    border-radius: 5px;
+    @include font($size: 1.6rem, $height: 1.9rem, $weight: 400, $text-transform: none);
+    color: $color-black;
+
+    &-content {
+      background: $color-popover;
+      @extend %box-shadow-popover;
+      display: flex;
+      justify-content: space-between;
+
+      & button {
+        padding: 10px;
+        border: 1px solid $color-bars-light;
+        border-radius: 5pxs;
+
+        &:last-child {
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}

@@ -19,6 +19,7 @@ import  sortSlice  from './slices/sortSlice';
 import optionsSlice from './slices/optionsSlice';
 import priceSlice from './slices/priceSlice';
 import seatsSlice from './slices/seatsSlice';
+import timeSlice from './slices/timeSlice';
 
 const persistConfig = {
   key: 'root',
@@ -62,6 +63,11 @@ const pricePersistConfig = {
   storage
 }
 
+const timePersistConfig = {
+  key: 'time',
+  storage
+}
+
 const seatsPersistConfig = {
   key: 'seats',
   storage,
@@ -72,6 +78,7 @@ const rootReducer = combineReducers({
   search: persistReducer(searchPersistConfig, searchSlice.reducer),
   options: persistReducer(optionsPersistConfig, optionsSlice.reducer),
   price: persistReducer(pricePersistConfig, priceSlice.reducer),
+  time: persistReducer(timePersistConfig, timeSlice.reducer),
   lastTickets: lastTicketsSlice.reducer,
   trains: persistReducer(trainsPersistConfig, trainsSlice.reducer),
   train: persistReducer(trainPersistConfig, trainSlice.reducer),

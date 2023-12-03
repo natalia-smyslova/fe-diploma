@@ -25,6 +25,13 @@
   border-right: 1px dashed $color-secondary-light;
 }
 
+.right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+}
+
 .sum {
   display: flex;
   padding: 0 26px;
@@ -49,6 +56,6 @@
 .btn{
   @include font($size: 2.4rem, $height: 2.8rem, $weight: 700, $text-transform: none);
   // color: $color-main-dark;
-  padding: 12px 60px;
+  padding: 6px 60px;
   margin: 0 0 28px 25px;
 }

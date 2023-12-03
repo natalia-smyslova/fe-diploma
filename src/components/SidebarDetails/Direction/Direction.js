@@ -18,6 +18,7 @@ function Direction({ direction }) {
   // const arrow = direction === 'departure' ? arrowTo : arrowBack; 
   const directionName = direction === 'departure' ? 'Туда' : 'Обратно'; 
   const train = useSelector(state => state.train.trains[direction]); 
+  // const arrivalDate = useSelector(state => state.search.arrivalDate);
  
   const { duration } = train; 
   const hours = Math.floor(duration / 3600);  
@@ -48,21 +49,21 @@ function Direction({ direction }) {
       </div>
       <div className={styles.totalTime}> {hours} : {minutes}</div>
       <div className={styles.directions}>
+        
         <div className={styles.top}>
           <div className={styles.direction}>
             <span className={styles.time}>{timeOfDeparture}</span>
             <div className={styles.date}>{dateOfDeparture}</div>
           </div>
-
           <div className={styles.arrow}>
             <img src={arrowDeparture} alt="иконка - стрелка" />
           </div>
-
           <div className={`${styles.direction} ${styles.right}`}>
             <span className={styles.time}>{timeOfArrival}</span>
             <span className={styles.date}>{dateOfArrival}</span>
           </div>
         </div>
+
         <div className={styles.bottom}>
           <div className={styles.direction}>
             <span className={styles.city}>{departureCity}</span>
