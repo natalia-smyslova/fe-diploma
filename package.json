@@ -2,6 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://natalia-smyslova.github.io/fe-diploma",
   "dependencies": {
     "@ant-design/icons": "^5.2.6",
     "@reduxjs/toolkit": "^1.9.7",
@@ -11,6 +12,7 @@
     "@uidotdev/usehooks": "^2.4.1",
     "antd": "^5.10.2",
     "dayjs": "^1.11.10",
+    "gh-pages": "^6.1.0",
     "prop-types": "^15.8.1",
     "rc-picker": "^3.14.6",
     "react": "^18.2.0",
@@ -29,10 +31,12 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "CI=false && react-scripts build",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "react-scripts lint"
+    "lint": "react-scripts lint",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
