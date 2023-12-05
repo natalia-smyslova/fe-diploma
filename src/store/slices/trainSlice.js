@@ -61,9 +61,7 @@ const trainSlice = createSlice({
     removeSelectedSeats(state, action) {
       const { direction, seat } = action.payload;
       state.selectedSeats[direction] = state.selectedSeats[direction].filter(
-        item => {
-          item.seat !== seat
-        }
+        item => item.seat !== seat
       )
     },
     removeAllSelectedSeats(state, action) {
