@@ -6,9 +6,9 @@ import fieldParams from '../fieldParams';
 import './SpecialNeeds.scss';
 
 function SpecialNeeds() {
-  const onChange = (e) => {
-    console.log(`checked = ${e.target.checked}`);
-  };
+  // const onChange = (e) => {
+  //   console.log(`checked = ${e.target.checked}`);
+  // };
 
   return (
     <div className='special__needs'>
@@ -27,7 +27,7 @@ function SpecialNeeds() {
               },
             },
           }}>
-          <Checkbox className="passengerCard-checkbox" onChange={onChange}>
+          <Checkbox className="passengerCard-checkbox" >
             {fieldParams.specialNeedsLabel}
           </Checkbox>
         </ConfigProvider>

@@ -38,6 +38,7 @@ function Coaches({ direction }) {
       dispatch(removeAllSelectedSeats(direction));
       dispatch(setSelectedSeats({ name, direction, coachId }));
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch]);
 
   return (

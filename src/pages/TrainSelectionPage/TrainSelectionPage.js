@@ -36,6 +36,7 @@ function TrainSelectionPage() {
 
   let url = useMemo(() => `
     ${process.env.REACT_APP_SEARCH_ROUTES}?from_city_id=${departureCity.id}&to_city_id=${arrivalCity.id}`,
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [departureCity, arrivalCity, limit, sort, offset, options, price, time]
   );
 
@@ -117,6 +118,7 @@ function TrainSelectionPage() {
   useEffect(() => {
     dispatch(changeOffset(0));
     dispatch(setCurrentPage(1));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [departureCity, arrivalCity, departureDate, arrivalDate, limit, sort, options, price, time]);
   
   const body = loading && <LoadingAnimation /> || <TrainSelectionBody />

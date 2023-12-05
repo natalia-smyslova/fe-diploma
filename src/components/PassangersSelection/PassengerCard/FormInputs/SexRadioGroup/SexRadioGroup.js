@@ -7,9 +7,9 @@ import fieldParams from '../fieldParams';
 import './SexRadioGroup.scss';
 
 function SexRadioGroup() {
-  const onChange = (e) => {
-    console.log(`checked = ${e.target.checked}`);
-  };
+  // const onChange = (e) => {
+  //   console.log(`checked = ${e.target.checked}`);
+  // };
 
   return (
     <div className='wrapper'>
@@ -56,7 +56,7 @@ function SexRadioGroup() {
               optionType="button"
               buttonStyle="solid"
               className="passengerCard-radio"
-              onChange={onChange}
+              // onChange={onChange}
             >
               <Radio.Button value="true" defaultChecked>
                 М
