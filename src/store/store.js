@@ -20,6 +20,7 @@ import optionsSlice from './slices/optionsSlice';
 import priceSlice from './slices/priceSlice';
 import seatsSlice from './slices/seatsSlice';
 import timeSlice from './slices/timeSlice';
+import passengerSlice from './slices/passengerSlice';
 
 const persistConfig = {
   key: 'root',
@@ -74,6 +75,11 @@ const seatsPersistConfig = {
   blacklist: ['loading', 'error'],
 }
 
+const passengerPersistConfig = {
+  key: 'passenger',
+  storage
+}
+
 const rootReducer = combineReducers({
   search: persistReducer(searchPersistConfig, searchSlice.reducer),
   options: persistReducer(optionsPersistConfig, optionsSlice.reducer),
@@ -85,6 +91,7 @@ const rootReducer = combineReducers({
   numberOfPassengers: persistReducer(numberOfPassengersPersistConfig, numberOfPassengersSlice.reducer),
   seats: persistReducer(seatsPersistConfig, seatsSlice.reducer),
   sort: persistReducer(sortPersistConfig, sortSlice.reducer),
+  passenger: persistReducer(passengerPersistConfig, passengerSlice.reducer)
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

@@ -14,17 +14,15 @@ import fourthActive from './img/fourth-active.svg';
 
 import styles from './CoachType.module.scss';
 
-import classes from '../../classes';
-
 function CoachType({ direction }) {
-  const train = useSelector(state => state.train.trains[direction]);
+  const train = useSelector(state => state.train.trains)[direction];
 
   const coachTypes = [
     {
       id: 4,
       img: fourth,
       imgActive: fourthActive,
-      name: classes.fourth,
+      name: 'fourth',
       nameRus: 'сидячий',
       available: train?.have_fourth_class
     },
@@ -32,7 +30,7 @@ function CoachType({ direction }) {
       id: 3,
       img: third,
       imgActive: thirdActive,
-      name: classes.third,
+      name: 'third',
       nameRus: 'плацкарт',
       available: train?.have_third_class
     },
@@ -40,7 +38,7 @@ function CoachType({ direction }) {
       id: 2,
       img: second,
       imgActive: secondActive,
-      name: classes.second,
+      name: 'second',
       nameRus: 'купе',
       available: train?.have_second_class
     },
@@ -48,7 +46,7 @@ function CoachType({ direction }) {
       id: 1,
       img: first,
       imgActive: firstActive,
-      name: classes.first,
+      name: 'first',
       nameRus: 'люкс',
       available: train?.have_first_class
     },
@@ -58,11 +56,10 @@ function CoachType({ direction }) {
     <div className={styles.coach}>
       <h4 className={styles.title}>Тип вагона</h4>
       <div className={styles.coachTypes}>
-        {coachTypes.map((coach) => (
+        {coachTypes.map(coach => (
           coach.available &&
-          <CoachTypeItem key={coach.id} coach={coach} direction={direction}
-          />
-        )
+          <CoachTypeItem key={coach.id} coach={coach} direction={direction} />
+          )
         )}
       </div>
     </div>

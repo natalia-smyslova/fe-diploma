@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 import DirectionInfo from './DirectionInfo/DirectionInfo';
@@ -14,8 +15,11 @@ import arrivalArrow from './img/arrow-arrival.svg';
 
 import styles from './SelectionBlock.module.scss';
 
+
 function SelectionBlock({ direction }) {
   const navigate = useNavigate();
+
+  const seats = useSelector(state => state.seats.selectedSeats);
 
   const buttonClassNames = `button button__transperant-light ${styles.btn}`;
 
@@ -35,30 +39,13 @@ function SelectionBlock({ direction }) {
           Выбрать другой поезд
         </button>
       </div>
+      
       <DirectionInfo direction={direction} />
       <TicketsNumber direction={direction} />
       <CoachType direction={direction} />
       <Coaches direction={direction} />
-      <CoachBlock />
+      <CoachBlock  direction={direction} />
 
-      {/* <NumberOfPassengers
-        direction={direction}
-        adultSeats={adultSeats}
-        childrenSeats={childrenSeats}
-      />
-      <CoachType direction={direction} />
-      <Coaches direction={direction} />
-      <CoachBlock
-        direction={direction}
-        NumOfPplView={NumOfPplView}
-        adultSeats={adultSeats}
-        childrenSeats={childrenSeats}
-      />
-      <TotalPrice
-        direction={direction}
-        adultSeats={adultSeats}
-        childrenSeats={childrenSeats}
-      /> */}
     </div>
   );
 };

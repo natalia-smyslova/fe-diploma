@@ -1,12 +1,11 @@
-import { React, useState } from 'react';
+import { React, useState } from 'react'
 
-import { Tooltip } from 'antd';
+import { Tooltip } from 'antd'
 
-import serviceNames from '../serviceNames';
+import './Popover.scss'
 
-import './Popover.scss';
-
-function ServiceItem({ name,
+function ServiceItem({
+  name,
   included,
   text,
   inactive,
@@ -14,29 +13,30 @@ function ServiceItem({ name,
   active,
   className,
 }) {
-
   let initialState;
+
   switch (name) {
-    case serviceNames.food:
-      initialState = 'inactive';
-      break;
-    case serviceNames.linens:
-      initialState = included ? 'active' : 'inactive';
-      break;
+    case 'питание':
+      initialState = 'inactive'
+      break
+    case 'белье':
+      initialState = included ? 'active' : 'inactive'
+      break
     default:
-      initialState = 'active';
+      initialState = 'active'
   }
 
-  const [img, setImg] = useState(initialState);
+  const [img, setImg] = useState(initialState)
 
   const mouseEnterHandler = () => {
-    setImg('hover');
-  };
+    setImg('hover')
+  }
   const mouseLeaveHandler = () => {
     setImg(initialState);
-  };
+  }
 
   let icon;
+
   switch (img) {
     case 'active':
       icon = active;
@@ -49,11 +49,12 @@ function ServiceItem({ name,
   }
 
   let title;
+
   switch (name) {
-    case serviceNames.linens:
+    case 'белье':
       title = !included ? text : name;
       break;
-    case serviceNames.food:
+    case 'питание':
       title = text;
       break;
     default:
@@ -61,11 +62,7 @@ function ServiceItem({ name,
   }
 
   return (
-    <Tooltip
-      overlayClassName="icons-tooltip"
-      title={title}
-      placement="bottom"
-    >
+    <Tooltip overlayClassName="icons-tooltip" title={title} placement="bottom">
       <div
         className={className}
         onMouseEnter={mouseEnterHandler}
@@ -74,7 +71,7 @@ function ServiceItem({ name,
         <img src={icon} alt="иконка" />
       </div>
     </Tooltip>
-  );
+  )
 }
 
 export default ServiceItem;

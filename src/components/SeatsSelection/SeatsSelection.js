@@ -1,38 +1,94 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import React, { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
 
-import SelectionBlock from './SelectionBlock/SelectionBlock';
+import SelectionBlock from './SelectionBlock/SelectionBlock'
 
-import links from '../../utils/constants/links';
+import { removePassengersDirection } from '../../store/slices/numberOfPassengersSlice'
 
-import styles from './SeatsSelection.module.scss';
+import links from '../../utils/constants/links'
+
+import styles from './SeatsSelection.module.scss'
 
 function SeatsSelection() {
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
 
-  const navigate = useNavigate();
+  const direction = useSelector((state) => state.train.trains);
+  const departure = direction.departure._id
+  const arrival = direction.arrival?._id;
 
-  const direction = useSelector(state => state.train.trains);
+  const [disabled, setDisabled] = useState(true);
 
-  const buttonClassNames = `button button-colored ${styles.btn}`;
+  const selectedSeats = useSelector((state) => state.seats.selectedSeats)
+
+  const numberOfPassengers = useSelector(
+    (state) => state.numberOfPassengers.numberOfPassengers
+  )
+
+  const seatsDeparture = selectedSeats['departure']
+    ?.map((item) => item.seats)
+    .flat()?.length
+
+  const passDeparture = Object.entries(numberOfPassengers['departure'])?.reduce(
+    (currentNumber, item) => currentNumber + item[1],
+    0
+  )
+
+  const seatsArrival = selectedSeats['arrival']
+    ?.map((item) => item.seats)
+    ?.flat()?.length
+  const passArrival = Object.entries(numberOfPassengers['arrival'])?.reduce(
+    (currentNumber, item) => currentNumber + item[1],
+    0
+  )
+
+  useEffect(() => {
+    if (!arrival) {
+      dispatch(removePassengersDirection('arrival'))
+    }
+  }, [arrival, dispatch])
+
+  useEffect(() => {
+    if (
+      seatsDeparture !== 0 &&
+      passDeparture !== 0 &&
+      (!arrival || (seatsArrival !== 0 && passArrival !== 0))
+    ) {
+      if (seatsDeparture === passDeparture && (!arrival || seatsArrival === passArrival)) {
+        setDisabled(false)
+      } else {
+        setDisabled(true)
+      }
+    }
+  }, [disabled, seatsDeparture, passDeparture, seatsArrival, passArrival, arrival, departure])
+
+  const buttonClassNames = `button button-colored ${styles.btn}`
 
   const clickHandler = () => {
-    navigate(links.passengers);
-  };
+    navigate(links.passengers)
+  }
 
   return (
     <section className={styles.seats}>
       <h3 className={styles.seats__title}>выбор мест</h3>
-      {direction.departure && <SelectionBlock direction='departure'/>}
-      {direction.arrival && <SelectionBlock direction='arrival'/>}
-      
-      <div className={styles.wrapper}>
-        <button type="button" className={buttonClassNames} onClick={clickHandler}>
+      {departure && <SelectionBlock direction="departure" />}
+      {arrival && <SelectionBlock direction="arrival" />}
+
+      {departure && (
+        <div className={styles.wrapper}>
+        <button
+          type="button"
+          className={buttonClassNames}
+          onClick={clickHandler}
+        >
           далее
         </button>
       </div>
+      )}
+      
     </section>
   )
-};
+}
 
-export default SeatsSelection;
+export default SeatsSelection

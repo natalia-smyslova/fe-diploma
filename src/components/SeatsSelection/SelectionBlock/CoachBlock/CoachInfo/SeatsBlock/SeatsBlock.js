@@ -2,55 +2,46 @@ import React from 'react';
 
 import styles from './SeatcsBlock.module.scss';
 
-function SeatsBlock() {
-  const top = (
+function SeatsBlock({ coach, numberOfSideSeats, numberOfTopSeats, numberOfBottomSeats, numberOfAllSeats }) {
+
+  const topSeats = (
     <div className={styles.details}>
       <div className={styles.seats__type}>Верхние</div>
-      <div className={styles.seats__number}>
-        5
-        {/* {numOfTop === -1 ? 0 : numOfTop} */}
-      </div>
+      <div className={styles.seats__number}>{numberOfTopSeats === -1 ? 0 : numberOfTopSeats}</div>
     </div>
   );
 
-  const bottom = (
+  const bottomSeats = (
     <div className={styles.details}>
       <div className={styles.seats__type}>Нижние</div>
-      {/* {(coach?.coach?.class_type === classes.first ||
-        coach?.coach?.class_type === classes.fourth) && ( */}
-      <div className={styles.seats__number}>23
-        {/* {numOfSeats} */}
-      </div>
-      {/* )} */}
-      {/* {(coach?.coach?.class_type === classes.second ||
-        coach?.coach?.class_type === classes.third) && ( */}
-      {/* <div className={styles.seats__number}>
-        
-        {numOfBottom === -1 ? 0 : numOfBottom}
-      </div> */}
-      {/* )} */}
+      {(coach?.coach?.class_type === 'first' ||
+        coach?.coach?.class_type === 'fourth') && (
+      <div className={styles.seats__number}>{numberOfAllSeats}</div>
+      )}
+      {(coach?.coach?.class_type === 'second' ||
+        coach?.coach?.class_type === 'third') && (
+      <div className={styles.seats__number}>{numberOfBottomSeats === -1 ? 0 : numberOfBottomSeats}</div>
+      )}
     </div>
   );
 
-  const side = (
+  const sideSeats = (
     <div className={styles.details}>
       <div className={styles.seats__type}>Боковые</div>
-      <div className={styles.seats__number}>
-        8
-        {/* {numOfSide === -1 ? 0 : numOfSide} */}
-      </div>
+      <div className={styles.seats__number}>{numberOfSideSeats === -1 ? 0 : numberOfSideSeats}</div>
     </div>
   );
+
   return (
     <>
-      {/* {(coach?.coach?.class_type === classes.second ||
-        coach?.coach?.class_type === classes.third) &&
-        numOfTop > 0 && */}
-      {top}
-      {/* {numOfBottom > 0 &&  */}
-      {bottom}
-      {/* {coach?.coach?.class_type === classes.third && numOfSide > 0 &&  */}
-      {side}
+      {numberOfTopSeats > 0 && (
+        coach.coach.class_type === 'second' ||
+        coach.coach.class_type === 'third'
+      ) && topSeats}
+
+      {(numberOfBottomSeats > 0) && bottomSeats}
+
+      {numberOfSideSeats > 0 && coach.coach.class_type === 'third' && sideSeats}
     </>
   );
 }

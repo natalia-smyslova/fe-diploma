@@ -1,8 +1,6 @@
 import React from 'react';
 
 import rub from './rub.svg';
-
-import passengerTypes from '../../../SeatsSelection/SelectionBlock/passangerTypes';
 import styles from './PassangerItem.module.scss';
 
 function PassangerItem({number, type}) {
@@ -10,7 +8,7 @@ function PassangerItem({number, type}) {
   const adultsWord = number === 1 ? 'Взрослый' : 'Взрослых';
   // const childrenWord = childrenFormatter(number);
   const childrenWord = 'дети'
-  const word = type === passengerTypes.adults ? adultsWord : childrenWord;
+  const word = type === 'adults' ? adultsWord : childrenWord;
 
   return (
     <div className={styles.row}>

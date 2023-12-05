@@ -1,68 +1,61 @@
-import React from 'react';
+import React from 'react'
 
-import rub from './rub.svg';
+import rub from './rub.svg'
 
-import styles from './PricesBlock.module.scss';
+import styles from './PricesBlock.module.scss'
 
-function PricesBlock() {
+function PricesBlock({
+  coach,
+  numberOfSideSeats,
+  numberOfTopSeats,
+  numberOfBottomSeats,
+}) {
   const topPrice = (
     <div className={styles.price__amount}>
-      <div className={styles.price__number}>
-        {/* {coach?.coach?.top_price} */}
-        1234
-      </div>
+      <div className={styles.price__number}>{coach?.coach?.top_price}</div>
       <div className={styles.currency}>
         <img src={rub} alt="иконка - руб." />
       </div>
     </div>
-  );
+  )
 
   const bottomPrice = (
     <div className={styles.price__amount}>
-      {/* {coach?.coach?.class_type !== classes.first && ( */}
-      <div className={styles.price__number}>
-        {/* {coach?.coach?.bottom_price} */}
-        9876
-      </div>
-      {/* )} */}
-      {/* {coach?.coach?.class_type === classes.first && ( */}
-      {/* <div className={styles.price__number}>
-        4567
-        {coach?.coach?.price}
-      </div> */}
-      {/* )} */}
+      {coach?.coach?.class_type !== 'first' && (
+        <div className={styles.price__number}>{coach?.coach?.bottom_price}</div>
+      )}
+      {coach?.coach?.class_type === 'first' && (
+        <div className={styles.price__number}>{coach?.coach?.price}</div>
+      )}
       <div className={styles.currency}>
         <img src={rub} alt="иконка - руб." />
       </div>
     </div>
-  );
+  )
 
   const sidePrice = (
     <div className={styles.price__amount}>
-      <div className={styles.price__number}>
-        6895
-        {/* {coach?.coach?.side_price} */}
-      </div>
+      <div className={styles.price__number}>{coach?.coach?.side_price}</div>
       <span className={styles.currency}>
         <img src={rub} alt="иконка - руб." />
       </span>
     </div>
-  );
+  )
+
   return (
     <div className={styles.wrapper}>
-      {/* {(coach?.coach?.class_type === classes.second ||
-        coach?.coach?.class_type === classes.third) &&
-        numOfTop > 0 && */}
-      {topPrice}
+      {numberOfTopSeats > 0 &&
+        (coach?.coach?.class_type === 'second' ||
+          coach?.coach?.class_type === 'third') &&
+        topPrice}
 
-      {/* {numOfBottom > 0 &&  */}
-      {bottomPrice}
+      {numberOfBottomSeats > 0 && bottomPrice}
 
-      {/* {coach?.coach?.class_type === classes.third &&
-        numOfSide > 0 && */}
-      {sidePrice}
+      {numberOfSideSeats > 0 &&
+        coach?.coach?.class_type === 'third' &&
+        sidePrice}
     </div>
-  );
-};
+  )
+}
 
-export default PricesBlock;
+export default PricesBlock

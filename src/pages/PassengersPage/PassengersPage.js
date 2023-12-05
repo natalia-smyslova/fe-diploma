@@ -1,18 +1,17 @@
 import React from 'react';
 
-// import styles from './PassangersPage.module.scss';
+// import styles from './PassengersPage.module.scss';
 
 import Layout from '../../components/Layout/Layout';
-import PassangersBody from '../../components/Bodies/PassangersBody/PassangersBody';
+import PassengersBody from '../../components/Bodies/PassengersBody/PassengersBody';
 import SearchBlockHorizontal from '../../components/SearchBlock/SearchBlockHorizontal';
 
 import pictures from '../../components/Layout/pictures';
 
-import styles from './PassangersPage.module.scss';
+import styles from './PassengersPage.module.scss';
 
 function PassengersPage() {
-  const body = <PassangersBody />
-
+  const body = <PassengersBody />
   return (
     <Layout picture={pictures.selection} body={body}>
       <div className={styles.wrapper}>

@@ -1,12 +1,14 @@
 @import '../../../../../scss/constants';
 @import '../../../../../scss/mixins';
 
-.coachNames {
+
+.coach-name {
   @include font($size: 2.4rem, $height: 2.8rem, $weight: 700,$text-transform:none);
   color: $color-black;
   margin-right: 5px;
 
-  &-active {
+  &.active {
     color: $color-main-light;
   }
 }
+

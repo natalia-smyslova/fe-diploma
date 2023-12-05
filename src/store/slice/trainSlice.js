@@ -66,8 +66,8 @@ const trainSlice = createSlice({
         }
       )
     },
-    removeAllSelectedSeats(state) {
-      state.selectedCoaches[action.payload] = [];
+    removeAllSelectedSeats(state, action) {
+      state.selectedSeats[action.payload] = [];
     },
   },
 });

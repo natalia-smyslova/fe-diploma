@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import PassangerItem from './PassengerItem/PassengerItem';
 
 import passenger from './img/passenger.svg';
-import passengerTypes from '../../SeatsSelection/SelectionBlock/passangerTypes';
 
 import plus from '../img/plus.svg';
 import minus from '../img/minus.svg';
@@ -25,7 +24,7 @@ function Passengers() {
           // className={styles.row}
           number={3}
           sum={5}
-          type={passengerTypes.adults}
+          type='adults'
         />
         {/* {numOfChildrenDep > 0 && childrenDep} */}
       </div>

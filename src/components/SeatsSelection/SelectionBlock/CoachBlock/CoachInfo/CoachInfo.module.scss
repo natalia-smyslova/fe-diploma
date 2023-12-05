@@ -15,8 +15,8 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  height: 161px;
-  width: 190px;
+  // height: 161px;
+  // width: 190px;
   padding: 30px 59px 32px 32px;
   background-color: $color-options;
 }
@@ -70,4 +70,8 @@
 
 .seats__text{
   margin-right: 10px;
+}
+
+.last-text {
+  
 }
