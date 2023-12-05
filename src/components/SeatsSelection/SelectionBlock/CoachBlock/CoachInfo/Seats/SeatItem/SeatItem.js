@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { Popover } from 'antd'
@@ -31,8 +31,8 @@ function SeatItem({
   const [open, setOpen] = useState(false)
 
   const numberOfPassengers = useSelector(state => state.numberOfPassengers.numberOfPassengers)[direction];
-  const numberOfAdults = numberOfPassengers?.adults;
-  const numberOfChildren = numberOfPassengers?.children;
+  // const numberOfAdults = numberOfPassengers?.adults;
+  // const numberOfChildren = numberOfPassengers?.children;
   // const maxNumberOfAdults = useSelector(state => state.numberOfPassengers.maxNumberOfAdults)[direction];
   // const maxNumberOfChildren = useSelector(state => state.numberOfPassengers.maxNumberOfChildren)[direction];
 

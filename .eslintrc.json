@@ -29,6 +29,7 @@
         "no-param-reassign": 0,
         "jsx-a11y/click-events-have-key-events": "off",
         "prefer-destructuring": ["error", {"object": false, "array": false}],
-        "no-underscore-dangle": "off"
+        "no-underscore-dangle": "off",
+        "no-return-assign": "off"
     }
 }

@@ -1,13 +1,12 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-
+import dayjs from 'dayjs';
 import trainIcon from './img/train.svg';
 import smallArrow from './img/arrow-small.svg';
 import clock from './img/clock.svg';
 import arrow from './img/arrow.svg';
 
 import styles from './DirectionInfo.module.scss';
-import dayjs from 'dayjs';
 
 function DirectionInfo({ direction }) {
   const train = useSelector(state => state.train.trains[direction]);

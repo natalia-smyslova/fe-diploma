@@ -19,7 +19,7 @@ import styles from './SelectionBlock.module.scss';
 function SelectionBlock({ direction }) {
   const navigate = useNavigate();
 
-  const seats = useSelector(state => state.seats.selectedSeats);
+  // const seats = useSelector(state => state.seats.selectedSeats);
 
   const buttonClassNames = `button button__transperant-light ${styles.btn}`;
 

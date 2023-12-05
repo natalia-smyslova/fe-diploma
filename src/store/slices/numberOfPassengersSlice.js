@@ -45,7 +45,7 @@ const numberOfPassengersSlice = createSlice({
     },
     setMaxNumberOfAdults(state, action) {
       const { direction, value } = action.payload;
-      state.maxNumberOfAdults = value;
+      state.maxNumberOfAdults[direction] = value;
     },
     setMaxNumberOfChildren(state, action) {
       const { direction, value } = action.payload
