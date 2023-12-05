@@ -46,6 +46,7 @@ function SelectItem({ name, placeholder }) {
     if (debouncedSearchTerm) {
       fetchCities(inputValue);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [debouncedSearchTerm]);
 
   const searchHaldler = (value) => {
